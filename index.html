@@ -54,7 +54,7 @@
 				<section>
 					<section>
 						<h2>Trunk Spaces</h2>
-						<p style="text-align:justify;font-size:0.8em">A popular simplification of product spaces in FEM are <b>trunk spaces</b>, also called "serendipity" spaces. For example, in 2D, the simplest formulation given the maximum degree in 1D ($p$) is the set of polynomial spaces spanned by $x^iy^j, i,j = 0,1,\ldots,p$ subject to the <b>restriction</b> $i+j\leq~p$.</p>
+						<p>A popular simplification of product spaces in FEM are <b>trunk spaces</b>, also called "serendipity" spaces. For example, in 2D, the simplest formulation given the maximum degree in 1D ($p$) is the set of polynomial spaces spanned by $x^iy^j, i,j = 0,1,\ldots,p$ subject to the <b>restriction</b> $i+j\leq~p$.</p>
 						<div class="fragment fade-in" data-fragment-index="1">
 							<div>$1$</div>
 							<div>$x\quad~y$</div>
@@ -69,16 +69,65 @@
                                 2D Trunk space for $p=2$
 						</div>
 					</section>
-					<section>
-						<div style="font-size:10pt">
-						\[
-\begin{equation*}
-\phi_j(\xi) = \sqrt{\frac{2j - 1}{2}} \int_{-1}^{\xi} P_{j-1}(t) \, dt = \frac{1}{\sqrt{4j - 2}} (P_j(\xi) - P_{j-2}(\xi)), \quad j = 2, 3, \ldots
-\end{equation*}
-						\]
+
+					<section data-auto-animate>
+						<h3>Lowering the condition number</h3>
+						<ul>
+							<li class="fragment fade-in">Function spaces built on product of monomials lead to <b>high condition numbers</b>.</li>
+							<li class="fragment fade-in">We implemented the 2D and 3D target spaces as products of 1D <em>hierarchic shape functions</em>:</li>
+						</ul>
+						<div data-id="eqs" class="fragment fade-in">
+							<div style="font-size:12pt">
+							$$
+							\begin{aligned}
+								N_1(x) &amp; = \frac{1-x}{2}\\
+								N_2(x) &amp; = \frac{1+x}{2}\\
+								N_i(x) &amp; = \phi_{i-1}(x),~i=3,4,\ldots,p+1
+							\end{aligned}
+							$$
+							</div>
+							<p style="text-align:left;font-size:0.5em">with:</p>
+							<div style="font-size:10pt">
+							\[
+	\begin{equation*}
+	\phi_j(x) = \frac{1}{\sqrt{4j - 2}} (P_j(x) - P_{j-2}(x)), \quad j = 2, 3, \ldots
+	\end{equation*}
+							\]
+							</div>
+							<p style="text-align:left;font-size:0.5em">where $P_j(x)$ are Legendre polynomials.</p>
 						</div>
 					</section>
-					<section>Slide 2</section>
+
+					<section data-auto-animate>
+						<h3>Lowering the condition number</h3>
+						<ul>
+							<li>Function spaces built on product of monomials lead to <b>high condition numbers</b>.</li>
+							<li>We implemented the 2D and 3D target spaces as products of 1D <em>hierarchic shape functions</em>:</li>
+						</ul>
+						<div data-id="eqs" style="float:left">
+							<div style="font-size:12pt;">
+								$$
+								\begin{aligned}
+									N_1(x) &amp; = \frac{1-x}{2}\\
+									N_2(x) &amp; = \frac{1+x}{2}\\
+									N_i(x) &amp; = \phi_{i-1}(x),~i=3,4,\ldots,p+1
+								\end{aligned}
+								$$
+							</div>
+								<p style="text-align:left;font-size:0.5em">with:</p>
+							<div style="font-size:10pt;">
+								\[
+		\begin{equation*}
+		\phi_j(x) = \frac{1}{\sqrt{4j - 2}} (P_j(x) - P_{j-2}(x)), \quad j = 2, 3, \ldots
+		\end{equation*}
+								\]
+							</div>
+							<p style="text-align:left;font-size:0.5em">where $P_j(x)$ are Legendre polynomials.</p>
+						</div>
+						<img style="float:right;margin-right:15%;width:30%" src="images/1D_space_p6.svg"/>
+					</section>
+
+
 				</section>
 				<section>
 					<section><h2>Finding Quadrature Rules: An Optimization Problem</h2></section>
