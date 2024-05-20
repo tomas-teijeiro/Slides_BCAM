@@ -1,0 +1,72 @@
+/**
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+
+$mainColor: #222;
+$headingColor: #0092d4;
+
+$mainFontSize: 32px;
+$headingFont: Lato, Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: 600;
+$linkColor: #2a76dd;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.8em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+$overlayElementBgColor: 0, 0, 0;
+$overlayElementFgColor: 240, 240, 240;
+
+// Change text colors against dark slide backgrounds
+@include dark-bg-text-color(#fff);
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+//Custom rules
+.reveal h1,
+.reveal h2 {
+    font-weight: bold;
+}
+
+.reveal ul li {
+    margin-bottom: 1%;
+}
+
+ol.outline {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.outline li {
+  counter-increment: step-counter;
+  margin-bottom: 3%;
+}
+.outline li::before {
+  content: counter(step-counter)".";
+  font-size: 110%;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+
