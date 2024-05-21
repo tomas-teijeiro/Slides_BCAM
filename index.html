@@ -184,7 +184,6 @@
 							<div style="font-size:0.9em">
 							$$
 							L(X, W) := \max\limits_{f\in \mathcal{S}}\frac{\left|e(f)\right|}{||f||_{L^2}}=\left(\sum\limits_{i,j=0}^n (M^{-1})_{ij}e(v_i)e(v_j)\right)^\frac{1}{2}
-
 							$$
 							</div>
 						</div>
@@ -193,8 +192,41 @@
 				</section>
 
 				<section>
-					<section><h2>Machine Learning Algorithm</h2></section>
-					<section>Slide 2</section>
+					<section><h2>Machine Learning Algorithm</h2>
+					<pre><code class="hljs python" data-trim data-line-numbers="|1-8|10,17-27">
+						def loss(parameters):
+							"""Loss function to be minimized in the optimization"""
+							x, y, w = parameters['x'], parameters['y'], parameters['w']
+							b = basis(x, y)
+							w = w/jnp.sum(w)
+							err = reference - jnp.dot(b, w)
+							return jnp.einsum("IJ,I,J", Minv, err, err)
+						loss_value_grad = jax.jit(jax.value_and_grad(loss))
+
+						def fit(params, optimizer, epochs=10000, early_stop=1e-22):
+							@jax.jit
+							def gradient_step(grads, opt_state, params):
+								updates, opt_state = optimizer.update(grads, opt_state, params)
+								params = optax.apply_updates(params, updates)
+								return params, opt_state
+
+							opt_state = optimizer.init(params)
+							estop = EarlyStopping(min_delta=early_stop, patience=100)
+							i = 0
+							loss_value, grads = loss_value_grad(params)
+							while i &lt; epochs and not estop.should_stop:
+								params, opt_state = gradient_step(grads, opt_state, params)
+								loss_value, grads = loss_value_grad(params)
+								estop = estop.update(loss_value)
+								i += 1
+
+							return params, loss_value, i+1
+					</code></pre>
+					</section>
+
+					<section>
+						<h3>Restarted Gradient Descent</h3>
+					</section>
 				</section>
 
 				<section>
