@@ -134,17 +134,69 @@
 							<li class="fragment fade-in">Still, target spaces are <em>smaller</em> than regular tensor-product spaces. <b class="fragment fade-in">Can we go beyond Gaussian quadrature rules for integration?</b></li>
 						</ul>
 					</section>
-
-
 				</section>
+
 				<section>
 					<section><h2>Finding Quadrature Rules:<br/> An Optimization Problem</h2></section>
-					<section>Slide 2</section>
+
+					<section>
+						<h3>Quadrature rules: Parameterization</h3>
+						<p>In 2D, an exact quadrature rule for $\mathcal{S}$ is given by ${X := \{x_i\}_{i=1}^q}$, ${Y := \{y_i\}_{i=1}^q}$ and ${W := \{w_i\}_{i=1}^q}$, such that:</p>
+						<div class="fragment fade-in" data-fragment-index="1">
+						$$
+						\begin{equation}
+						\iint \limits_{0}^{1} f(x, y) dx~dy = \sum\limits_{i=1}^q f(x_i,y_i)w_i ~ \forall f \in \mathcal{S}
+						\end{equation}
+						$$
+						</div>
+						<p class="fragment fade-in" data-fragment-index="2">Thus, we seek to find $q, X, Y$ (and ${Z := \{z_i\}_{i=1}^q}$ for 3D spaces) such that $q$ <b>is minimum</b> and $(1)$ is satisfied. <span class="fragment fade-in" data-fragment-index="3">We have also the following constraints:</span></p>
+						<div style="font-size:0.6em" class="fragment fade-in" data-fragment-index="3">
+						$$
+						\begin{aligned}
+						x_i, y_i, z_i, w_i &amp;\in [0, 1]\,,\quad i=1,2,\ldots,q\,,\\
+						\sum\limits_{i=1}^q w_i &amp;= 1\,.
+						\end{aligned}
+						$$
+						</div>
+					</section>
+
+					<section>
+						<h3>Target Loss Function</h3>
+
+						<p>Given the set of basis functions $\{v_i(x,y)\}_{i=1}^n$ of $\mathcal{S}$, the two main components of our loss function are:</p>
+						<div class="column-container">
+							<div class="fragment fade-right">
+							<h5 style='color:#222;font-size:0.8em'>Gram matrix</h5>
+								<div style="font-size:0.6em">
+									$M_{ij} :=\iint \limits_0^1 v_i v_j dx dy , \quad i,j=1,\ldots, n$
+								</div>
+							</div>
+							<div class="fragment fade-left">
+							<h4 style='color:#222;font-size:0.8em'>Individual integration error</h4>
+								<div style="font-size:0.6em">
+									$e(v_i) := \left|\iint \limits_{0}^{1}v_i(x,y) dx dy - \sum\limits_{j=1}^q v_i(x_j,y_j)w_j\right|$
+								</div>
+							</div>
+						</div>
+
+						<div class="fragment fade-in">
+
+
+
+							$$
+							L(X, W) := \max\limits_{f\in \mathcal{S}}\frac{\left|e(f)\right|}{||f||_{L^2}}=\left(\sum\limits_{i,j=0}^n (M^{-1})_{ij}e(v_i)e(v_j)\right)^\frac{1}{2}
+
+							$$
+						</div>
+
+					</section>
 				</section>
+
 				<section>
 					<section><h2>Machine Learning Algorithm</h2></section>
 					<section>Slide 2</section>
 				</section>
+
 				<section>
 					<section><h2>Results and Conclusion</h2></section>
 					<section>Slide 2</section>

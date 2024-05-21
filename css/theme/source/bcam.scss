@@ -74,4 +74,10 @@ ol.outline {
   font-size:0.8em;
 }
 
+//For column-based layout
+.column-container{
+  display: grid;
+  grid-auto-flow: column;
+}
+
 

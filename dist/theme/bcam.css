@@ -388,4 +388,9 @@ ol.outline {
   font-size: 0.8em;
 }
 
+.column-container {
+  display: grid;
+  grid-auto-flow: column;
+}
+
 /*# sourceMappingURL=bcam.css.map */
