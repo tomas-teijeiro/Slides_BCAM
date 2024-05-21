@@ -73,29 +73,28 @@
 					<section data-auto-animate>
 						<h3>Lowering the condition number</h3>
 						<ul>
-							<li class="fragment fade-in">Function spaces built on product of monomials lead to <b>high condition numbers</b>.</li>
-							<li class="fragment fade-in">We implemented the 2D and 3D target spaces as products of 1D <em>hierarchic shape functions</em>:</li>
+							<li class="fragment fade-in" class="fragment fade-in" data-fragment-index="1">Function spaces built on product of monomials lead to <b>high condition numbers</b>.</li>
+							<li class="fragment fade-in" class="fragment fade-in" data-fragment-index="2">We implemented the 2D and 3D target spaces as products of 1D <em>hierarchic shape functions</em>:</li>
 						</ul>
-						<div data-id="eqs" class="fragment fade-in">
-							<div style="font-size:12pt">
-							$$
-							\begin{aligned}
-								N_1(x) &amp; = \frac{1-x}{2}\\
-								N_2(x) &amp; = \frac{1+x}{2}\\
-								N_i(x) &amp; = \phi_{i-1}(x),~i=3,4,\ldots,p+1
-							\end{aligned}
-							$$
-							</div>
-							<p style="text-align:left;font-size:0.5em">with:</p>
-							<div style="font-size:10pt">
-							\[
-	\begin{equation*}
-	\phi_j(x) = \frac{1}{\sqrt{4j - 2}} (P_j(x) - P_{j-2}(x)), \quad j = 2, 3, \ldots
-	\end{equation*}
-							\]
-							</div>
-							<p style="text-align:left;font-size:0.5em">where $P_j(x)$ are Legendre polynomials.</p>
+						<div data-id="eqs" style="font-size:12pt" class="fragment fade-in" data-fragment-index="3">
+						$$
+						\begin{aligned}
+							N_1(x) &amp; = \frac{1-x}{2}\\
+							N_2(x) &amp; = \frac{1+x}{2}\\
+							N_i(x) &amp; = \phi_{i-1}(x),~i=3,4,\ldots,p+1
+						\end{aligned}
+						$$
 						</div>
+						<p style="text-align:left;font-size:0.5em" class="fragment fade-in" data-fragment-index="3">with:</p>
+						<div data-id="phi" style="font-size:10pt" class="fragment fade-in" data-fragment-index="3">
+						\[
+\begin{equation*}
+\phi_j(x) = \frac{1}{\sqrt{4j - 2}} (P_j(x) - P_{j-2}(x)), \quad j = 2, 3, \ldots
+\end{equation*}
+						\]
+						</div>
+						<p style="text-align:left;font-size:0.5em" class="fragment fade-in" data-fragment-index="3">where $P_j(x)$ are Legendre polynomials.</p>
+
 					</section>
 
 					<section data-auto-animate>
@@ -104,8 +103,9 @@
 							<li>Function spaces built on product of monomials lead to <b>high condition numbers</b>.</li>
 							<li>We implemented the 2D and 3D target spaces as products of 1D <em>hierarchic shape functions</em>:</li>
 						</ul>
-						<div data-id="eqs" style="float:left">
-							<div style="font-size:12pt;">
+
+							<img style="float:right;margin-right:15%;width:30%" src="images/1D_space_p6.svg"/>
+							<div data-id="eqs" style="font-size:12pt;max-width:50%">
 								$$
 								\begin{aligned}
 									N_1(x) &amp; = \frac{1-x}{2}\\
@@ -114,17 +114,15 @@
 								\end{aligned}
 								$$
 							</div>
-								<p style="text-align:left;font-size:0.5em">with:</p>
-							<div style="font-size:10pt;">
+								<p style="text-align:left;font-size:0.5em;max-width:50%">with:</p>
+							<div data-id="phi" style="font-size:10pt;max-width:50%">
 								\[
 		\begin{equation*}
 		\phi_j(x) = \frac{1}{\sqrt{4j - 2}} (P_j(x) - P_{j-2}(x)), \quad j = 2, 3, \ldots
 		\end{equation*}
 								\]
 							</div>
-							<p style="text-align:left;font-size:0.5em">where $P_j(x)$ are Legendre polynomials.</p>
-						</div>
-						<img style="float:right;margin-right:15%;width:30%" src="images/1D_space_p6.svg"/>
+							<p style="text-align:left;font-size:0.5em;max-width:50%">where $P_j(x)$ are Legendre polynomials.</p>
 					</section>
 
 
