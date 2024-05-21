@@ -122,13 +122,23 @@
 		\end{equation*}
 								\]
 							</div>
-							<p style="text-align:left;font-size:0.5em;max-width:50%">where $P_j(x)$ are Legendre polynomials.</p>
+							<p style="text-align:left;font-size:0.5em;max-width:30%">where $P_j(x)$ are Legendre polynomials.</p>
+					</section>
+
+					<section>
+						<h3>Target spaces for integration</h3>
+						<ul>
+							<li class="fragment fade-in">Given the maximum degree $p$ of the basis functions in 1D, we define the trial and test spaces $U$ and $V$ as 2D or 3D trunk spaces of degree $p$.</li>
+							<li class="fragment fade-in">Our target space for integration will be $\mathcal{S} = U \otimes V$.</li>
+							<li class="fragment fade-in">However, products of trunk spaces <em>are not trunk spaces</em> 😭. </li>
+							<li class="fragment fade-in">Still, target spaces are <em>smaller</em> than regular tensor-product spaces. <b class="fragment fade-in">Can we go beyond Gaussian quadrature rules for integration?</b></li>
+						</ul>
 					</section>
 
 
 				</section>
 				<section>
-					<section><h2>Finding Quadrature Rules: An Optimization Problem</h2></section>
+					<section><h2>Finding Quadrature Rules:<br/> An Optimization Problem</h2></section>
 					<section>Slide 2</section>
 				</section>
 				<section>
