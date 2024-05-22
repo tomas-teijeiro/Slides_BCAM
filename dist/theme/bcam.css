@@ -393,4 +393,8 @@ ol.outline {
   grid-auto-flow: column;
 }
 
+.reveal .numeric td {
+  text-align: right;
+}
+
 /*# sourceMappingURL=bcam.css.map */
