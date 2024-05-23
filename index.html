@@ -149,7 +149,7 @@
 						\end{equation}
 						$$
 						</div>
-						<p class="fragment fade-in" data-fragment-index="2">Thus, we seek to find $q, X, Y$ (and ${Z := \{z_i\}_{i=1}^q}$ for 3D spaces) such that $q$ <b>is minimum</b> and $(1)$ is satisfied. <span class="fragment fade-in" data-fragment-index="3">We have also the following constraints:</span></p>
+						<p class="fragment fade-in" data-fragment-index="2">Thus, we seek to find $q, X, Y, W$ (and ${Z := \{z_i\}_{i=1}^q}$ for 3D spaces) such that $q$ <b>is minimum</b> and $(1)$ is satisfied. <span class="fragment fade-in" data-fragment-index="3">We have also the following constraints:</span></p>
 						<div style="font-size:0.6em" class="fragment fade-in" data-fragment-index="3">
 						$$
 						\begin{aligned}
@@ -187,7 +187,16 @@
 							$$
 							</div>
 						</div>
+					</section>
 
+					<section>
+						<h3>Determining the optimum $q$</h3>
+						<ul>
+							<li class="fragment fade-in">Given the set of basis functions $\{v_i\}_{i=1}^n$, we interpret it as a <b>system of $n$ equations</b>.</li>
+							<li class="fragment fade-in">Each quadrature point in 2D consists of 3 variables $(x_i, y_i, w_i)$.</li>
+							<li class="fragment fade-in">Thus, to ensure there is a solution, $q &geq; \lceil\frac{n}{3}\rceil$.</li>
+							<li class="fragment fade-in">In practice, $\lceil\frac{n}{3}\rceil &gt; \frac{n}{3}$, leading to <b>underdetermined systems</b> <span class="fragment fade-in">→ This is the basis for the generation of <b>randomized rules.</b></span></li>
+						</ul>
 					</section>
 				</section>
 
