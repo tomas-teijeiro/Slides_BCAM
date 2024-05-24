@@ -52,22 +52,30 @@
 				</section>
 
 				<section>
-					<section>
+					<section data-auto-animate>
 						<h2>Trunk Spaces</h2>
 						<p>A popular simplification of product spaces in FEM are <b>trunk spaces</b>, also called "serendipity" spaces. For example, in 2D, the simplest formulation given the maximum degree in 1D ($p$) is the set of polynomial spaces spanned by $x^iy^j, i,j = 0,1,\ldots,p$ subject to the <b>restriction</b> $i+j\leq~p$.</p>
-						<div class="fragment fade-in" data-fragment-index="1">
+						<div class="fragment fade-in" data-fragment-index="1" data-id="space">
 							<div>$1$</div>
 							<div>$x\quad~y$</div>
 							<div>$x^2\quad~xy\quad~y^2$</div>
-							<div class="fragment semi-fade-out" data-fragment-index="2">$x^2y\quad~xy^2$</div>
-							<div class="fragment semi-fade-out" data-fragment-index="2">$x^2y^2$</div>
-						</div>
-						<div style="position:absolute;left:0;right:0;margin-left:auto;margin-top:0.5em" class="fragment current-visible" data-fragment-index="1">
-                                2D Tensor Product space for $p=2$
-						</div>
-						<div style="position:absolute;left:0;right:0;margin-left:auto;margin-top:0.5em" class="fragment current-visible" data-fragment-index="2">
-                                2D Trunk space for $p=2$
-						</div>
+							<div>$x^2y\quad~xy^2$</div>
+							<div>$x^2y^2$</div>
+							2D tensor product space for $p=2$
+						</div>				
+					</section>
+
+					<section data-auto-animate>
+						<h2>Trunk Spaces</h2>
+						<p>A popular simplification of product spaces in FEM are <b>trunk spaces</b>, also called "serendipity" spaces. For example, in 2D, the simplest formulation given the maximum degree in 1D ($p$) is the set of polynomial spaces spanned by $x^iy^j, i,j = 0,1,\ldots,p$ subject to the <b>restriction</b> $i+j\leq~p$.</p>
+						<div data-id="space">
+							<div>$1$</div>
+							<div>$x\quad~y$</div>
+							<div>$x^2\quad~xy\quad~y^2$</div>
+							<div style="color:#d62728">$\sout{x^2y\quad~xy^2}$</div>
+							<div style="color:#d62728">$\sout{x^2y^2}$</div>
+							2D trunk space for $p=2$
+						</div>						
 					</section>
 
 					<section data-auto-animate>
@@ -180,7 +188,7 @@
 						</div>
 
 						<div class="fragment fade-in">
-							<p>then, the loss function is defined as:</p>
+							<p>Then, the loss function is defined as:</p>
 							<div style="font-size:0.9em">
 							$$
 							L(X, W) := \max\limits_{f\in \mathcal{S}}\frac{\left|e(f)\right|}{||f||_{L^2}}=\left(\sum\limits_{i,j=0}^n (M^{-1})_{ij}e(v_i)e(v_j)\right)^\frac{1}{2}
@@ -292,15 +300,10 @@
 				<section>
 					<h2>Conclusions</h2>
 					<ul>
-						<li class="fragment fade-in">ML allows to discover <b>exact quadrature rules for products of 2D and 3D Trunk spaces</b> with a reduced number of integration points.</li>
+						<li class="fragment fade-in">ML allows to discover <b>exact quadrature rules for products of 2D and 3D trunk spaces</b> with a reduced number of integration points.</li>
 						<li class="fragment fade-in">Even if the optimization problem is non-convex, <b>convergence is in general very fast</b>.</li>
 						<li class="fragment fade-in">Randomized rules support <b>covering the full integration domain</b>, and thus they can help prevent overfitting when used for Neural-Network training.</li>
 					</ul>
-				</section>
-
-				<section>
-					<h2 style="margin-bottom:1.5em">Thank you for your attention!</h2>
-					<h3 class="fragment fade-up">Questions?</h3>
 				</section>
 
 			</div>
@@ -317,6 +320,8 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				controls: false,
+				slideNumber: 'c/t',
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
