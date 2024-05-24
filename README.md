@@ -6,3 +6,10 @@ They were presented In session: [MS005D - Deep Learning Computing IV](https://ec
 
 Slides created with [Reveal.js](https://revealjs.com/).
 
+## Export to PDF:
+
+For a proper export to `pdf`, run the following command (adjusting the `--max-slides` flag accordingly):
+
+```
+$ docker run --rm -t --net=host -v `pwd`:/slides -v "/usr/share/fonts:/home/node/.local/share/fonts" astefanutti/decktape generic --key=" " --max-slides=52 index.html slides.pdf
+```
