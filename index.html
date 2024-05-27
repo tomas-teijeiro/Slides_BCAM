@@ -30,7 +30,7 @@
                 </section>
 
                 <!--Outline-->
-                <section>
+                <!-- <section>
                     <h2>Outline</h2>
                     <ol class="outline">
                         <li>Motivation</li>
@@ -39,37 +39,29 @@
                         <li>Machine Learning Algorithm</li>
                         <li>Results and Conclusion</li>
                     </ol>
-                </section>
+                </section> -->
 
 				<section>
-					<h2>Motivation</h2>
-					<b>Context: Galerkin formulation to solve a FEM problem in 2D or 3D.</b>
-					<ul style="margin-bottom:1em;font-size:0.9em">
-						<li class="fragment fade-in" data-fragment-index="1">Given the <em>trial</em> and <em>test</em> spaces $U$ and $V$, assessing the orthogonality of solutions requires solving $\int_\Omega uv$.</li>
-						<li class="fragment fade-in" data-fragment-index="2">Usually, function spaces and integration rules are built by means of <b>tensor products over 1D</b> spaces and Gaussian quadrature rules.</li>
-						<li class="fragment fade-in" data-fragment-index="3">This leads to <b>rules larger than necessary:</b>
-						<ul style="font-size:0.8em">
-							<li>Increased computational complexity.</li>
-							<li>Poor scalability.</li>
-						</ul></li>
-						<li style="width:68%" class="fragment fade-in" data-fragment-index="4"><em>Can we optimize the complexity of the spaces, and then find simpler and more efficient rules?</em></li>
-					</ul>
-					<img style="position:absolute;bottom:3%;right:3%;width:27%" class="plain fragment fade-up" data-fragment-index="3" src="assets/npoints_gauss.svg"/>
-				</section>
+					<section><h2>Context and Motivation</h2></section>
 
-				<section>
-					<h2>Motivation</h2>
-					<ul style="margin-bottom:1em">
-						<li class="fragment fade-in" data-fragment-index="1">In FEM, integration rules for higher-dimensional spaces are usually built by means of <b>tensor products over 1D</b> rules.</li>
-						<li style="width:70%" class="fragment fade-in" data-fragment-index="2">This leads to <b>spaces larger than necessary</b> <div class="fragment fade-in" data-fragment-index="3"> → increased computational complexity.</div></li>
-						<li style="width:68%" class="fragment fade-in" data-fragment-index="4"><em>Can we optimize the complexity of the spaces, and then find simpler and more efficient rules?</em></li>
-					</ul>
-					<img style="position:absolute;bottom:2%;right:3%;width:27%" class="plain fragment fade-up" data-fragment-index="3" src="assets/npoints_gauss.svg"/>
-				</section>
-
-				<section>
 					<section>
-						<h2>Trunk Spaces</h2>
+						<h3>Problem Context</h3>
+						<b>Galerkin formulation to solve a FEM problem in 2D or 3D.</b>
+						<ul style="margin-bottom:1em;font-size:0.9em">
+							<li class="fragment fade-in" data-fragment-index="1">Given the <em>trial</em> and <em>test</em> spaces $U$ and $V$, assessing the orthogonality of solutions requires solving $\int_\Omega uv$.</li>
+							<li class="fragment fade-in" data-fragment-index="2">Usually, function spaces and integration rules are built by means of <b>tensor products over 1D</b> spaces and Gaussian quadrature rules.</li>
+							<li class="fragment fade-in" data-fragment-index="3">This leads to <b>rules larger than necessary:</b>
+							<ul style="font-size:0.8em">
+								<li>Increased computational complexity.</li>
+								<li>Poor scalability.</li>
+							</ul></li>
+							<li style="width:68%" class="fragment fade-in" data-fragment-index="4"><em>Can we optimize the complexity of the spaces, and then find <b>simpler and more efficient</b> rules?</em></li>
+						</ul>
+						<img style="position:absolute;bottom:3%;right:3%;width:27%" class="plain fragment fade-up" data-fragment-index="3" src="assets/npoints_gauss.svg"/>
+					</section>
+
+					<section>
+						<h3>Trunk Spaces</h3>
 						<p>A popular simplification of product spaces in FEM are <b>trunk spaces</b>, also called "serendipity" spaces. For example, in 2D, the simplest formulation given the maximum degree in 1D ($p$) is the set of polynomial spaces spanned by $x^iy^j, i,j = 0,1,\ldots,p$ subject to the <b>restriction</b> $i+j\leq~p$.</p>
 						<div class="fragment fade-in" data-fragment-index="1" data-id="space">
 							<div>$1$</div>
@@ -97,12 +89,14 @@
 					<section>
 						<h3>Target spaces for integration</h3>
 						<ul>
-							<li class="fragment fade-in">Given the maximum degree $p$ of the basis functions in 1D, we define the trial and test spaces $U$ and $V$ as 2D or 3D trunk spaces of degree $p$.</li>
-							<li class="fragment fade-in">Our target space for integration will be $\mathcal{S} = U \otimes V$.</li>
+							<li class="fragment fade-in">Given the maximum degree $p$ of the basis functions in 1D, we define the trial and test spaces $U$ and $V$ as 2D (or 3D) trunk spaces of degree $p$ in the domain $[0,1]\times[0,1](\times[0,1])$.</li>
+							<li class="fragment fade-in">Thus our target space for integration is $\mathcal{S} = span(U \otimes V)$.</li>
 							<li class="fragment fade-in">However, products of trunk spaces <em>are not trunk spaces</em> 😭. </li>
-							<li class="fragment fade-in">Still, target spaces are <em>smaller</em> than regular tensor-product spaces. <b class="fragment fade-in">Can we go beyond Gaussian quadrature rules for integration?</b></li>
+							<li class="fragment fade-in">Still, target spaces are <em>smaller</em> than regular tensor-product spaces.</li>
 						</ul>
+						<b class="fragment fade-in">Can we go beyond Gaussian quadrature rules for integration?</b>
 					</section>
+
 				</section>
 
 				<section>
@@ -110,7 +104,7 @@
 
 					<section>
 						<h3>Quadrature rules: Parameterization</h3>
-						<p>In 2D, an exact quadrature rule for $\mathcal{S}$ is given by ${X := \{x_i\}_{i=1}^q}$, ${Y := \{y_i\}_{i=1}^q}$ and ${W := \{w_i\}_{i=1}^q}$, such that:</p>
+						<p>In 2D, an exact quadrature rule for $\mathcal{S}$ is given by a set of triplets (quadruplets in 3D) ${Q := \{(x_i, y_i, w_i)\}_{i=1}^q}$, such that:</p>
 						<div class="fragment fade-in" data-fragment-index="1">
 						$$
 						\begin{equation}
@@ -118,11 +112,12 @@
 						\end{equation}
 						$$
 						</div>
-						<p class="fragment fade-in" data-fragment-index="2">Thus, we seek to find $q, X, Y, W$ (and ${Z := \{z_i\}_{i=1}^q}$ for 3D spaces) such that $q$ <b>is minimum</b> and $(1)$ is satisfied. <span class="fragment fade-in" data-fragment-index="3">We have also the following constraints:</span></p>
-						<div style="font-size:0.6em" class="fragment fade-in" data-fragment-index="3">
+						<p class="fragment fade-in" data-fragment-index="2">Thus, we seek to find $q$ and $Q$ such that $q$ <b>is minimum</b> and $(1)$ is satisfied.</p>
+						<p class="fragment fade-in" data-fragment-index="3">We have also the following constraints:</p>
+						<div style="font-size:0.6em" class="fragment fade-in" data-fragment-index="3">						
 						$$
 						\begin{aligned}
-						x_i, y_i, z_i, w_i &amp;\in [0, 1]\,,\quad i=1,2,\ldots,q\,,\\
+						x_i, y_i, w_i &amp;\in (0, 1)\,,\quad i=1,2,\ldots,q\,,\\
 						\sum\limits_{i=1}^q w_i &amp;= 1\,.
 						\end{aligned}
 						$$
@@ -132,7 +127,7 @@
 					<section>
 						<h3>Target Loss Function</h3>
 
-						<p>Given the set of basis functions $\{v_i(x,y)\}_{i=1}^n$ of $\mathcal{S}$, the two main components of our loss function are:</p>
+						<ul><li>Given the set of basis functions $\{v_i(x,y)\}_{i=1}^n$ of $\mathcal{S}$, the two main components of our loss function are:</li></ul>
 						<div class="column-container">
 							<div class="fragment fade-right">
 							<h5 style='color:#222;font-size:0.8em'>Gram matrix</h5>
@@ -149,7 +144,7 @@
 						</div>
 
 						<div class="fragment fade-in">
-							<p>Then, the loss function is defined as:</p>
+							<div style="text-align: left;"><ul><li>Then, the loss function is defined as:</li></ul></div>
 							<div style="font-size:0.9em">
 							$$
 							L(X, W) := \max\limits_{f\in \mathcal{S}}\frac{\left|e(f)\right|}{||f||_{L^2}}=\left(\sum\limits_{i,j=0}^n (M^{-1})_{ij}e(v_i)e(v_j)\right)^\frac{1}{2}
@@ -158,13 +153,67 @@
 						</div>
 					</section>
 
+					<section data-auto-animate>
+						<h3>Lowering the condition number</h3>
+						<ul>
+							<li class="fragment fade-in" class="fragment fade-in" data-fragment-index="1">Function spaces built on product of monomials lead to Gram matrices $M$ with <b>high condition numbers</b>.</li>
+							<li class="fragment fade-in" class="fragment fade-in" data-fragment-index="2">We implement the 2D and 3D target spaces as products of 1D <em>hierarchic shape functions</em>:</li>
+						</ul>
+						<div data-id="eqs" style="font-size:12pt" class="fragment fade-in" data-fragment-index="3">
+						$$
+						\begin{aligned}
+							v_1(x) &amp; = \frac{1-x}{2}\\
+							v_2(x) &amp; = \frac{1+x}{2}\\
+							v_i(x) &amp; = \phi_{i-1}(x),~i=3,4,\ldots,p+1
+						\end{aligned}
+						$$
+						</div>
+						<p style="text-align:left;font-size:0.5em" class="fragment fade-in" data-fragment-index="3">with:</p>
+						<div data-id="phi" style="font-size:10pt" class="fragment fade-in" data-fragment-index="3">
+						\[
+\begin{equation*}
+\phi_j(x) = \frac{1}{\sqrt{4j - 2}} (P_j(x) - P_{j-2}(x)), \quad j = 2, 3, \ldots
+\end{equation*}
+						\]
+						</div>
+						<p style="text-align:left;font-size:0.5em" class="fragment fade-in" data-fragment-index="3">where $P_j(x)$ are Legendre polynomials.</p>
+
+					</section>
+					<section data-auto-animate>
+						<h3>Lowering the condition number</h3>
+						<ul>
+							<li>Function spaces built on product of monomials lead to Gram matrices $M$ with <b>high condition numbers</b>.</li>
+							<li>We implement the 2D and 3D target spaces as products of 1D <em>hierarchic shape functions</em>:</li>
+						</ul>
+
+							<img style="float:right;margin-right:15%;width:30%" src="assets/1D_space_p6.svg"/>
+							<div data-id="eqs" style="font-size:12pt;max-width:50%">
+								$$
+								\begin{aligned}
+									v_1(x) &amp; = \frac{1-x}{2}\\
+									v_2(x) &amp; = \frac{1+x}{2}\\
+									v_i(x) &amp; = \phi_{i-1}(x),~i=3,4,\ldots,p+1
+								\end{aligned}
+								$$
+							</div>
+								<p style="text-align:left;font-size:0.5em;max-width:50%">with:</p>
+							<div data-id="phi" style="font-size:10pt;max-width:50%">
+								\[
+		\begin{equation*}
+		\phi_j(x) = \frac{1}{\sqrt{4j - 2}} (P_j(x) - P_{j-2}(x)), \quad j = 2, 3, \ldots
+		\end{equation*}
+								\]
+							</div>
+							<p style="text-align:left;font-size:0.5em;max-width:30%">where $P_j(x)$ are Legendre polynomials.</p>
+					</section>
+
 					<section>
 						<h3>Determining the optimum $q$</h3>
 						<ul>
 							<li class="fragment fade-in">Given the set of basis functions $\{v_i\}_{i=1}^n$, we interpret it as a <b>system of $n$ equations</b>.</li>
 							<li class="fragment fade-in">Each quadrature point in 2D consists of 3 variables $(x_i, y_i, w_i)$.</li>
 							<li class="fragment fade-in">Thus, to ensure there is a solution, $q &geq; \lceil\frac{n}{3}\rceil$.</li>
-							<li class="fragment fade-in">In practice, $\lceil\frac{n}{3}\rceil &gt; \frac{n}{3}$, leading to <b>underdetermined systems</b> <span class="fragment fade-in">→ This is the basis for the generation of <b>randomized rules.</b></span></li>
+							<li class="fragment fade-in">In practice, $\lceil\frac{n}{3}\rceil &gt; \frac{n}{3}$, leading to <b>underdetermined systems</b><br/> <span class="fragment fade-in">→ This is the basis for the generation of <b>randomized rules.</b></span></li>
 						</ul>
 					</section>
 				</section>
@@ -202,61 +251,6 @@
 					</code></pre>
 					</section>
 
-					<section data-auto-animate>
-						<h3>Lowering the condition number</h3>
-						<ul>
-							<li class="fragment fade-in" class="fragment fade-in" data-fragment-index="1">Function spaces built on product of monomials lead to <b>high condition numbers</b>.</li>
-							<li class="fragment fade-in" class="fragment fade-in" data-fragment-index="2">We implemented the 2D and 3D target spaces as products of 1D <em>hierarchic shape functions</em>:</li>
-						</ul>
-						<div data-id="eqs" style="font-size:12pt" class="fragment fade-in" data-fragment-index="3">
-						$$
-						\begin{aligned}
-							N_1(x) &amp; = \frac{1-x}{2}\\
-							N_2(x) &amp; = \frac{1+x}{2}\\
-							N_i(x) &amp; = \phi_{i-1}(x),~i=3,4,\ldots,p+1
-						\end{aligned}
-						$$
-						</div>
-						<p style="text-align:left;font-size:0.5em" class="fragment fade-in" data-fragment-index="3">with:</p>
-						<div data-id="phi" style="font-size:10pt" class="fragment fade-in" data-fragment-index="3">
-						\[
-\begin{equation*}
-\phi_j(x) = \frac{1}{\sqrt{4j - 2}} (P_j(x) - P_{j-2}(x)), \quad j = 2, 3, \ldots
-\end{equation*}
-						\]
-						</div>
-						<p style="text-align:left;font-size:0.5em" class="fragment fade-in" data-fragment-index="3">where $P_j(x)$ are Legendre polynomials.</p>
-
-					</section>
-
-					<section data-auto-animate>
-						<h3>Lowering the condition number</h3>
-						<ul>
-							<li>Function spaces built on product of monomials lead to <b>high condition numbers</b>.</li>
-							<li>We implemented the 2D and 3D target spaces as products of 1D <em>hierarchic shape functions</em>:</li>
-						</ul>
-
-							<img style="float:right;margin-right:15%;width:30%" src="assets/1D_space_p6.svg"/>
-							<div data-id="eqs" style="font-size:12pt;max-width:50%">
-								$$
-								\begin{aligned}
-									N_1(x) &amp; = \frac{1-x}{2}\\
-									N_2(x) &amp; = \frac{1+x}{2}\\
-									N_i(x) &amp; = \phi_{i-1}(x),~i=3,4,\ldots,p+1
-								\end{aligned}
-								$$
-							</div>
-								<p style="text-align:left;font-size:0.5em;max-width:50%">with:</p>
-							<div data-id="phi" style="font-size:10pt;max-width:50%">
-								\[
-		\begin{equation*}
-		\phi_j(x) = \frac{1}{\sqrt{4j - 2}} (P_j(x) - P_{j-2}(x)), \quad j = 2, 3, \ldots
-		\end{equation*}
-								\]
-							</div>
-							<p style="text-align:left;font-size:0.5em;max-width:30%">where $P_j(x)$ are Legendre polynomials.</p>
-					</section>
-
 					<section>
 						<h3>Algorithm in Action ($p=6$)</h3>
 						<iframe src="assets/2D_P6_history.html" style="width:400pt;height:400pt"></iframe>
@@ -283,16 +277,16 @@
 						<table class="numeric">
 							<tbody style="font-size:0.8em">
 							<tr><th>$p$</th><th>$q$-Gaussian</th><th>$q$-ML (Optimum)</th><th>Savings</th><th>Restarts</th></tr>
-							<tr><td>1</td><td>4</td><td style="background-color:#f4cccc">4 (3)</td><td>0.00</td><td>0</td></tr>
-							<tr class="fragment grow"><td>2</td><td>9</td><td style="background-color:#f4cccc">9 (8)</td><td>0.00</td><td>0</td></tr>
-							<tr><td>3</td><td>16</td><td style="background-color:#d9ead3">13</td><td>0.19</td><td>1</td></tr>
-							<tr><td>4</td><td>25</td><td style="background-color:#d9ead3">19</td><td>0.24</td><td>1</td></tr>
-							<tr><td>5</td><td>36</td><td style="background-color:#d9ead3">27</td><td>0.25</td><td>1</td></tr>
-							<tr><td>6</td><td>49</td><td style="background-color:#d9ead3">36</td><td>0.27</td><td>4</td></tr>
-							<tr><td>7</td><td>64</td><td style="background-color:#d9ead3">46</td><td>0.28</td><td>11</td></tr>
-							<tr><td>8</td><td>81</td><td style="background-color:#d9ead3">58</td><td>0.28</td><td>22</td></tr>
-							<tr><td>9</td><td>100</td><td style="background-color:#d9ead3">71</td><td>0.29</td><td>3071</td></tr>
-							<tr><td>10</td><td>121</td><td style="background-color:#d9ead3">85</td><td>0.30</td><td>102</td></tr>
+							<tr><td>1</td><td>4</td><td style="background-color:#f4cccc">4 (3)</td><td>0%</td><td>0</td></tr>
+							<tr class="fragment grow"><td>2</td><td>9</td><td style="background-color:#f4cccc">9 (8)</td><td>0%</td><td>0</td></tr>
+							<tr><td>3</td><td>16</td><td style="background-color:#d9ead3">13</td><td>19%</td><td>1</td></tr>
+							<tr><td>4</td><td>25</td><td style="background-color:#d9ead3">19</td><td>24%</td><td>1</td></tr>
+							<tr><td>5</td><td>36</td><td style="background-color:#d9ead3">27</td><td>25%</td><td>1</td></tr>
+							<tr><td>6</td><td>49</td><td style="background-color:#d9ead3">36</td><td>27%</td><td>4</td></tr>
+							<tr><td>7</td><td>64</td><td style="background-color:#d9ead3">46</td><td>28%</td><td>11</td></tr>
+							<tr><td>8</td><td>81</td><td style="background-color:#d9ead3">58</td><td>28%</td><td>22</td></tr>
+							<tr><td>9</td><td>100</td><td style="background-color:#d9ead3">71</td><td>29%</td><td>3071</td></tr>
+							<tr><td>10</td><td>121</td><td style="background-color:#d9ead3">85</td><td>30%</td><td>102</td></tr>
 							</tbody>
 						</table>
 					</section>
@@ -302,12 +296,12 @@
 						<table class="numeric">
 							<tbody style="font-size:0.8em">
 							<tr><th>$p$</th><th>$q$-Gaussian</th><th>$q$-ML (Optimum)</th><th>Savings</th><th>Restarts</th></tr>
-							<tr><td>1</td><td>8</td><td style="background-color:#f4cccc">8 (7)</td><td>0.00</td><td>0</td></tr>
-							<tr><td>2</td><td>27</td><td style="background-color:#f4cccc">24 (23)</td><td>0.11</td><td>0</td></tr>
-							<tr><td>3</td><td>64</td><td style="background-color:#d9ead3">43</td><td>0.33</td><td>11</td></tr>
-							<tr><td>4</td><td>125</td><td style="background-color:#d9ead3">74</td><td>0.41</td><td>202</td></tr>
-							<tr><td>5</td><td>216</td><td style="background-color:#f4cccc">118 (117)</td><td>0.45</td><td>516</td></tr>
-							<tr><td>6</td><td>343</td><td style="background-color:#f4cccc">178 (174)</td><td>0.48</td><td>769</td></tr>
+							<tr><td>1</td><td>8</td><td style="background-color:#f4cccc">8 (7)</td><td>0%</td><td>0</td></tr>
+							<tr><td>2</td><td>27</td><td style="background-color:#f4cccc">24 (23)</td><td>11%</td><td>0</td></tr>
+							<tr><td>3</td><td>64</td><td style="background-color:#d9ead3">43</td><td>33%</td><td>11</td></tr>
+							<tr><td>4</td><td>125</td><td style="background-color:#d9ead3">74</td><td>41%</td><td>202</td></tr>
+							<tr><td>5</td><td>216</td><td style="background-color:#f4cccc">118 (117)</td><td>45%</td><td>516</td></tr>
+							<tr><td>6</td><td>343</td><td style="background-color:#f4cccc">178 (174)</td><td>48%</td><td>769</td></tr>
 							</tbody>
 						</table>
 					</section>
