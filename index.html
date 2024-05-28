@@ -60,7 +60,7 @@
 						<img style="position:absolute;bottom:3%;right:3%;width:27%" class="plain fragment fade-up" data-fragment-index="3" src="assets/npoints_gauss.svg"/>
 					</section>
 
-					<section>
+					<section data-auto-animate>
 						<h3>Trunk Spaces</h3>
 						<p>A popular simplification of product spaces in FEM are <b>trunk spaces</b>, also called "serendipity" spaces. For example, in 2D, the simplest formulation given the maximum degree in 1D ($p$) is the set of polynomial spaces spanned by $x^iy^j, i,j = 0,1,\ldots,p$ subject to the <b>restriction</b> $i+j\leq~p$.</p>
 						<div class="fragment fade-in" data-fragment-index="1" data-id="space">
@@ -83,7 +83,26 @@
 						<div style="position:absolute;left:0;right:0;margin-left:auto;margin-top:0.5em" class="fragment current-visible" data-fragment-index="2">
                                 2D Trunk space for $p=2$
 						</div>
-						</div>				
+						</div>
+					</section>
+
+					<section data-auto-animate>
+						<h3>Trunk Spaces</h3>
+						<p>A popular simplification of product spaces in FEM are <b>trunk spaces</b>, also called "serendipity" spaces. For example, in 2D, the simplest formulation given the maximum degree in 1D ($p$) is the set of polynomial spaces spanned by $x^iy^j, i,j = 0,1,\ldots,p$ subject to the <b>restriction</b> $i+j\leq~p$.</p>
+						<div style="display:grid;grid-template-columns: 1fr 1fr;justify-items:center">
+							<div data-id="space">
+								<div>$1$</div>
+								<div>$x\quad~y$</div>
+								<div>$x^2\quad~xy\quad~y^2$</div>
+								<div style="color: #d62728;">$\sout{x^2y\quad~xy^2}$</div>
+								<div style="color: #d62728;">$\sout{x^2y^2}$</div>
+								2D Trunk space for $p=2$
+							</div>
+							<div style="font-size:0.8em;">
+								Trunk space size in 2D $$\frac{(p+1)(p+2)}{2}$$
+								Trunk space size in 3D $$\frac{(p+1)(p+2)(p+3)}{6}$$
+							</div>
+						</div>
 					</section>
 
 					<section>
