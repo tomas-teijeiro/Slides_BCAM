@@ -48,14 +48,14 @@
 						<h3>Problem Context</h3>
 						<b>Galerkin formulation to solve a FEM problem in 2D or 3D.</b>
 						<ul style="margin-bottom:1em;font-size:0.9em">
-							<li class="fragment fade-in" data-fragment-index="1">Given the <em>trial</em> and <em>test</em> spaces $U$ and $V$, assessing the orthogonality of solutions requires solving $\int_\Omega uv$.</li>
+							<li class="fragment fade-in" data-fragment-index="1">Given the <em>trial</em> and <em>test</em> spaces $U$ and $V$, we want to evaluate the mass matrix <span style="font-size:0.8em;">$\int u_i \cdot v_j$</span>, and the stiffness matrix <span style="font-size:0.8em;">$\int \nabla u_i \cdot \nabla v_j$</span>, where <span style="font-size:0.8em;">$u_i \in U$, $v_j \in V$</span>.</li>
 							<li class="fragment fade-in" data-fragment-index="2">Usually, function spaces and integration rules are built by means of <b>tensor products over 1D</b> spaces and Gaussian quadrature rules.</li>
 							<li class="fragment fade-in" data-fragment-index="3">This leads to <b>rules larger than necessary:</b>
 							<ul style="font-size:0.8em">
 								<li>Increased computational complexity.</li>
 								<li>Poor scalability.</li>
 							</ul></li>
-							<li style="width:68%" class="fragment fade-in" data-fragment-index="4"><em>Can we optimize the complexity of the spaces, and then find <b>simpler and more efficient</b> rules?</em></li>
+							<li style="width:68%" class="fragment fade-in" data-fragment-index="4"><em>Can we optimize the complexity of the spaces, and find <b>simpler and more efficient</b> quadrature rules?</em></li>
 						</ul>
 						<img style="position:absolute;bottom:3%;right:3%;width:27%" class="plain fragment fade-up" data-fragment-index="3" src="assets/npoints_gauss.svg"/>
 					</section>
