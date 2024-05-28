@@ -1,10 +1,8 @@
-## Slides for ECCOMAS 2024
+## Presentations by T. Teijeiro
 
-These slides correspond to the presentation *Generating Efficient Randomized Quadrature Rules for 2D and 3D Trunk Spaces using Machine Learning*, by T. Teijeiro, D. Pardo and V. Calo. 
+This repository contains different presentations given by T. Teijeiro as a [BCAM](https://www.bcamath.org) researcher. The slides of each presentation are in a different branch, with this README file updated accordingly.
 
-They were presented In session: [MS005D - Deep Learning Computing IV](https://eccomas2024.org/event/session/57b14175-f81f-11ee-a60e-000c29ddfc0c)
-
-Slides created with [Reveal.js](https://revealjs.com/).
+Slides are created with [Reveal.js](https://revealjs.com/), and deployed using Github pages. Only one presentation is deployed at a given time.
 
 ### Export to PDF:
 
