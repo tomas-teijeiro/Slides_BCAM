@@ -21,29 +21,54 @@
 			<div class="slides">
 				<!--Title-->
                 <section style="height:100%" data-transition="none" data-background-image="assets/background_titlepage.svg">
-                    <h2 style="margin-top:5%;margin-bottom:6%">Generating Efficient Randomized Quadrature Rules for 2D and 3D Trunk Spaces using Machine Learning</h2>
-                    <h4 style="color:#222;margin-bottom:8%"><em>Tomas Teijeiro</em>, David Pardo, Victor Calo</h2>
-                    <h4 style="text-align:left;color:#222;font-size:1.3em;margin-bottom:1%">ECCOMAS 2024</h4>
-                    <h5 style="text-align:left;color:#222;font-size:0.8em">06/06/2024, Lisboa</h5>
+                    <h2 style="margin-top:5%;margin-bottom:6%;font-size:2.5em">AI: The Mathematics of Self-Deception</h2>
+                    <h4 style="color:#222;margin-bottom:8%;font-size:1.7em">Tomas Teijeiro</h2>
+                    <h4 style="text-align:left;color:#222;font-size:1em;margin-bottom:1%">Math SOMMa Junior Meeting 2024</h4>
+                    <h5 style="text-align:left;color:#222;font-size:0.8em">03/10/2024, Barcelona</h5>
                     <img class="plain" style="position:fixed;left:0;bottom:5%;height:8%" src="assets/institutional_logos.png"/>
                     <img class="plain" style="position:fixed;right:0;bottom:5%;height:8%" src="assets/bottom_right_titlepage.png"/>
                 </section>
 
                 <!--Outline-->
-                <!-- <section>
+                <section>
                     <h2>Outline</h2>
                     <ol class="outline">
                         <li>Motivation</li>
-                        <li>Trunk Spaces</li>
-                        <li>Finding Quadratures: An Optimization Problem</li>
-                        <li>Machine Learning Algorithm</li>
-                        <li>Results and Conclusion</li>
+                        <li>The Deception of Metrics</li>
+                        <li>The Deception of Algorithms</li>
+                        <li>The Deception of Data</li>
+                        <li>Concluding Remarks</li>
                     </ol>
-                </section> -->
+                </section>
 
 				<section>
-					<section><h2>Context and Motivation</h2></section>
+					<section><h2>The Deception of Metrics</h2></section>
 
+					<section>
+						<h3>Case Study: Epileptic Seizure Detection</h3>
+						 - Show figure in slide 12 of epilepsy21 presentation. Explain the architecture, objectives...
+					</section>
+
+					<section>
+						<h3>State-of-the-art in Seizure Detection?</h3>
+						 - Slide 2 of epilepsy21 presentation.
+					</section>
+
+					<section>
+						<h3>Is seizure detection so easy?</h3>
+						- Slide 3 of epilepsy21 presentation.
+					</section>
+
+					<section>
+						<h3>The importance of metrics</h3>
+						- Slide 4 of epilepsy21 presentation.
+					</section>
+
+					<section>
+						<h3>Goodhart's Law</h3>
+						- Worth a slide on that?
+					</section>
+<!-- 
 					<section>
 						<h3>Problem Context</h3>
 						<b>Galerkin formulation to solve a FEM problem in 2D or 3D.</b>
@@ -114,14 +139,34 @@
 							<li class="fragment fade-in">Still, target spaces are <em>smaller</em> than regular tensor-product spaces.</li>
 						</ul>
 						<b class="fragment fade-in">Can we go beyond Gaussian quadrature rules for integration?</b>
-					</section>
+					</section> -->
 
 				</section>
 
 				<section>
-					<section><h2>Finding Quadrature Rules:<br/> An Optimization Problem</h2></section>
+					<section><h2>The Deception of Algorithms</h2></section>
 
 					<section>
+						<h3>Case Study: Arrhythmia diagnosis from ECG signals</h3>
+						- Explain a little bit about the ECG, and the objective of the task.
+					</section>
+
+					<section>
+						<h3>A bit of history...</h3>
+						- 2017, the paper from Andrew NG, and the Physionet Challenge (slide 13 CinC20 presentation)
+					</section>
+
+					<section>
+						<h3>Physionet Challenge 2017 Results</h3>
+						- Slide 14 CinC20 presentation, focusing on DL approaches.
+					</section>
+
+					<section>
+						<h3>What are the limitations of DL (in this context)?</h3>
+						- Slides 9, 10 and 11 of CinC20 presentation, focusing on DL approaches.
+					</section>
+
+					<!-- <section>
 						<h3>Quadrature rules: Parameterization</h3>
 						<p>In 2D, an exact quadrature rule for $\mathcal{S}$ is given by a set of triplets (quadruplets in 3D) ${Q := \{(x_i, y_i, w_i)\}_{i=1}^q}$, such that:</p>
 						<div class="fragment fade-in" data-fragment-index="1">
@@ -234,11 +279,18 @@
 							<li class="fragment fade-in">Thus, to ensure there is a solution, $q &geq; \lceil\frac{n}{3}\rceil$.</li>
 							<li class="fragment fade-in">In practice, $\lceil\frac{n}{3}\rceil &gt; \frac{n}{3}$, leading to <b>underdetermined systems</b><br/> <span class="fragment fade-in">→ This is the basis for the generation of <b>randomized rules.</b></span></li>
 						</ul>
-					</section>
+					</section> -->
 				</section>
 
 				<section>
-					<section><h2>Machine Learning Algorithm</h2>
+					<section><h2>The Deception of Data</h2></section>
+
+					<section>
+						<h3>Case Study: Cartilage assessment from knee sounds</h3>
+						- Explain about the wearable, objectives... Use some Sensemodi slides.
+					</section>
+
+					<!-- <section><h2>Machine Learning Algorithm</h2>
 					<pre><code class="hljs python" data-trim data-line-numbers="|1-8|10,17-27">
 						def loss(parameters):
 							"""Loss function to be minimized in the optimization"""
@@ -284,54 +336,15 @@
 							<iframe data-src="assets/2D_P4_rnd3.html" style="width:240pt;height:240pt"></iframe>
 						</div>
 						<div style="position:absolute;bottom:43%;width:100%;z-index:1;text-align:center" class="fragment fade-in">All are <b>exact</b> rules for $p=4$</div>
-					</section>
+					</section> -->
 
 				</section>
 
 				<section>
-					<section><h2>Experimental Results</h2></section>
-
-					<section>
-						<h3>2D Results</h3>
-						<table class="numeric">
-							<tbody style="font-size:0.8em">
-							<tr><th>$p$</th><th>$q$-Gaussian</th><th>$q$-ML (Optimum)</th><th>Savings</th><th>Restarts</th></tr>
-							<tr><td>1</td><td>4</td><td style="background-color:#f4cccc">4 (3)</td><td>0%</td><td>0</td></tr>
-							<tr class="fragment grow"><td>2</td><td>9</td><td style="background-color:#f4cccc">9 (8)</td><td>0%</td><td>0</td></tr>
-							<tr><td>3</td><td>16</td><td style="background-color:#d9ead3">13</td><td>19%</td><td>1</td></tr>
-							<tr><td>4</td><td>25</td><td style="background-color:#d9ead3">19</td><td>24%</td><td>1</td></tr>
-							<tr><td>5</td><td>36</td><td style="background-color:#d9ead3">27</td><td>25%</td><td>1</td></tr>
-							<tr><td>6</td><td>49</td><td style="background-color:#d9ead3">36</td><td>27%</td><td>4</td></tr>
-							<tr><td>7</td><td>64</td><td style="background-color:#d9ead3">46</td><td>28%</td><td>11</td></tr>
-							<tr><td>8</td><td>81</td><td style="background-color:#d9ead3">58</td><td>28%</td><td>22</td></tr>
-							<tr><td>9</td><td>100</td><td style="background-color:#d9ead3">71</td><td>29%</td><td>3071</td></tr>
-							<tr><td>10</td><td>121</td><td style="background-color:#d9ead3">85</td><td>30%</td><td>102</td></tr>
-							</tbody>
-						</table>
-					</section>
-
-					<section>
-						<h3>3D Results</h3>
-						<table class="numeric">
-							<tbody style="font-size:0.8em">
-							<tr><th>$p$</th><th>$q$-Gaussian</th><th>$q$-ML (Optimum)</th><th>Savings</th><th>Restarts</th></tr>
-							<tr><td>1</td><td>8</td><td style="background-color:#f4cccc">8 (7)</td><td>0%</td><td>0</td></tr>
-							<tr><td>2</td><td>27</td><td style="background-color:#f4cccc">24 (23)</td><td>11%</td><td>0</td></tr>
-							<tr><td>3</td><td>64</td><td style="background-color:#d9ead3">43</td><td>33%</td><td>11</td></tr>
-							<tr><td>4</td><td>125</td><td style="background-color:#d9ead3">74</td><td>41%</td><td>202</td></tr>
-							<tr><td>5</td><td>216</td><td style="background-color:#f4cccc">118 (117)</td><td>45%</td><td>516</td></tr>
-							<tr><td>6</td><td>343</td><td style="background-color:#f4cccc">178 (174)</td><td>48%</td><td>769</td></tr>
-							</tbody>
-						</table>
-					</section>
-				</section>
-
-				<section>
-					<h2>Conclusions</h2>
+					<h2>Concluding Remarks</h2>
 					<ul>
-						<li class="fragment fade-in">ML allows to discover <b>exact quadrature rules for products of 2D and 3D trunk spaces</b> with a reduced number of integration points.</li>
-						<li class="fragment fade-in">Even if the optimization problem is non-convex, <b>convergence is in general very fast</b>.</li>
-						<li class="fragment fade-in">Randomized rules support <b>covering the full integration domain</b>, and thus they can help prevent overfitting when used for Neural-Network training.</li>
+						<li class="fragment fade-in">Most publications on AI have self-deception as their main weakness.</li>
+						<li class="fragment fade-in">Most publications on AI have deception as their main objective.</li>
 					</ul>
 				</section>
 
