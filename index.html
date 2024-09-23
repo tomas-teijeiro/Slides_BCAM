@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Randomized Quadrature Rules for Trunk Spaces</title>
+		<title>AI: The Mathematics of Self-Deception</title>
 		<meta name="author" content="T. Teijeiro">
 
 		<link rel="stylesheet" href="dist/reset.css">
@@ -30,7 +30,7 @@
                 </section>
 
                 <!--Outline-->
-                <section>
+                <!-- <section>
                     <h2>Outline</h2>
                     <ol class="outline">
                         <li>Motivation</li>
@@ -39,7 +39,48 @@
                         <li>The Deception of Data</li>
                         <li>Concluding Remarks</li>
                     </ol>
-                </section>
+                </section> -->
+
+				<section>
+					<h2>My Role Today...</h2>
+					<img class="fragment grow" data-fragment-index="1" style="height:11em;float:left;margin-left:18%" src="assets/Manwithtinfoil.png"/>
+                    <img class="fragment shrink" data-fragment-index="1" style="height:11em;float:right;margin-right:18%" src="assets/Crime_Scene_-_Do_Not_Enter.jpg"/>
+				</section>
+
+				<section>
+					<h2>What is this Talk About?</h2>
+					- Observation: Almost any imaginable computational problem has been <b>successfully</b> addressed using AI techniques.
+					<p>but</p>
+					- AI solutions usually <b>fail miserably</b> when translated to real-life scenarios.<br/>
+					- Hypothesis: AI methods are particularly prone to give false positive results.
+				</section>
+
+				<section>
+					<h2>The Equation of Machine Learning</h2>
+					<div style="font-size:1.2em;">
+						$$
+						\begin{equation*}
+						\theta^* = \argmin_{\theta} \mathcal{L}(\theta; \mathbf{X}, \mathbf{y})
+						\end{equation*}
+						$$
+					</div>
+					<p class="fragment fade-in" data-fragment-index="1">where</p>
+					<ul>
+						<li class="fragment fade-in" data-fragment-index="1">$\theta$ is the set of <em>parameters</em> defining a model</li>
+						<li class="fragment fade-in" data-fragment-index="2">$\mathbf{X}, \mathbf{y}$ are <em>training data</em> with inputs ($\mathbf{X}$) and known outputs ($\mathbf{y}$)</li>
+						<li class="fragment fade-in" data-fragment-index="3">$\mathcal{L}$ is a <em>loss function</em> measuring the quality of the model</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Gradient Descent</h2>
+					$$
+					\begin{equation*}
+					\theta_{n+1} \leftarrow \theta_n - \alpha \nabla_{\theta_n} \mathcal{L}(\theta_n; \mathbf{X}, \mathbf{y})
+					\end{equation*}
+					$$
+					<iframe data-src="assets/Linregress_animation.html" style="width:100%;height:300pt"></iframe>
+				</section>
 
 				<section>
 					<section><h2>The Deception of Metrics</h2></section>
@@ -144,7 +185,7 @@
 				</section>
 
 				<section>
-					<section><h2>The Deception of Algorithms</h2></section>
+					<section><h2>The Deception of Models</h2></section>
 
 					<section>
 						<h3>Case Study: Arrhythmia diagnosis from ECG signals</h3>
