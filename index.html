@@ -56,30 +56,43 @@
 				</section>
 
 				<section>
-					<h2>The Equation of Machine Learning</h2>
-					<div style="font-size:1.2em;">
+					<section data-auto-animate>
+						<h2 data-id="title">When Bugs Become Friends</h2>
+						<img data-id="image" style="width:75%" src="assets/bugs_flik.jpeg" />
+					</section>
+
+					<section data-auto-animate>
+						<h2 data-id="title">When Bugs Become <s style="color:rgb(150, 0, 0)">Friends</s> Backstabbers</h2>
+						<img data-id="image" style="width:75%" src="assets/bugs_hopper.jpg" />
+					</section>				
+
+					<section>
+						<h3>The Equation of Machine Learning</h3>
+						<div style="font-size:1.2em;">
+							$$
+							\begin{equation*}
+							\theta^* = \argmin_{\theta} \mathcal{L}(\theta; \mathbf{X}, \mathbf{y})
+							\end{equation*}
+							$$
+						</div>
+						<p class="fragment fade-in" data-fragment-index="1">where</p>
+						<ul>
+							<li class="fragment fade-in" data-fragment-index="1">$\theta$ is the set of <em>parameters</em> defining a model</li>
+							<li class="fragment fade-in" data-fragment-index="2">$\mathbf{X}, \mathbf{y}$ are <em>training data</em> with inputs ($\mathbf{X}$) and known outputs ($\mathbf{y}$)</li>
+							<li class="fragment fade-in" data-fragment-index="3">$\mathcal{L}$ is a <em>loss function</em> measuring the quality of the model</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Gradient Descent</h3>
 						$$
 						\begin{equation*}
-						\theta^* = \argmin_{\theta} \mathcal{L}(\theta; \mathbf{X}, \mathbf{y})
+						\theta_{n+1} \leftarrow \theta_n - \alpha \nabla_{\theta_n} \mathcal{L}(\theta_n; \mathbf{X}, \mathbf{y})
 						\end{equation*}
 						$$
-					</div>
-					<p class="fragment fade-in" data-fragment-index="1">where</p>
-					<ul>
-						<li class="fragment fade-in" data-fragment-index="1">$\theta$ is the set of <em>parameters</em> defining a model</li>
-						<li class="fragment fade-in" data-fragment-index="2">$\mathbf{X}, \mathbf{y}$ are <em>training data</em> with inputs ($\mathbf{X}$) and known outputs ($\mathbf{y}$)</li>
-						<li class="fragment fade-in" data-fragment-index="3">$\mathcal{L}$ is a <em>loss function</em> measuring the quality of the model</li>
-					</ul>
-				</section>
+						<iframe data-src="assets/Linregress_animation.html" style="width:100%;height:300pt"></iframe>
+					</section>
 
-				<section>
-					<h2>Gradient Descent</h2>
-					$$
-					\begin{equation*}
-					\theta_{n+1} \leftarrow \theta_n - \alpha \nabla_{\theta_n} \mathcal{L}(\theta_n; \mathbf{X}, \mathbf{y})
-					\end{equation*}
-					$$
-					<iframe data-src="assets/Linregress_animation.html" style="width:100%;height:300pt"></iframe>
 				</section>
 
 				<section>
@@ -87,13 +100,40 @@
 
 					<section>
 						<h3>Case Study: Epileptic Seizure Detection</h3>
-						 - Show figure in slide 12 of epilepsy21 presentation. Explain the architecture, objectives...
+						<div style="text-align:left;float:left;width:60%;margin-top:1em;">
+							<ul>
+								<li><b>Objective:</b> Detect seizures in real-time using wearable sensors and embedded AI models.</li>
+								<li></li>
+							</ul>
+						</div>
+						<img style="float:right;width:35%" src="assets/distributed_self_aware_ai.svg" />
 					</section>
 
 					<section>
 						<h3>State-of-the-art in Seizure Detection?</h3>
-						 - Slide 2 of epilepsy21 presentation.
+						<table>
+							<tbody style="font-size:0.4em;">
+								<tr style="background-color:#0092d3;color:white"><th>Author(s)</th><th>Year</th><th>Feature Extraction</th><th>Classification</th><th>Accuracy (%)</th></tr>
+								<tr><td>Nigam fr Graupe</td><td>2004</td><td>Nonlinear pre-processing filter</td><td>Diagnostic neural network</td><td style="text-align:right;font-weight: bold;">97.20</td></tr>
+								<tr style="background-color: #cee2f3;"><td>Scrinivasan et al</td><td>2005</td><td>Time &amp; Frequency domain analysis</td><td>Recurrent neural network</td><td style="text-align:right;font-weight: bold;">99.60</td></tr>
+								<tr><td>Kannathal et al</td><td>2005a</td><td>Chaotic measures</td><td>Surrogate data analysis</td><td style="text-align:right;font-weight: bold;">90.00</td></tr>
+								<tr style="background-color: #cee2f3;"><td>Kannathal et al</td><td>2005b</td><td>Entropy measures</td><td>Adaptive neuro-fuzzy inference</td><td style="text-align:right;font-weight: bold;">92.22</td></tr>
+								<tr><td>Güler &amp; Ubeyli</td><td>2005</td><td>Wavelet transform</td><td>Adaptive neuro-fuzzy inference</td><td style="text-align:right;font-weight: bold;">98.68</td></tr>
+								<tr style="background-color: #cee2f3;"><td>Güler et al</td><td>2005</td><td>Lyapunov exponents</td><td>Recurrent neural network</td><td style="text-align:right;font-weight: bold;">96.79</td></tr>
+								<tr><td>…</td><td>…</td><td>…</td><td>…</td><td>…</td></tr>
+								<tr style="background-color: #cee2f3;"><td>Chandaka et al</td><td>2009</td><td>Cross correlation</td><td>Support vector machines</td><td style="text-align:right;font-weight: bold;">95.95</td></tr>
+								<tr><td>Ocak</td><td>2009</td><td>Wavelet transform &amp; Approximate entropy</td><td>Surrogate data analysis</td><td style="text-align:right;font-weight: bold;">96.65</td></tr>
+								<tr style="background-color: #cee2f3;"><td>Goo et al</td><td>2009</td><td>Wavelet transform &amp; Relative wavelet energy</td><td>Artificial neural networks</td><td style="text-align:right;font-weight: bold;">95.20</td></tr>
+								<tr><td>Tzallas et al</td><td>2009</td><td>Time-frequency analysis</td><td>Naive Bayes, k-nearest neighbor, Logistic Regression, Decision trees</td><td style="text-align:right;font-weight: bold;">100.00</td></tr>
+								<tr style="background-color: #cee2f3;"><td>Tzallas et al</td><td>2009a</td><td>Eigenvector methods</td><td>Recurrent neural network</td><td  style="text-align:right;font-weight: bold;">98.15</td></tr>
+								<tr><td>Tzallas et al</td><td>2009b</td><td>Wavelet transform</td><td>Probabilistic neural networks</td><td  style="text-align:right;font-weight: bold;">97.63</td></tr>
+								<tr style="background-color: #cee2f3;"><td>Cuo et al</td><td>2010a</td><td>Wavelet transform &amp; Approximate entropy</td><td>Artificial neural networks</td><td  style="text-align:right;font-weight: bold;">99.85</td></tr>
+								<tr><td>Duo et al</td><td>2010b</td><td>Wavelet transform &amp; Line length feature</td><td>Artificial neural networks</td><td  style="text-align:right;font-weight: bold;">99.60</td></tr>
+							</tbody>
+						</table>
 					</section>
+
+					<section data-transition="none" data-background-video="assets/directed.mp4"></section>
 
 					<section>
 						<h3>Is seizure detection so easy?</h3>
