@@ -103,7 +103,7 @@
 						<div style="text-align:left;float:left;width:60%;margin-top:1em;">
 							<ul>
 								<li><b>Objective:</b> Detect seizures in real-time using wearable sensors and embedded AI models.</li>
-								<li></li>
+								<li><b>How:</b> Collect different biosignals (EEG, Heart Rate) </li>								
 							</ul>
 						</div>
 						<img style="float:right;width:35%" src="assets/distributed_self_aware_ai.svg" />
@@ -112,7 +112,7 @@
 					<section>
 						<h3>State-of-the-art in Seizure Detection?</h3>
 						<table>
-							<tbody style="font-size:0.4em;">
+							<tbody style="font-size:0.42em;">
 								<tr style="background-color:#0092d3;color:white"><th>Author(s)</th><th>Year</th><th>Feature Extraction</th><th>Classification</th><th>Accuracy (%)</th></tr>
 								<tr><td>Nigam fr Graupe</td><td>2004</td><td>Nonlinear pre-processing filter</td><td>Diagnostic neural network</td><td style="text-align:right;font-weight: bold;">97.20</td></tr>
 								<tr style="background-color: #cee2f3;"><td>Scrinivasan et al</td><td>2005</td><td>Time &amp; Frequency domain analysis</td><td>Recurrent neural network</td><td style="text-align:right;font-weight: bold;">99.60</td></tr>
@@ -135,14 +135,76 @@
 
 					<section data-transition="none" data-background-video="assets/directed.mp4"></section>
 
-					<section>
-						<h3>Is seizure detection so easy?</h3>
-						- Slide 3 of epilepsy21 presentation.
+					<section data-auto-animate>
+						<h3>Is Seizure Detection so Easy?</h3>
+						<div class="column-container">
+							<div class="fragment" style="margin-right: 5%;font-size:0.8em;">
+								<p><b>&bull; EEG:</b> A simple neural-network model can generalize ictal recognition ($F_1=0.87$)</p>
+								<img src="assets/network_output_prob.png" />
+							</div>							
+							<div class="fragment" style="margin-left: 5%;font-size:0.8em;">
+								<p><b>&bull; ECG:</b> Basic HRV parameters3 show high separability between classes ($p &lt; 10^{-12}$) </p>
+								<img data-id="hist" src="assets/mcsi_distr_norm.svg" />
+							</div>
+						</div>	
 					</section>
 
-					<section>
-						<h3>The importance of metrics</h3>
-						- Slide 4 of epilepsy21 presentation.
+					<section data-auto-animate>
+						<h3>Is Seizure Detection so Easy?</h3>
+						<div class="column-container">
+							<div style="margin-right: 5%;font-size:0.8em;">
+								<p><b>&bull; EEG:</b> A simple neural-network model can generalize ictal recognition ($F_1=0.87$)</p>
+								<img src="assets/network_output_prob.png" />
+							</div>							
+							<div style="margin-left: 5%;font-size:0.8em;">
+								<p><b>&bull; ECG:</b> Basic HRV parameters3 show high separability between classes ($p &lt; 10^{-12}$) </p>
+								<img data-id="hist" src="assets/mcsi_distr_not_norm.svg" />
+								<img class="fragment fade-up" style="position:absolute;margin-left:-45%;width:330pt;" src="assets/mcsi_distr_not_norm_zoom.png" />
+							</div>
+						</div>	
+					</section>
+
+					<section data-auto-animate data-auto-animate-restart>
+						<h3>The Importance of Metrics</h3>
+						<p>&bull; Consider the two following competing seizure detection models:</p>
+						<table class="numeric" data-id="tab">
+							<tbody style="font-size:0.8em">
+								<tr style="background-color:#0092d3;color:white"><th>Model</th><th>Sensitivity</th><th>Specificity</th><th>Max. Delay</th></tr>
+								<tr><td style="text-align: center;color:#af2e34;border-color: black;"><b>A</b></td><td>98%</td><td>99.5%</td><td>15 s</td></tr>
+								<tr><td style="text-align: center;color:#d16d34"><b>B</b></td><td>95%</td><td>100%</td><td>18 s</td></tr>
+							</tbody>
+						</table>
+						<div class="fragment" data-fragment-index="1">
+							<iframe style="width:80%;height:240pt;margin-top: 1em;" src="https://directpoll.com/r?XDbzPBd3ixYqg8sOgSLDnCHhfki3zfQPKtMXqFoV1EzY9b"></iframe>
+						</div>
+					</section>
+
+					<section data-auto-animate>
+						<h3>The Importance of Metrics</h3>
+						<p>&bull; Consider the two following competing seizure detection models:</p>
+						<table class="numeric" data-id="tab">
+							<tbody style="font-size:0.8em">
+								<tr style="background-color:#0092d3;color:white"><th>Model</th><th>Sensitivity</th><th>Specificity</th><th>Max. Delay</th></tr>
+								<tr><td style="text-align: center;color:#af2e34;border-color: black;"><b>A</b></td><td>98%</td><td>99.5%</td><td>15 s</td></tr>
+								<tr><td style="text-align: center;color:#d16d34"><b>B</b></td><td>95%</td><td>100%</td><td>18 s</td></tr>
+							</tbody>
+						</table>
+						<p>&bull; Now suppose a patient that has one seizure per week on average...</p>
+						<div class="fragment fade-in">Model <span style="color:#af2e34"><b>A</b></span> would give a false alarm every 50 minutes!!</div>
+					</section>
+
+					<section data-auto-animate>
+						<h3>The Importance of Metrics</h3>
+						<p>&bull; Consider the two following competing seizure detection models:</p>
+						<table class="numeric" data-id="tab">
+							<tbody style="font-size:0.8em">
+								<tr style="background-color:#0092d3;color:white"><th>Model</th><th>Sensitivity</th><th>Specificity</th><th>Max. Delay</th><th>Precision</th></tr>
+								<tr><td style="text-align: center;color:#af2e34;border-color: black;"><b>A</b></td><td>98%</td><td>99.5%</td><td>15 s</td><td><b>0.005%</b></td></tr>
+								<tr><td style="text-align: center;color:#d16d34"><b>B</b></td><td>95%</td><td>100%</td><td>18 s</td><td><b>100%</b></td></tr>
+							</tbody>
+						</table>
+						<p>&bull; Now suppose a patient that has one seizure per week on average...</p>
+						Model <span style="color:#af2e34"><b>A</b></span> would give a false alarm every 50 minutes!!
 					</section>
 
 					<section>
