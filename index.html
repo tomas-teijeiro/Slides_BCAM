@@ -44,15 +44,10 @@
 				</section>
 
 				<section>
-					<section data-auto-animate>
+					<section>
 						<h2 data-id="title">When Bugs Become Friends</h2>
 						<img data-id="image" style="width:75%" src="assets/bugs_flik.jpeg" />
 					</section>
-
-					<section data-auto-animate>
-						<h2 data-id="title">When Bugs Become <s style="color:rgb(150, 0, 0)">Friends</s> Backstabbers</h2>
-						<img data-id="image" style="width:75%" src="assets/bugs_hopper.jpg" />
-					</section>				
 
 					<section>
 						<h3>The Equation of Machine Learning</h3>
@@ -81,6 +76,10 @@
 						<iframe data-src="assets/Linregress_animation.html" style="width:100%;height:300pt"></iframe>
 					</section>
 
+					<section>
+						<h2 data-id="title">When Bugs Become <s style="color:rgb(150, 0, 0)">Friends</s> Backstabbers</h2>
+						<img data-id="image" style="width:75%" src="assets/bugs_hopper.jpg" />
+					</section>				
 				</section>
 
 				<section>
@@ -195,7 +194,7 @@
 					<section><h2>The Deception of Models</h2></section>
 
 					<section>
-						<h3>Case Study: Arrhythmia diagnosis from ECG signals</h3>
+						<h3>Case Study: Arrhythmia Diagnosis from ECG Signals</h3>
 						<div class="column-container">
 							<div style="display:grid;grid-auto-flow: row;">
 								<video width="240pt" autoplay="true" loop="true" muted="true"> <source src="assets/sr_anim.mp4"/></video>
@@ -227,7 +226,7 @@
 					</section>
 
 					<section>
-						<h3>A bit of history...</h3>
+						<h3>A Bit of History...</h3>
 						&bull; 2017, I was finishing my PhD thesis on ECG interpretation, when...
 						<img class="fragment fade-up" width="80%" src="assets/2017_arxiv_paper.png" />
 					</section>
@@ -277,7 +276,7 @@
 									$$
 									</div>
 									<ul style="font-size: 0.7em;">
-										<li>Dataset: Public MIT-BIH Arrhithmia Database, MLII Lead
+										<li>Dataset: Public MIT-BIH Arrhythmia Database, MLII Lead
 											<ul style="font-size: 0.625em;">
 												<li>37 records for training, 9 for testing.</li>
 												<li>Segments of 30 seconds duration, with different overlapping for assessing the relevance of the dataset size.</li>
@@ -365,8 +364,48 @@
 					<section><h2>The Deception of Data</h2></section>
 
 					<section>
-						<h3>Case Study: Cartilage assessment from knee sounds</h3>
-						- Explain about the wearable, objectives... Use some Sensemodi slides.
+						<h3>Case Study: Knee Assessment with Wearables</h3>
+						<ul>
+							<li><b>Objective:</b> To study the use of wearables for prevention and follow-up of knee musculoskeletal disorders: osteoarthritis, meniscus tears, etc.</li>
+							<li><b>How:</b> Acquiring kinematic and acoustic data of the knee joint in protocolized exercises: Flexion-extension, Sit-to-Stand, Steps.</li>
+						</ul>
+
+						<div class="column-container" style="grid-template-columns: 1fr 1fr 1fr;margin-top: 1em;">
+							<img style="margin:0pt" height="305pt" src="assets/sensemodi_device.png" />
+							<img style="margin:0pt" height="305pt" src="assets/sensemodi_v3.5.jpg" />
+							<div>
+								<img style="margin:0pt" width="175pt" src="assets/audio_spectrogram.jpg" />
+								<img style="margin:0pt" width="175pt" src="assets/audio_time.png" />
+								<img style="margin:0pt" width="175pt" src="assets/kinematics.png" />
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h3>What does the Literature Say?</h3>
+						<div class="r-stack">
+							<img width="80%" src="assets/inan_paper.png" />
+							<div class="fragment fade-in-then-out column-container" style="grid-template-columns: 2fr 1fr;" data-fragment-index="1">
+								<img class="fragment grow" data-fragment-index="1" width="70%" src="assets/inan_probability_distributions.png" />
+								<img class="fragment grow" data-fragment-index="1" width="70%" src="assets/inan_knee_scores.png" />
+							</div>
+							<img class="fragment" data-fragment-index="2" width="80%" src="assets/inan_paper_overlay.png" />
+						</div>
+					</section>
+
+					<section>
+						<h3>Reproducibility Challenges</h3>
+						- We have not been able to reproduce the results, but works with other frequency ranges!
+					</section>
+
+					<section>
+						<h3>Hunting the Bug</h3>
+						- Finally, how we have been able to find the trick.
+					</section>
+
+					<section>
+						<h3>Another example</h3>
+						- Show the counterfactual experiment.
 					</section>
 
 				</section>
