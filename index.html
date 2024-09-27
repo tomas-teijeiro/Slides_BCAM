@@ -90,10 +90,10 @@
 						<div style="text-align:left;float:left;width:60%;margin-top:1em;">
 							<ul>
 								<li><b>Objective:</b> Detect seizures in real-time using wearable sensors and embedded AI models.</li>
-								<li><b>How:</b> Collect different biosignals (EEG, Heart Rate) </li>								
+								<li class="fragment" data-fragment-index="1"><b>How:</b> Collect different biosignals (EEG, Heart Rate), process them locally with lightweight algorithms, and refine uncertain decisions with complex algorithms on powerful devices.</li>
 							</ul>
 						</div>
-						<img style="float:right;width:35%" src="assets/distributed_self_aware_ai.svg" />
+						<img class="fragment" data-fragment-index="1" style="float:right;width:35%" src="assets/distributed_self_aware_ai.svg" />
 					</section>
 
 					<section>
@@ -181,11 +181,6 @@
 						</table>
 						<p style="margin-left: 5%;">&bull; Now suppose a patient that has one seizure per week on average...</p>
 						Model <span style="color:#af2e34"><b>A</b></span> would give a false alarm every 50 minutes!!
-					</section>
-
-					<section>
-						<h3>Goodhart's Law</h3>
-						- Worth a slide on that?
 					</section>
 
 				</section>
@@ -395,17 +390,64 @@
 
 					<section>
 						<h3>Reproducibility Challenges</h3>
-						- We have not been able to reproduce the results, but works with other frequency ranges!
+						<div class="column-container" style="grid-template-columns: 1fr 1fr;">
+							<img width="80%" src="assets/inan_pipeline.png" />
+							<div>
+								<ul style="align-content: center;">
+									<li class="fragment" style="margin-bottom: 0.5em;">Reported CV Accuracy: 80.6%</li>
+									<li class="fragment">Achieved CV Accuracy: <b style="color:red">51.3%</b></li>
+								</ul>
+								<div class="fragment">
+									<p>What happens if we explore different frequency ranges for feature extraction?</p>
+									<img width="60%" style="margin: 0pt;" src="assets/accuracy_vs_frequency_range_20_most_relevant_features.svg" />
+								</div>
+							</div>
+						</div>
 					</section>
 
 					<section>
-						<h3>Hunting the Bug</h3>
-						- Finally, how we have been able to find the trick.
+						<h3>What does the Data Say?</h3>
+						&bull; Finally, checking the raw data we found...
+						<div class="fragment column-container" style="font-size: 0.8em; margin-top: 1em;">
+							<div>
+								<span>&bull; Prototypical <b style="color:#258924">healthy</b> sample</span>
+								<div class="r-stack">
+									<img width="360pt" src="assets/inan_example_healthy_audio_spectrogram.svg" />
+								</div>
+							</div>
+							<div>
+								<span>&bull; Prototypical <b style="color:#b31e1e">unhealthy</b> sample</span>
+								<div class="r-stack">
+									<img width="360pt" src="assets/inan_example_unhealthy_audio_spectrogram.svg" />
+									<img class="fragment" width="360pt" src="assets/inan_example_unhealthy_audio_spectrogram_overlay.svg" />
+								</div>
+							</div>
+						</div>
 					</section>
 
 					<section>
-						<h3>Another example</h3>
-						- Show the counterfactual experiment.
+						<h3>One Last Example...</h3>
+						<div class="column-container" style="grid-template-columns: 1.5fr 1fr; align-items: end;">
+							<div style="font-size: 0.7em;">
+								<ul>
+									<li>In-house experiment, data collected in 5 consecutive days for a flexion-extension exercise.</li>
+								</ul>								
+								<div class="r-stack" style="margin-top: 0.6em;margin-bottom: 1em;">
+									<img width="100%" src="assets/counterfactual_experiment_illustration.svg" />
+									<img class="fragment" data-fragment-index="3" width="100%" src="assets/counterfactual_experiment_illustration_reality.svg" />
+								</div>
+								<ul>
+									<li>Then, 40 audio features were calculated, and a feature selection method was run to optimize a linear discriminant analysis classifier using LOOCV.</li>
+								</ul>
+							</div>	
+							<div class="fragment" data-fragment-index="1" style="margin-left: 0.8em;margin-top: -0.5em;">
+								<img style="margin-bottom: 0pt;" src="assets/MFCC_8_vs_MFCC_11.svg" />
+								<span style="font-size: 0.7em; margin-top: 0pt;">Best Classifier</span>
+							</div>						
+						</div>
+						<div class="fragment" data-fragment-index="2" style="margin-top: 0.8em;">
+							Results suggest that MFCC8 and MFCC11 could be used to detect unhealthy knees, but... <span class="fragment" data-fragment-index="3">in reality all data come from a <b>single</b> subject!</span>
+						</div>
 					</section>
 
 				</section>
