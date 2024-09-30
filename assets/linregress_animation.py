@@ -24,7 +24,7 @@ fig.add_trace(go.Scatter(
     x=X,
     y=Y,
     mode='markers',
-    marker=dict(size=10),
+    marker=dict(size=10, opacity=0.0),
     name="scatter"
 ))
 
@@ -47,21 +47,28 @@ frames = [go.Frame(
             mode='lines',
             line=dict(width=3)
         )],
-    layout=go.Layout(annotations=[go.layout.Annotation(
-            x=0.01,
-            y=0.05,
-            xref="x",
-            yref="y",
-            text=f"Loss: {np.mean(((a*X+b) - Y)**2):.2e}",
-            xanchor='left',
-            showarrow=False
-            )
+    layout=go.Layout(annotations=[
+            go.layout.Annotation(
+                x=0.01,
+                y=0.15,
+                xref="x",
+                yref="y",
+                text=f"a: {a:.2f}, b: {b:.2f}",
+                xanchor='left',
+                showarrow=False
+                ),
+            go.layout.Annotation(
+                x=0.01,
+                y=0.05,
+                xref="x",
+                yref="y",
+                text=f"Loss: {np.mean(((a*X+b) - Y)**2):.2e}",
+                xanchor='left',
+                showarrow=False
+                )
     ]),
     name=f'frame{i}'
 ) for i, (a, b) in enumerate(hist[::10,:])]
-
-
-
 
 
 

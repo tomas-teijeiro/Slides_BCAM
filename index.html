@@ -37,10 +37,16 @@
 
 				<section>
 					<h2>What is this Talk About?</h2>
-					- Observation: Almost any imaginable computational problem has been <b>successfully</b> addressed using AI techniques.
-					<p>but</p>
-					- AI solutions usually <b>fail miserably</b> when translated to real-life scenarios.<br/>
-					- Hypothesis: AI methods are particularly prone to give false positive results.
+					<blockquote>
+					Almost any imaginable computational problem has been <b>successfully</b> addressed using AI techniques.
+					</blockquote>
+					<div class="fragment">
+						<p>but...</p>
+						<ul style="font-size: 0.8em;">
+							<li>AI solutions usually <b>fail miserably</b> when translated to real-life scenarios.</li>							
+						</ul>
+					</div>
+					Why?
 				</section>
 
 				<section>
@@ -67,13 +73,53 @@
 					</section>
 
 					<section>
-						<h3>Gradient Descent</h3>
+						<h3>Training a Model through Gradient Descent</h3>
 						$$
 						\begin{equation*}
 						\theta_{n+1} \leftarrow \theta_n - \alpha \nabla_{\theta_n} \mathcal{L}(\theta_n; \mathbf{X}, \mathbf{y})
 						\end{equation*}
 						$$
-						<iframe data-src="assets/Linregress_animation.html" style="width:100%;height:300pt"></iframe>
+						<div class="fragment" style="width:50%;float:left">
+							<div>
+								&bull; Basic Example <br/>
+								<div style="font-size: 0.8em;">
+								$$
+								\begin{align*}
+									\mathbf{y} &= a\cdot \mathbf{X} + b + \epsilon\\
+									\epsilon &\sim \mathcal{N}(0, 0.1)\\
+									\theta &= \{a=0.3, b=0.8\}
+								\end{align*}
+								$$
+								</div>
+								<div class="fragment">
+									&bull; Training Setup<br/>
+									<div style="font-size: 0.8em;">
+										$$
+										\begin{align*}
+											\mathcal{L}(\theta_n; \mathbf{X}, \mathbf{y}) &:= MSE(a_n\cdot X + b_n, y)\\
+											\theta_0 &= \{a_0 = 0.0, b_0=0.0\}\\
+											\alpha &= 0.001
+										\end{align*}
+										$$	
+									</div>				
+								</div>			
+							</div>
+						</div>	
+						<div class="fragment" style="width:50%;float:right">
+							<iframe data-src="assets/Linregress_animation.html" style="width:100%;height:300pt"></iframe>
+						</div>					
+					</section>
+
+					<section>
+						<h3>How "well" do they Learn?</h3>
+						<div class="column-container" style="grid-template-columns: 1fr 1.5fr;">
+							<ul>
+								<li><b>Greedy search:</b> Always following min gradient.</li>
+								<li class="fragment"><b>Extreme flexibility:</b> Up to trillions of parameters.</li>
+								<li class="fragment">Eventually, a (local) <b>minimum is reached</b>.</li>
+							</ul>
+							<video data-autoplay width="100%"> <source data-src="assets/iceage.webm"></source></video>
+						</div>						
 					</section>
 
 					<section>
