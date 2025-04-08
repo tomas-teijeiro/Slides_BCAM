@@ -9,7 +9,7 @@ def grad_f(x):
 
 #Adam simulation
 
-alpha = 0.15         # learning rate
+alpha = 0.015         # learning rate
 beta1 = 0.9
 beta2 = 0.999
 epsilon = 1e-8
@@ -36,9 +36,9 @@ for t in range(1, num_iterations+1):
     v_hat = v / (1 - beta2**t)
 
     # Non-adaptive gradient descent:
-    #x = x - alpha * g
+    x = x - alpha * g
     # Update the parameter.
-    x = x - alpha * m_hat / (np.sqrt(v_hat) + epsilon)
+    #x = x - alpha * m_hat / (np.sqrt(v_hat) + epsilon)
 
     x_history.append(x)
     f_history.append(f(x))
@@ -50,15 +50,15 @@ y_vals = f(x_vals)
 
 fig = go.Figure()
 
-fig.add_trace(go.Scatter(x=x_vals, y=y_vals, mode="lines", line=dict(width=3, color='#626dfa'), hoverinfo='skip', name="f(x)"))
-fig.add_trace(go.Scatter(x=x_vals, y=y_vals, mode="lines", line=dict(width=3, color='#626dfa'), hoverinfo='skip', name="f(x)"))
+fig.add_trace(go.Scatter(x=x_vals, y=y_vals, mode="lines", line=dict(width=2, color='#626dfa'), hoverinfo='skip', name="f(x)"))
+fig.add_trace(go.Scatter(x=x_vals, y=y_vals, mode="lines", line=dict(width=2, color='#626dfa', shape='spline'), hoverinfo='skip', name="f(x)"))
 
 frames=[
 go.Frame(
 data=[
     go.Scatter(x=[x_history[i]], y=[f_history[i]],
                mode="markers+text",
-               marker=dict(size=40, color="darkred"),
+               marker=dict(size=20, color="darkred"),
                text=[""],#[f"Momentum: {m_history[i]:.2f}"],
                textposition="top center")
     ],
@@ -86,8 +86,7 @@ animation_settings = dict(
 #%%
 import plotly.io as pio
 # Save the animation as a gif
-pio.write_html(fig, "adam_optimization.html",
+pio.write_html(fig, "gd_optimization.html",
                config={'displayModeBar':False}, animation_opts=animation_settings,
                auto_play=True, include_mathjax=False, include_plotlyjs='directory',
                full_html=False)
-

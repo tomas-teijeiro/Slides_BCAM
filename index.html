@@ -225,51 +225,8 @@
 					</section>
 
 					<section data-auto-animate>
-						<h3>The Importance of Metrics</h3>
-						<p style="margin-left: 5%;">&bull; Consider the two following competing seizure detection models:</p>
-						<table class="numeric" data-id="tab">
-							<tbody style="font-size:0.8em">
-								<tr style="background-color:#0092d3;color:white"><th>Model</th><th>Sensitivity</th><th>Specificity</th><th>Max. Delay</th></tr>
-								<tr><td style="text-align: center;color:#af2e34;border-color: black;"><b>A</b></td><td>98%</td><td>99.5%</td><td>12 s</td></tr>
-								<tr><td style="text-align: center;color:#d16d34"><b>B</b></td><td>95%</td><td>100%</td><td>18 s</td></tr>
-							</tbody>
-						</table>
-						<div class="fragment" data-fragment-index="1">
-							<iframe style="width:80%;height:240pt;margin-top: 1em;" src="https://directpoll.com/r?XDbzPBd3ixYqg8sOgSLDnCHhfki3zfQPKtMXqFoV1EzY9b"></iframe>
-						</div>
-					</section>
-
-					<section data-auto-animate>
-						<h3>The Importance of Metrics</h3>
-						<p style="margin-left: 5%;">&bull; Consider the two following competing seizure detection models:</p>
-						<table class="numeric" data-id="tab">
-							<tbody style="font-size:0.8em">
-								<tr style="background-color:#0092d3;color:white"><th>Model</th><th>Sensitivity</th><th>Specificity</th><th>Max. Delay</th></tr>
-								<tr><td style="text-align: center;color:#af2e34;border-color: black;"><b>A</b></td><td>98%</td><td>99.5%</td><td>12 s</td></tr>
-								<tr><td style="text-align: center;color:#d16d34"><b>B</b></td><td>95%</td><td>100%</td><td>18 s</td></tr>
-							</tbody>
-						</table>
-						<p style="margin-left: 5%;">&bull; Now suppose a patient that has one seizure per week on average...</p>
-						<div class="fragment fade-in">Model <span style="color:#af2e34"><b>A</b></span> would give a false alarm every 50 minutes!!</div>
-					</section>
-
-					<section data-auto-animate>
-						<h3>The Importance of Metrics</h3>
-						<p style="margin-left: 5%;">&bull; Consider the two following competing seizure detection models:</p>
-						<table class="numeric" data-id="tab">
-							<tbody style="font-size:0.8em">
-								<tr style="background-color:#0092d3;color:white"><th>Model</th><th>Sensitivity</th><th>Specificity</th><th>Max. Delay</th><th>Precision</th></tr>
-								<tr><td style="text-align: center;color:#af2e34;border-color: black;"><b>A</b></td><td>98%</td><td>99.5%</td><td>12 s</td><td><b>0.005%</b></td></tr>
-								<tr><td style="text-align: center;color:#d16d34"><b>B</b></td><td>95%</td><td>100%</td><td>18 s</td><td><b>100%</b></td></tr>
-							</tbody>
-						</table>
-						<p style="margin-left: 5%;">&bull; Now suppose a patient that has one seizure per week on average...</p>
-						Model <span style="color:#af2e34"><b>A</b></span> would give a false alarm every 50 minutes!!
-					</section>
-
-					<section>
 						<h3>Measuring Success: A Sea of Metrics</h3>
-						<table class="wikitable" style="border:none; background:transparent; text-align:center; font-size:0.4em">
+						<table data-id="table" class="wikitable" style="border:none; background:transparent; text-align:center; font-size:0.4em">
 							<tbody><tr>
 							<td style="border:none;" rowspan="2">
 							</td>
@@ -320,6 +277,217 @@
 							<td style="border-top:double silver; border-right:double silver;background:#ffffff;"><a href="/wiki/Prevalence" title="Prevalence">Prevalence</a> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">P</span><span class="sr-only">/</span><span class="den">P + N</span></span>⁠</span></span>
 							</td>
 							<td style="background:#eeffee;"><span class="nowrap"><a href="/wiki/Positive_predictive_value" class="mw-redirect" title="Positive predictive value">Positive predictive value</a> (PPV),</span> <span style="font-size: 85%;"><a href="/wiki/Precision_(information_retrieval)" class="mw-redirect" title="Precision (information retrieval)">precision</a></span> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TP</span><span class="sr-only">/</span><span class="den">TP + FP</span></span>⁠</span></span> <span class="texhtml">= 1 − FDR</span>
+							</td>
+							<td style="background:#ddeedd;"><a href="/wiki/Negative_predictive_value" class="mw-redirect" title="Negative predictive value">Negative predictive value</a> (NPV) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TN</span><span class="sr-only">/</span><span class="den">TN + FN</span></span>⁠</span></span> <span class="texhtml">= 1 − FOR</span>
+							</td>
+							<td style="background:#eeeeff;"><a href="/wiki/Positive_likelihood_ratio" class="mw-redirect" title="Positive likelihood ratio">Positive likelihood ratio</a> (LR+) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TPR</span><span class="sr-only">/</span><span class="den">FPR</span></span>⁠</span></span>
+							</td>
+							<td style="background:#eeeeff;"><a href="/wiki/Negative_likelihood_ratio" class="mw-redirect" title="Negative likelihood ratio">Negative likelihood ratio</a> (LR−) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">FNR</span><span class="sr-only">/</span><span class="den">TNR</span></span>⁠</span></span>
+							</td></tr>
+							<tr>
+							<td style="border-right:double silver;background:#ffffff;"><a href="/wiki/Accuracy_and_precision#In_classification" title="Accuracy and precision">Accuracy</a> (ACC) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TP + TN</span><span class="sr-only">/</span><span class="den">P + N</span></span>⁠</span></span>
+							</td>
+							<td style="background:#eedddd;"><a href="/wiki/False_discovery_rate" title="False discovery rate">False discovery rate</a> (FDR) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">FP</span><span class="sr-only">/</span><span class="den">TP + FP</span></span>⁠</span></span> <span class="texhtml">= 1 − PPV</span>
+							</td>
+							<td style="background:#ffeeee;border-right:double silver;"><a href="/wiki/False_omission_rate" class="mw-redirect" title="False omission rate">False omission rate</a> (FOR) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">FN</span><span class="sr-only">/</span><span class="den">TN + FN</span></span>⁠</span></span> <span class="texhtml">= 1 − NPV</span>
+							</td>
+							<td style="border-top:double silver;border-right:double silver;background:#ffffff;">Markedness (MK), <span style="font-size: 85%;">deltaP (Δp)</span> <br><span class="texhtml">= PPV + NPV − 1</span>
+							</td>
+							<td style="background:#eeeeff;"><a href="/wiki/Diagnostic_odds_ratio" title="Diagnostic odds ratio">Diagnostic <span class="nowrap">odds ratio</span></a> (DOR) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">LR+</span><span class="sr-only">/</span><span class="den">LR−</span></span>⁠</span></span>
+							</td></tr>
+							<tr>
+							<td style="background:#ffffff;">Balanced accuracy (BA) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TPR + TNR</span><span class="sr-only">/</span><span class="den">2</span></span>⁠</span></span>
+							</td>
+							<td style="border-top:double silver;background:#ffffff;"><a href="/wiki/F1_score" class="mw-redirect" title="F1 score">F<sub>1</sub> score</a> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">2 PPV × TPR</span><span class="sr-only">/</span><span class="den">PPV + TPR</span></span>⁠</span></span> <span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">2 TP</span><span class="sr-only">/</span><span class="den">2 TP + FP + FN</span></span>⁠</span></span>
+							</td>
+							<td style="border-top:double silver;background:#ffffff;"><a href="/wiki/Fowlkes%E2%80%93Mallows_index" title="Fowlkes–Mallows index">Fowlkes–Mallows index</a> (FM) <br><span class="texhtml">= <span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">PPV × TPR</span></span></span>
+							</td>
+							<td style="border-top:double silver;background:#ffffff;"><a href="/wiki/Matthews_correlation_coefficient" class="mw-redirect" title="Matthews correlation coefficient">Matthews correlation coefficient</a> (MCC) <br><span class="texhtml texhtml-big" style="font-size:80%;">= <span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">TPR × TNR × PPV × NPV</span></span></span> <span class="texhtml texhtml-big" style="font-size:80%;">- <span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">FNR × FPR × FOR × FDR</span></span></span>
+							</td>
+							<td style="border-top:double silver;background:#ffffff;" colspan="2">Threat score (TS), critical success index (CSI), <a href="/wiki/Jaccard_index#Jaccard_index_in_binary_classification_confusion_matrices" title="Jaccard index">Jaccard index</a> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TP</span><span class="sr-only">/</span><span class="den">TP + FN + FP</span></span>⁠</span></span>
+							</td></tr></tbody></table>
+					</section>
+
+					<section data-auto-animate>
+						<h3>Measuring Success: A Sea of Metrics</h3>
+						<table data-id="table" class="wikitable" style="border:none; background:transparent; text-align:center; font-size:0.4em">
+							<tbody><tr>
+							<td style="border:none;" rowspan="2">
+							</td>
+							<td style="border:none;">
+							</td>
+							<td style="background:#bbeeee;" colspan="2"><b>Predicted condition</b>
+							</td>
+							<td style="border:none; text-align:right;" colspan="2">
+							</td></tr>
+							<tr>
+							<td style="background:#eeeeee;"><a href="/wiki/Statistical_population" title="Statistical population">Total population</a> <br><span class="texhtml">= P + N</span>
+							</td>
+							<td style="background:#ccffff;"><b>Predicted positive</b>
+							</td>
+							<td style="background:#aadddd;"><b>Predicted negative</b>
+							</td>
+							<td style="border-left:double silver;background:#ffffff"><a href="/wiki/Youden%27s_J_statistic" title="Youden's J statistic">Informedness</a>, <span style="font-size: 85%;">bookmaker informedness (BM)</span> <br><span class="texhtml">= TPR + TNR − 1</span>
+							</td>
+							<td style="background:#ffffff;"><a href="/wiki/Prevalence_threshold" class="mw-redirect" title="Prevalence threshold">Prevalence threshold</a> (PT) <br><span class="texhtml">= <style data-mw-deduplicate="TemplateStyles:r1214402035">.mw-parser-output .sfrac{white-space:nowrap}.mw-parser-output .sfrac.tion,.mw-parser-output .sfrac .tion{display:inline-block;vertical-align:-0.5em;font-size:85%;text-align:center}.mw-parser-output .sfrac .num{display:block;line-height:1em;margin:0.0em 0.1em;border-bottom:1px solid}.mw-parser-output .sfrac .den{display:block;line-height:1em;margin:0.1em 0.1em}.mw-parser-output .sr-only{border:0;clip:rect(0,0,0,0);clip-path:polygon(0px 0px,0px 0px,0px 0px);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}</style><span class="sfrac">⁠<span class="tion"><span class="num"><span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">TPR × FPR</span></span> - FPR</span><span class="sr-only">/</span><span class="den">TPR - FPR</span></span>⁠</span></span>
+							</td></tr>
+							<tr>
+							<td rowspan="2" class="nowrap ts-vertical-header is-valign-middle" style="background:#eeeebb;"><div style=""><style data-mw-deduplicate="TemplateStyles:r1221560606">@supports(writing-mode:vertical-rl){.mw-parser-output .ts-vertical-header{line-height:1;max-width:1em;padding:0.4em;vertical-align:bottom;width:1em}html.client-js .mw-parser-output .sortable:not(.jquery-tablesorter) .ts-vertical-header:not(.unsortable),html.client-js .mw-parser-output .ts-vertical-header.headerSort{background-position:50%.4em;padding-right:0.4em;padding-top:21px}.mw-parser-output .ts-vertical-header.is-valign-top{vertical-align:top}.mw-parser-output .ts-vertical-header.is-valign-middle{vertical-align:middle}.mw-parser-output .ts-vertical-header.is-normal{font-weight:normal}.mw-parser-output .ts-vertical-header>*{display:inline-block;transform:rotate(180deg);writing-mode:vertical-rl}@supports(writing-mode:sideways-lr){.mw-parser-output .ts-vertical-header>*{transform:none;writing-mode:sideways-lr}}}</style><b>Actual condition</b></div>
+							</td>
+							<td style="background:#ffffcc;"><b>Positive (P)</b>
+							</td>
+							<td style="background:#ccffcc;"><b><a href="/wiki/True_positive" class="mw-redirect" title="True positive">True positive</a></b> (TP), <br><span style="font-size: 85%;">hit</span>
+							</td>
+							<td style="background:#ffdddd;"><b><a href="/wiki/False_negative" class="mw-redirect" title="False negative">False negative</a></b> (FN), <br><span style="font-size: 85%;">miss, underestimation</span>
+							</td>
+							<td style="background:#eeffee; position:relative; box-shadow: 0px 0px 5px 2px darkblue;"><a href="/wiki/True_positive_rate" class="mw-redirect" title="True positive rate">True positive rate</a> (TPR), <a href="/wiki/Recall_(information_retrieval)" class="mw-redirect" title="Recall (information retrieval)">recall</a>, <a href="/wiki/Sensitivity_(tests)" class="mw-redirect" title="Sensitivity (tests)">sensitivity</a> (SEN), <span style="font-size: 85%;">probability&nbsp;of&nbsp;detection, hit&nbsp;rate, <a href="/wiki/Statistical_power" class="mw-redirect" title="Statistical power">power</a></span> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TP</span><span class="sr-only">/</span><span class="den">P</span></span>⁠</span></span> <span class="texhtml">= 1 − FNR</span>
+							</td>
+							<td style="background:#ffeeee;"><a href="/wiki/False_negative_rate" class="mw-redirect" title="False negative rate">False negative rate</a> (FNR), <br><span style="font-size: 85%;">miss&nbsp;rate</span> <br><span style="font-size: 85%;"><a href="/wiki/Type_II_error" class="mw-redirect" title="Type II error">type&nbsp;II&nbsp;error</a></span><br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">FN</span><span class="sr-only">/</span><span class="den">P</span></span>⁠</span></span> <span class="texhtml">= 1 − TPR</span>
+							</td></tr>
+							<tr>
+							<td style="background:#ddddaa;"><b>Negative (N)</b>
+							</td>
+							<td style="background:#ffcccc;"><b><a href="/wiki/False_positive" class="mw-redirect" title="False positive">False positive</a></b> (FP), <br><span style="font-size: 85%;">false alarm, overestimation</span>
+							</td>
+							<td style="background:#bbeebb;"><b><a href="/wiki/True_negative" class="mw-redirect" title="True negative">True negative</a></b> (TN), <br><span style="font-size: 85%;">correct rejection</span>
+							</td>
+							<td style="background:#eedddd;"><a href="/wiki/False_positive_rate" title="False positive rate">False positive rate</a> (FPR), <br><span style="font-size: 85%;">probability&nbsp;of&nbsp;false&nbsp;alarm, <a href="/wiki/Evaluation_measures_(information_retrieval)#Fall-out" title="Evaluation measures (information retrieval)"><span class="nowrap">fall-out</span></a></span> <br><span style="font-size: 85%;"><a href="/wiki/Type_I_error" class="mw-redirect" title="Type I error">type&nbsp;I&nbsp;error</a></span> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">FP</span><span class="sr-only">/</span><span class="den">N</span></span>⁠</span></span> <span class="texhtml">= 1 − TNR</span>
+							</td>
+							<td style="background:#ddeedd; position:relative; box-shadow: 0px 0px 5px 2px darkblue;"><a href="/wiki/True_negative_rate" class="mw-redirect" title="True negative rate">True negative rate</a> (TNR), <br><span style="font-size: 85%;"><a href="/wiki/Specificity_(tests)" class="mw-redirect" title="Specificity (tests)">specificity</a> (SPC), selectivity</span> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TN</span><span class="sr-only">/</span><span class="den">N</span></span>⁠</span></span> <span class="texhtml">= 1 − FPR</span>
+							</td></tr>
+							<tr>
+							<td style="border:none;" rowspan="3">
+							</td>
+							<td style="border-top:double silver; border-right:double silver;background:#ffffff;"><a href="/wiki/Prevalence" title="Prevalence">Prevalence</a> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">P</span><span class="sr-only">/</span><span class="den">P + N</span></span>⁠</span></span>
+							</td>
+							<td style="background:#eeffee;"><span class="nowrap"><a href="/wiki/Positive_predictive_value" class="mw-redirect" title="Positive predictive value">Positive predictive value</a> (PPV),</span> <span style="font-size: 85%;"><a href="/wiki/Precision_(information_retrieval)" class="mw-redirect" title="Precision (information retrieval)">precision</a></span> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TP</span><span class="sr-only">/</span><span class="den">TP + FP</span></span>⁠</span></span> <span class="texhtml">= 1 − FDR</span>
+							</td>
+							<td style="background:#ddeedd;"><a href="/wiki/Negative_predictive_value" class="mw-redirect" title="Negative predictive value">Negative predictive value</a> (NPV) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TN</span><span class="sr-only">/</span><span class="den">TN + FN</span></span>⁠</span></span> <span class="texhtml">= 1 − FOR</span>
+							</td>
+							<td style="background:#eeeeff;"><a href="/wiki/Positive_likelihood_ratio" class="mw-redirect" title="Positive likelihood ratio">Positive likelihood ratio</a> (LR+) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TPR</span><span class="sr-only">/</span><span class="den">FPR</span></span>⁠</span></span>
+							</td>
+							<td style="background:#eeeeff;"><a href="/wiki/Negative_likelihood_ratio" class="mw-redirect" title="Negative likelihood ratio">Negative likelihood ratio</a> (LR−) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">FNR</span><span class="sr-only">/</span><span class="den">TNR</span></span>⁠</span></span>
+							</td></tr>
+							<tr>
+							<td style="border-right:double silver;background:#ffffff;"><a href="/wiki/Accuracy_and_precision#In_classification" title="Accuracy and precision">Accuracy</a> (ACC) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TP + TN</span><span class="sr-only">/</span><span class="den">P + N</span></span>⁠</span></span>
+							</td>
+							<td style="background:#eedddd;"><a href="/wiki/False_discovery_rate" title="False discovery rate">False discovery rate</a> (FDR) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">FP</span><span class="sr-only">/</span><span class="den">TP + FP</span></span>⁠</span></span> <span class="texhtml">= 1 − PPV</span>
+							</td>
+							<td style="background:#ffeeee;border-right:double silver;"><a href="/wiki/False_omission_rate" class="mw-redirect" title="False omission rate">False omission rate</a> (FOR) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">FN</span><span class="sr-only">/</span><span class="den">TN + FN</span></span>⁠</span></span> <span class="texhtml">= 1 − NPV</span>
+							</td>
+							<td style="border-top:double silver;border-right:double silver;background:#ffffff;">Markedness (MK), <span style="font-size: 85%;">deltaP (Δp)</span> <br><span class="texhtml">= PPV + NPV − 1</span>
+							</td>
+							<td style="background:#eeeeff;"><a href="/wiki/Diagnostic_odds_ratio" title="Diagnostic odds ratio">Diagnostic <span class="nowrap">odds ratio</span></a> (DOR) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">LR+</span><span class="sr-only">/</span><span class="den">LR−</span></span>⁠</span></span>
+							</td></tr>
+							<tr>
+							<td style="background:#ffffff;">Balanced accuracy (BA) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TPR + TNR</span><span class="sr-only">/</span><span class="den">2</span></span>⁠</span></span>
+							</td>
+							<td style="border-top:double silver;background:#ffffff;"><a href="/wiki/F1_score" class="mw-redirect" title="F1 score">F<sub>1</sub> score</a> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">2 PPV × TPR</span><span class="sr-only">/</span><span class="den">PPV + TPR</span></span>⁠</span></span> <span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">2 TP</span><span class="sr-only">/</span><span class="den">2 TP + FP + FN</span></span>⁠</span></span>
+							</td>
+							<td style="border-top:double silver;background:#ffffff;"><a href="/wiki/Fowlkes%E2%80%93Mallows_index" title="Fowlkes–Mallows index">Fowlkes–Mallows index</a> (FM) <br><span class="texhtml">= <span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">PPV × TPR</span></span></span>
+							</td>
+							<td style="border-top:double silver;background:#ffffff;"><a href="/wiki/Matthews_correlation_coefficient" class="mw-redirect" title="Matthews correlation coefficient">Matthews correlation coefficient</a> (MCC) <br><span class="texhtml texhtml-big" style="font-size:80%;">= <span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">TPR × TNR × PPV × NPV</span></span></span> <span class="texhtml texhtml-big" style="font-size:80%;">- <span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">FNR × FPR × FOR × FDR</span></span></span>
+							</td>
+							<td style="border-top:double silver;background:#ffffff;" colspan="2">Threat score (TS), critical success index (CSI), <a href="/wiki/Jaccard_index#Jaccard_index_in_binary_classification_confusion_matrices" title="Jaccard index">Jaccard index</a> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TP</span><span class="sr-only">/</span><span class="den">TP + FN + FP</span></span>⁠</span></span>
+							</td></tr></tbody></table>
+					</section>
+
+					<section data-auto-animate data-auto-animate-restart>
+						<h3>The Importance of Metrics</h3>
+						<p style="margin-left: 5%;">&bull; Consider the two following competing seizure detection models:</p>
+						<table class="numeric" data-id="tab">
+							<tbody style="font-size:0.8em">
+								<tr style="background-color:#0092d3;color:white"><th>Model</th><th>Sensitivity</th><th>Specificity</th><th>Max. Delay</th></tr>
+								<tr><td style="text-align: center;color:#af2e34;border-color: black;"><b>A</b></td><td>98%</td><td>99.5%</td><td>12 s</td></tr>
+								<tr><td style="text-align: center;color:#d16d34"><b>B</b></td><td>95%</td><td>100%</td><td>18 s</td></tr>
+							</tbody>
+						</table>
+						<div class="fragment" data-fragment-index="1">
+							<iframe style="width:80%;height:240pt;margin-top: 1em;" src="https://directpoll.com/r?XDbzPBd3ixYqg8sOgSLDnCHhfki3zfQPKtMXqFoV1EzY9b"></iframe>
+						</div>
+					</section>
+
+					<section data-auto-animate>
+						<h3>The Importance of Metrics</h3>
+						<p style="margin-left: 5%;">&bull; Consider the two following competing seizure detection models:</p>
+						<table class="numeric" data-id="tab">
+							<tbody style="font-size:0.8em">
+								<tr style="background-color:#0092d3;color:white"><th>Model</th><th>Sensitivity</th><th>Specificity</th><th>Max. Delay</th></tr>
+								<tr><td style="text-align: center;color:#af2e34;border-color: black;"><b>A</b></td><td>98%</td><td>99.5%</td><td>12 s</td></tr>
+								<tr><td style="text-align: center;color:#d16d34"><b>B</b></td><td>95%</td><td>100%</td><td>18 s</td></tr>
+							</tbody>
+						</table>
+						<p style="margin-left: 5%;">&bull; Now suppose a patient that has one seizure per week on average...</p>
+						<div class="fragment fade-in">Model <span style="color:#af2e34"><b>A</b></span> would give a false alarm every 50 minutes!!</div>
+					</section>
+
+					<section data-auto-animate>
+						<h3>The Importance of Metrics</h3>
+						<p style="margin-left: 5%;">&bull; Consider the two following competing seizure detection models:</p>
+						<table class="numeric" data-id="tab">
+							<tbody style="font-size:0.8em">
+								<tr style="background-color:#0092d3;color:white"><th>Model</th><th>Sensitivity</th><th>Specificity</th><th>Max. Delay</th><th>Precision</th></tr>
+								<tr><td style="text-align: center;color:#af2e34;border-color: black;"><b>A</b></td><td>98%</td><td>99.5%</td><td>12 s</td><td><b>0.005%</b></td></tr>
+								<tr><td style="text-align: center;color:#d16d34"><b>B</b></td><td>95%</td><td>100%</td><td>18 s</td><td><b>100%</b></td></tr>
+							</tbody>
+						</table>
+						<p style="margin-left: 5%;">&bull; Now suppose a patient that has one seizure per week on average...</p>
+						Model <span style="color:#af2e34"><b>A</b></span> would give a false alarm every 50 minutes!!
+					</section>
+
+					<section data-auto-animate>
+						<h3>The Importance of Metrics</h3>
+						<table class="wikitable" style="border:none; background:transparent; text-align:center; font-size:0.4em">
+							<tbody><tr>
+							<td style="border:none;" rowspan="2">
+							</td>
+							<td style="border:none;">
+							</td>
+							<td style="background:#bbeeee;" colspan="2"><b>Predicted condition</b>
+							</td>
+							<td style="border:none; text-align:right;" colspan="2">
+							</td></tr>
+							<tr>
+							<td style="background:#eeeeee;"><a href="/wiki/Statistical_population" title="Statistical population">Total population</a> <br><span class="texhtml">= P + N</span>
+							</td>
+							<td style="background:#ccffff;"><b>Predicted positive</b>
+							</td>
+							<td style="background:#aadddd;"><b>Predicted negative</b>
+							</td>
+							<td style="border-left:double silver;background:#ffffff"><a href="/wiki/Youden%27s_J_statistic" title="Youden's J statistic">Informedness</a>, <span style="font-size: 85%;">bookmaker informedness (BM)</span> <br><span class="texhtml">= TPR + TNR − 1</span>
+							</td>
+							<td style="background:#ffffff;"><a href="/wiki/Prevalence_threshold" class="mw-redirect" title="Prevalence threshold">Prevalence threshold</a> (PT) <br><span class="texhtml">= <style data-mw-deduplicate="TemplateStyles:r1214402035">.mw-parser-output .sfrac{white-space:nowrap}.mw-parser-output .sfrac.tion,.mw-parser-output .sfrac .tion{display:inline-block;vertical-align:-0.5em;font-size:85%;text-align:center}.mw-parser-output .sfrac .num{display:block;line-height:1em;margin:0.0em 0.1em;border-bottom:1px solid}.mw-parser-output .sfrac .den{display:block;line-height:1em;margin:0.1em 0.1em}.mw-parser-output .sr-only{border:0;clip:rect(0,0,0,0);clip-path:polygon(0px 0px,0px 0px,0px 0px);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}</style><span class="sfrac">⁠<span class="tion"><span class="num"><span class="nowrap">√<span style="border-top:1px solid; padding:0 0.1em;">TPR × FPR</span></span> - FPR</span><span class="sr-only">/</span><span class="den">TPR - FPR</span></span>⁠</span></span>
+							</td></tr>
+							<tr>
+							<td rowspan="2" class="nowrap ts-vertical-header is-valign-middle" style="background:#eeeebb;"><div style=""><style data-mw-deduplicate="TemplateStyles:r1221560606">@supports(writing-mode:vertical-rl){.mw-parser-output .ts-vertical-header{line-height:1;max-width:1em;padding:0.4em;vertical-align:bottom;width:1em}html.client-js .mw-parser-output .sortable:not(.jquery-tablesorter) .ts-vertical-header:not(.unsortable),html.client-js .mw-parser-output .ts-vertical-header.headerSort{background-position:50%.4em;padding-right:0.4em;padding-top:21px}.mw-parser-output .ts-vertical-header.is-valign-top{vertical-align:top}.mw-parser-output .ts-vertical-header.is-valign-middle{vertical-align:middle}.mw-parser-output .ts-vertical-header.is-normal{font-weight:normal}.mw-parser-output .ts-vertical-header>*{display:inline-block;transform:rotate(180deg);writing-mode:vertical-rl}@supports(writing-mode:sideways-lr){.mw-parser-output .ts-vertical-header>*{transform:none;writing-mode:sideways-lr}}}</style><b>Actual condition</b></div>
+							</td>
+							<td style="background:#ffffcc;"><b>Positive (P)</b>
+							</td>
+							<td style="background:#ccffcc;"><b><a href="/wiki/True_positive" class="mw-redirect" title="True positive">True positive</a></b> (TP), <br><span style="font-size: 85%;">hit</span>
+							</td>
+							<td style="background:#ffdddd;"><b><a href="/wiki/False_negative" class="mw-redirect" title="False negative">False negative</a></b> (FN), <br><span style="font-size: 85%;">miss, underestimation</span>
+							</td>
+							<td style="background:#eeffee; position:relative; box-shadow: 0px 0px 5px 2px darkgreen;"><a href="/wiki/True_positive_rate" class="mw-redirect" title="True positive rate">True positive rate</a> (TPR), <a href="/wiki/Recall_(information_retrieval)" class="mw-redirect" title="Recall (information retrieval)">recall</a>, <a href="/wiki/Sensitivity_(tests)" class="mw-redirect" title="Sensitivity (tests)">sensitivity</a> (SEN), <span style="font-size: 85%;">probability&nbsp;of&nbsp;detection, hit&nbsp;rate, <a href="/wiki/Statistical_power" class="mw-redirect" title="Statistical power">power</a></span> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TP</span><span class="sr-only">/</span><span class="den">P</span></span>⁠</span></span> <span class="texhtml">= 1 − FNR</span>
+							</td>
+							<td style="background:#ffeeee;"><a href="/wiki/False_negative_rate" class="mw-redirect" title="False negative rate">False negative rate</a> (FNR), <br><span style="font-size: 85%;">miss&nbsp;rate</span> <br><span style="font-size: 85%;"><a href="/wiki/Type_II_error" class="mw-redirect" title="Type II error">type&nbsp;II&nbsp;error</a></span><br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">FN</span><span class="sr-only">/</span><span class="den">P</span></span>⁠</span></span> <span class="texhtml">= 1 − TPR</span>
+							</td></tr>
+							<tr>
+							<td style="background:#ddddaa;"><b>Negative (N)</b>
+							</td>
+							<td style="background:#ffcccc;"><b><a href="/wiki/False_positive" class="mw-redirect" title="False positive">False positive</a></b> (FP), <br><span style="font-size: 85%;">false alarm, overestimation</span>
+							</td>
+							<td style="background:#bbeebb;position:relative; box-shadow: 0px 0px 5px 2px darkred;"><b><a href="/wiki/True_negative" class="mw-redirect" title="True negative">True negative</a></b> (TN), <br><span style="font-size: 85%;">correct rejection</span>
+							</td>
+							<td style="background:#eedddd;"><a href="/wiki/False_positive_rate" title="False positive rate">False positive rate</a> (FPR), <br><span style="font-size: 85%;">probability&nbsp;of&nbsp;false&nbsp;alarm, <a href="/wiki/Evaluation_measures_(information_retrieval)#Fall-out" title="Evaluation measures (information retrieval)"><span class="nowrap">fall-out</span></a></span> <br><span style="font-size: 85%;"><a href="/wiki/Type_I_error" class="mw-redirect" title="Type I error">type&nbsp;I&nbsp;error</a></span> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">FP</span><span class="sr-only">/</span><span class="den">N</span></span>⁠</span></span> <span class="texhtml">= 1 − TNR</span>
+							</td>
+							<td style="background:#ddeedd;"><a href="/wiki/True_negative_rate" class="mw-redirect" title="True negative rate">True negative rate</a> (TNR), <br><span style="font-size: 85%;"><a href="/wiki/Specificity_(tests)" class="mw-redirect" title="Specificity (tests)">specificity</a> (SPC), selectivity</span> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TN</span><span class="sr-only">/</span><span class="den">N</span></span>⁠</span></span> <span class="texhtml">= 1 − FPR</span>
+							</td></tr>
+							<tr>
+							<td style="border:none;" rowspan="3">
+							</td>
+							<td style="border-top:double silver; border-right:double silver;background:#ffffff;"><a href="/wiki/Prevalence" title="Prevalence">Prevalence</a> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">P</span><span class="sr-only">/</span><span class="den">P + N</span></span>⁠</span></span>
+							</td>
+							<td style="background:#eeffee; position:relative; box-shadow: 0px 0px 5px 2px darkgreen;"><span class="nowrap"><a href="/wiki/Positive_predictive_value" class="mw-redirect" title="Positive predictive value">Positive predictive value</a> (PPV),</span> <span style="font-size: 85%;"><a href="/wiki/Precision_(information_retrieval)" class="mw-redirect" title="Precision (information retrieval)">precision</a></span> <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TP</span><span class="sr-only">/</span><span class="den">TP + FP</span></span>⁠</span></span> <span class="texhtml">= 1 − FDR</span>
 							</td>
 							<td style="background:#ddeedd;"><a href="/wiki/Negative_predictive_value" class="mw-redirect" title="Negative predictive value">Negative predictive value</a> (NPV) <br><span class="texhtml">= <link rel="mw-deduplicated-inline-style" href="mw-data:TemplateStyles:r1214402035"><span class="sfrac">⁠<span class="tion"><span class="num">TN</span><span class="sr-only">/</span><span class="den">TN + FN</span></span>⁠</span></span> <span class="texhtml">= 1 − FOR</span>
 							</td>
