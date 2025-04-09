@@ -782,6 +782,68 @@
 					</section>
 
 					<section>
+						<h3>Let's Look at the Code</h3>
+						<pre>
+							<code data-trim data-line-numbers="1-8|10-14|16-19|11">
+data = pd.read_csv('../dataset/feature_dataset.csv')
+y = data['CLASSES']
+X = data.drop(columns=['CLASSES', 'Segment', 'Stage', 'PAT_ID'], axis=1)
+X['KURTOSIS'] = pd.to_numeric(X['KURTOSIS'], errors='coerce')
+X['KURTOSIS_f'] = pd.to_numeric(X['KURTOSIS_f'], errors='coerce')
+X['SKEW'] = pd.to_numeric(X['SKEW'], errors='coerce')
+X['SKEW_f'] = pd.to_numeric(X['SKEW_f'], errors='coerce')
+X = X.dropna()
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+# Create an SVC model for classification and train it
+classifier_svm = SVC(kernel='rbf', C=10, gamma='scale')
+classifier_svm.fit(X_train, y_train)
+
+# Predict on the testing data using the SVM model
+y_pred_svm = classifier_svm.decision_function(X_test)
+fpr_svm, tpr_svm, _ = roc_curve(y_test, y_pred_svm)
+roc_auc_svm = auc(fpr_svm, tpr_svm) # Result is 0.96!! 🥳
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h3>A Little Tiny Detail...</h3>
+						<div class="r-stack">
+							<img src="assets/train_test_split.png" />
+							<img class="fragment" src="assets/train_test_split_overlay.png" />
+						</div>
+					</section>
+
+					<section>
+						<h3>...and let's look at the data...</h3>
+						<pre>
+							<code data-trim class="language-yml">
+								Segment              MIN       MAX      MEAN  ...          PCA3  CLASSES  PAT_ID
+								0              -1.317552  1.531883  0.001689  ... -2.480000e-06        1       1
+								1              -1.274121  1.438656 -0.001521  ... -3.240000e-06        1       1
+								2              -0.350645  0.551201  0.000017  ... -9.010000e-06        1       1
+								3              -0.636671  0.710520 -0.000052  ... -2.860000e-06        1       1
+								4              -0.443521  0.507641  0.000271  ...  4.290000e-06        1       1
+								...        ...       ...       ...       ...  ...           ...      ...     ...
+								49593          -0.796942  1.319245 -0.000062  ... -2.650000e-06        0      50
+								49594          -1.344436  1.981777 -0.000356  ... -7.420000e-07        0      50
+								49595          -0.346997  0.392739  0.000456  ... -2.540000e-06        0      50
+								49596          -0.466848  0.565417 -0.000085  ... -4.610000e-06        0      50
+								49597          -0.214931  0.336116 -0.000426  ...  2.250000e-06        0      50
+								
+								[49598 rows x 39 columns]								
+							</code>
+						</pre>
+						<ul style="font-size: 0.8em;">
+							<li class="fragment">Shuffling leads to samples <span class="fragment highlight-red">from the same patient</span> being in training and test sets.</li>
+							<li class="fragment">This breaks the <b>independence assumption</b> of samples of every learning method!</li>
+							<li class="fragment">In the end, they are just <b>learning to identify individuals by their voice.</b></li>
+						</ul>
+					</section>
+
+					<section>
 						<h3>One Last Example...</h3>
 						<div class="column-container" style="grid-template-columns: 1.5fr 1fr; align-items: end;">
 							<div style="font-size: 0.7em;">
