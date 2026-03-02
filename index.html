@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>AI: The Mathematics of Self-Deception</title>
+		<title>El Matemático que no Sabía Contar</title>
 		<meta name="author" content="T. Teijeiro">
 
 		<!-- For having access to Google fonts-->
@@ -26,14 +26,351 @@
 			<div class="slides">
 				<!--Title-->
                 <section style="height:100%" data-transition="none" data-background-image="assets/background_titlepage.svg">
-                    <h2 style="margin-top:5%;margin-bottom:6%;font-size:2.4em">AI: The Mathematics of Self-Deception</h2>
+                    <h2 style="margin-top:5%;margin-bottom:6%;font-size:2.4em">El Matemático que no Sabía Contar</h2>
                     <h4 style="color:#222;font-size:1.7em">Tomas Teijeiro</h4>
 					<h5 style="color:#222;margin-bottom:7%;font-size:0.8em"><em>BCAM - Basque Center for Applied Mathematics</em></h5>
-                    <h4 style="text-align:left;color:#222;font-size:1em;margin-bottom:1%">UAM Math Department Colloquium</h4>
-                    <h5 style="text-align:left;color:#222;font-size:0.8em">25/04/2025, Madrid</h5>
+                    <h4 style="text-align:left;color:#222;font-size:1em;margin-top:10%">BCAM - Naukas Pi Day 2026</h4>                    
                     <img class="plain" style="position:fixed;left:0;bottom:5%;height:8%" src="assets/institutional_logos.png"/>
                     <img class="plain" style="position:fixed;right:0;bottom:5%;height:8%" src="assets/bottom_right_titlepage.png"/>
                 </section>
+
+				<section>
+					<h3>Empezando de la peor manera...</h3>
+					<p>Basándome en las predicciones de un "visionario" (o charlatán, según el día):</p>
+					
+					<div style="display: flex; justify-content: space-around; align-items: center; margin-top: 50px;">
+						<div class="fragment">
+							<p style="font-size: 2em;">🎓</p>
+							<p><strong>GPT-3.5</strong><br><small>Estudiante de Instituto</small></p>
+						</div>
+						<div class="fragment">
+							<p style="font-size: 2.5em;">📜</p>
+							<p><strong>GPT-4</strong><br><small>Licenciado en Matemáticas</small></p>
+						</div>
+						<div class="fragment" style="color: #ff3e3e;">
+							<p style="font-size: 3em;">🔬</p>
+							<p><strong>GPT-5</strong><br><strong>Doctor en Matemáticas</strong></p>
+						</div>
+					</div>
+					
+					<aside class="notes">
+						Aquí puedes soltar la frase: "Voy a empezar de la peor manera posible...". La idea es mostrar la escala evolutiva que nos venden.
+					</aside>
+				</section>
+
+				<section>
+					<h3>Empezando de la peor manera...</h3>
+					<div style="display: flex; align-items: center; justify-content: space-between; margin-top: 30px;">
+						
+						<div style="flex: 1; text-align: center;">
+							<img src="https://www.investopedia.com/thmb/IlLEqjFYzBWdtddCvwmJGwn-Zyk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/samaltmanchatgpt-bf649dc8516747aaad2c8e125cf1f568.jpg" 
+								 alt="Sam Altman" 
+								 style="width: 80%;">
+							<p style="font-size: 0.6em; font-style: italic; margin-top: 10px; opacity: 0.8;">
+								"El visionario" (o el charlatán, según se mire)
+							</p>
+						</div>
+				
+						<div style="flex: 1.5; position: relative; height: 450px; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; padding-left: 50px;">
+							
+							<div class="fragment" style="align-self: flex-end; transform: translateY(-20px);">
+								<div style="background: #008ece; color: white; padding: 15px 25px; border-radius: 10px; text-align: center;">
+									<span style="font-size: 0.6em; display: block;">GPT-5</span>
+									<strong>Doctor en Matemáticas</strong>
+								</div>
+								<div style="text-align: right; font-size: 2em; margin-top: -10px;">📈</div>
+							</div>
+				
+							<div class="fragment" style="align-self: center; margin-bottom: 40px; transform: translateX(-30px);">
+								<div style="background: #444; color: white; padding: 10px 20px; border-radius: 10px; text-align: center;">
+									<span style="font-size: 0.6em; display: block;">GPT-4</span>
+									<strong>Licenciado</strong>
+								</div>
+							</div>
+				
+							<div class="fragment" style="align-self: flex-start; margin-bottom: 20px;">
+								<div style="background: #222; color: #aaa; padding: 8px 15px; border-radius: 10px; text-align: center; border: 1px solid #444;">
+									<span style="font-size: 0.5em; display: block;">GPT-3.5</span>
+									<strong>Estudiante de Instituto</strong>
+								</div>
+							</div>
+				
+							<div style="width: 100%; height: 2px; background: white; opacity: 0.3;"></div>
+						</div>
+					</div>
+				
+					<aside class="notes">
+						Aquí entras con la frase: "Voy a empezar de la peor manera posible...". 
+						A medida que avanzas los fragmentos, enfatizas cómo nos venden una evolución 
+						intelectual que parece no tener techo.
+					</aside>
+				</section>
+
+				<section>
+					<h3>El "Doctor" en acción</h3>
+					<p>Le pedimos resolver algo que a nosotros nos haría sudar:</p>
+					<div style="background: #2d2d2d; padding: 20px; border-radius: 10px; font-family: monospace;">
+						<p style="color: #a6e22e;">Prompt: Resuelve la integral de superficie de...</p>
+						<p>$$\iint_S (\nabla \times \mathbf{F}) \cdot d\mathbf{S}$$</p>
+					</div>
+					<p class="fragment" style="color: #42f59e; margin-top: 20px;">✓ Resultado impecable. Pasos detallados. Elegancia matemática.</p>
+					<p class="fragment"><strong>Fascinante, ¿verdad?</strong></p>
+				</section>
+
+				<section>
+					<h3>El "Doctor" tiene ayudantes de lujo</h3>
+					
+					<div style="display: flex; gap: 30px; align-items: center; margin-top: 20px;">
+						<div style="flex: 1; text-align: center;">
+							<div style="position: relative; display: inline-block;">
+								<img src="https://via.placeholder.com/250x320?text=Nature+Paper" 
+									 style="border: 2px solid #38bdf8; box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);">
+								<div style="position: absolute; bottom: -20px; right: -20px; width: 120px; height: 120px; border-radius: 50%; border: 3px solid white; overflow: hidden; background: #eee;">
+									<img src="https://www.ipam.ucla.edu/wp-content/uploads/2025/08/Terrys-headshot-e1754953455622.webp" alt="Terence Tao">
+								</div>
+							</div>
+							<p style="font-size: 0.5em; margin-top: 30px; color: #94a3b8;">
+								"Mathematical exploration and discovery at scale" <br> <strong>Nature, 2024</strong>
+							</p>
+						</div>
+
+						<img width=20% src="assets/status_grid.png"/>
+				
+						<div style="flex: 1.5; text-align: left;">
+							<h4 style="font-size: 0.8em; color: #94a3b8; text-transform: uppercase;">Colaborador destacado:</h4>
+							<p style="margin-top: -10px;"><strong>Terence Tao</strong> <br> 
+								<span style="font-size: 0.7em; opacity: 0.8;">Medalla Fields y, básicamente, el "Mozart" de las matemáticas modernas.</span>
+							</p>
+				
+							<ul style="font-size: 0.8em; line-height: 1.4; color: #e2e8f0;">
+								<li class="fragment">Resolución de problemas de la <strong>Olimpiada Internacional de Matemáticas</strong>.</li>
+								<li class="fragment">Descubrimiento de nuevos algoritmos (como el problema del <strong>Cap Set</strong>) que los humanos no habían mejorado en décadas.</li>
+								<li class="fragment">Capacidad para <strong>razonar simbólicamente</strong> en dominios donde la intuición humana falla.</li>
+							</ul>
+						</div>
+					</div>
+				
+					<div class="fragment" style="margin-top: 40px; border-top: 1px soli; padding-top: 20px;">
+						<p style="font-style: italic; color: #008ece;">
+							"La IA ya no solo calcula, ahora <strong>descubre</strong>."
+						</p>
+					</div>
+				
+					<aside class="notes">
+						Aquí mencionas que no lo dice cualquiera, lo dice Terence Tao, el matemático vivo más brillante. 
+						Si él está impresionado porque la IA resuelve problemas de nivel Olimpiada o mejora algoritmos 
+						estancados desde hace años, ¿cómo no vamos a creer que GPT-5 será Dios? 
+						Prepara el terreno para el contraste...
+					</aside>
+				</section>
+
+				<section>
+					<h3 style="margin-bottom: 30px;">Anatomía de un "Genio" en apuros</h3>
+					
+					<div style="display: flex; flex-direction: column; gap: 20px; font-size: 0.75em; width: 90%; margin: 0 auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+				
+						<div class="fragment fade-up" data-fragment-index="1" style="align-self: flex-end; background: #007aff; color: white; padding: 15px 20px; border-radius: 20px 20px 0 20px; max-width: 75%; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+							<strong>TÚ:</strong> [Inserta aquí tu prompt básico, ej: "¿Cuántas 'r' hay en Strawberry?"]
+						</div>
+				
+						<div style="align-self: flex-start; width: 85%; text-align: left; position: relative;">
+							
+							<div class="fragment fade-in-then-out" data-fragment-index="2" style="background: #0d1117; border: 1px solid #30363d; border-left: 4px solid #ffcc00; padding: 15px; border-radius: 10px; font-family: monospace; color: #8b949e; box-shadow: inset 0 0 10px rgba(0,0,0,0.5); position: absolute; top: 0; left: 0; width: 100%; z-index: 2;">
+								<span style="color: #ffcc00; font-weight: bold;">⚙️ Pensando...</span><br>
+								<div style="margin-top: 10px;">
+									> [Placeholder: "Analizando la estructura morfológica..."] <br>
+									> [Placeholder: "Calculando la probabilidad bayesiana..."]
+								</div>
+							</div>
+				
+							<div class="fragment fade-up" data-fragment-index="3" style="background: #333344; color: white; padding: 15px 20px; border-radius: 20px 20px 20px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3); z-index: 1; position: relative; width: fit-content;">
+								🤖 <strong>IA:</strong> [Inserta aquí la respuesta errónea pero dicha con absoluta confianza]
+							</div>
+						</div>
+				
+						<div class="fragment fade-up" data-fragment-index="4" style="align-self: flex-end; background: #007aff; color: white; padding: 15px 20px; border-radius: 20px 20px 0 20px; max-width: 75%; box-shadow: 0 4px 6px rgba(0,0,0,0.3); margin-top: 50px;">
+							<strong>TÚ:</strong> [Inserta aquí tu réplica, ej: "Pero si las cuentas a mano, ¿no ves que hay otra más?"]
+						</div>
+				
+						<div style="align-self: flex-start; width: 85%; text-align: left; position: relative;">
+							
+							<div class="fragment fade-in-then-out" data-fragment-index="5" style="background: #0d1117; border: 1px solid #30363d; border-left: 4px solid #ff4444; padding: 10px 15px; border-radius: 10px; font-family: monospace; color: #8b949e; position: absolute; top: 0; left: 0; width: 100%; z-index: 2;">
+								<span style="color: #ff4444; font-weight: bold;">⚠️ Re-evaluando (sudando aceite)...</span><br>
+								> [Placeholder: "Detectado error en la matriz de convolución..."]
+							</div>
+				
+							<div class="fragment fade-up" data-fragment-index="6" style="background: #333344; color: white; padding: 15px 20px; border-radius: 20px 20px 20px 0; box-shadow: 0 4px 6px rgba(0,0,0,0.3); z-index: 1; position: relative; width: fit-content;">
+								🤖 <strong>IA:</strong> [Inserta aquí la clásica disculpa: "Tienes toda la razón. Me he equivocado. La respuesta correcta es... (¡y vuelve a fallar!)"]
+							</div>
+						</div>
+				
+					</div>
+				
+					<aside class="notes">
+						La coreografía de los clics es la siguiente:
+						1. Tu primer prompt.
+						2. Sale la caja "Pensando". Te da tiempo a dramatizar su monólogo interior.
+						3. ¡Clic! El pensamiento desaparece mágicamente y aparece la respuesta estúpida.
+						4. Mandas tu réplica/zasca.
+						5. Vuelve a pensar, esta vez en modo pánico.
+						6. ¡Clic! Desaparece la caja de pánico y suelta su disculpa errónea final.
+					</aside>
+				</section>
+
+				<section data-background-color="#f8f9fa">
+					<h2>¿Por qué ocurre esta paradoja?</h2>
+					<p>Todo se resume en cómo aprendemos:</p>
+				
+					<div style="display: flex; align-items: center; justify-content: space-around; background: #e9ecef; border-radius: 15px; padding: 20px; margin-top: 20px;">
+						<div style="flex: 1; text-align: center;">
+							<h4 style="color: #1a73e8;">1. Memorización</h4>
+							<p style="font-size: 0.7em;">Capacidad de almacenar y recuperar datos exactos.</p>
+						</div>
+						
+						<div style="flex: 1.5; display: flex; gap: 10px; align-items: center;">
+							<div style="background: white; padding: 10px; border-radius: 10px; border: 2px solid #1a73e8; flex: 1;">
+								<p style="font-size: 0.5em; margin: 0;"><strong>IA</strong></p>
+								<p style="font-size: 0.8em; margin: 5px 0;">Recuerda 175.000 millones de parámetros y el decimal un millón de $\pi$ sin pestañear.</p>
+							</div>
+							<div style="font-size: 1.5em;">⚡ VS ⚡</div>
+							<div style="background: white; padding: 10px; border-radius: 10px; border: 2px solid #ff4444; flex: 1;">
+								<p style="font-size: 0.5em; margin: 0;"><strong>HUMANO</strong></p>
+								<img src="https://via.placeholder.com/150x100?text=MEME:+¿A+qué+venía+yo+aquí?" style="width: 100%; border-radius: 5px;">
+								<p style="font-size: 0.6em; margin: 5px 0; color: #cc0000;">"Entro en la cocina y olvido por qué he abierto la nevera."</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="fragment" style="margin-top: 40px; border-top: 3px solid #2c3e50; padding-top: 20px;">
+
+						<h3 style="color: #e67e22;">Pero... ¿Y la <strong>Generalización</strong>?</h3>
+						
+						<div style="display: flex; align-items: center; justify-content: center; gap: 40px; margin-top: 20px;">
+							<div style="text-align: center; opacity: 0.8;">
+								<img src="https://via.placeholder.com/180x180?text=CHEEMS+(IA)" style="width: 180px;">
+								<p style="font-size: 0.6em; font-weight: bold;">IA (Promedios)</p>
+								<p style="font-size: 0.5em; width: 200px; margin: 0 auto;">"Necesito ver 10.000 fotos de magdalenas para no confundirlas con un chihuahua."</p>
+							</div>
+				
+							<div style="font-size: 2em; font-weight: bold; color: #e67e22;">← 💥 →</div>
+				
+							<div style="text-align: center;">
+								<img src="https://via.placeholder.com/250x250?text=SWOLE+DOGE+(HUMANO)" style="width: 250px;">
+								<p style="font-size: 0.6em; font-weight: bold; color: #27ae60;">HUMANO (Inducción)</p>
+								<p style="font-size: 0.5em; width: 250px; margin: 0 auto;">"Entiendo el concepto de 'silla' viendo una sola vez un tronco cortado en el bosque."</p>
+							</div>
+						</div>
+						
+						<p class="fragment" style="font-size: 0.8em; margin-top: 20px; font-weight: bold; color: #2c3e50;">
+							La IA interpola entre ejemplos conocidos.<br>El humano <strong>salta</strong> al concepto abstracto.
+						</p>
+					</div>
+				
+					<aside class="notes">
+						Aquí empiezas admitiendo nuestra derrota: "En memoria somos un desastre, mi mujer me lo recuerda cada vez que olvido el aniversario". 
+						Risas. Pero luego, con el clic de la generalización, cambias el tono: "Aquí es donde somos dioses". 
+						Explicas que la IA es el perrito débil (Cheems) porque solo sabe 'hacer la media' de lo que ha visto, 
+						mientras que nosotros (Swole Doge) usamos la inducción para entender el universo con una sola pista.
+					</aside>
+				</section>
+
+				<section data-background-color="#1e1e1e">
+					<h3 style="color: #00d4ff;">Formalizando el "Sentido Común"</h3>
+					<p style="font-size: 0.6em; opacity: 0.8; margin-bottom: 40px;">De los silogismos de Aristóteles a la lógica de predicados</p>
+				
+					<div style="background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 15px; border: 1px solid #444; text-align: left; width: 80%; margin: 0 auto; font-family: 'Courier New', Courier, monospace;">
+						
+						<div style="margin-bottom: 30px; border-bottom: 1px solid #444; padding-bottom: 10px;">
+							<p style="color: #ffcc00; font-size: 0.7em; margin: 0;">Definiciones:</p>
+							<p style="font-size: 0.8em; margin: 10px 0;">
+								$C(x) \equiv$ "$x$ es un cuervo" <br>
+								$N(x) \equiv$ "$x$ es negro"
+							</p>
+						</div>
+				
+						<div class="fragment" style="margin-bottom: 30px;">
+							<h4 style="font-size: 0.7em; color: #42f59e; margin: 0;">1. Deducción (Modus Ponens)</h4>
+							<p style="font-size: 1.1em; margin: 10px 0; letter-spacing: 2px;">
+								$\forall x (C(x) \rightarrow N(x)) \land C(a) \vdash N(a)$
+							</p>
+							<p style="font-size: 0.4em; color: #888;">Si la regla es universal y el caso existe, la conclusión es <strong>verdadera</strong>.</p>
+						</div>
+				
+						<div class="fragment" style="border-top: 1px dashed #666; padding-top: 20px;">
+							<h4 style="font-size: 0.7em; color: #ff3e3e; margin: 0;">2. El "Salto" Inductivo</h4>
+							<p style="font-size: 1.1em; margin: 10px 0; letter-spacing: 2px;">
+								$\{C(a_1), N(a_1), \dots, C(a_n), N(a_n)\} \xrightarrow{?} \forall x (C(x) \rightarrow N(x))$
+							</p>
+							<p style="font-size: 0.4em; color: #888;">De $n$ observaciones particulares intentamos derivar una ley universal. <br>
+							<span style="color: #ff3e3e;">Matemáticamente: No garantizado.</span></p>
+						</div>
+				
+					</div>
+				
+					<div class="fragment" style="margin-top: 30px;">
+						<p style="font-size: 0.7em; font-style: italic; color: #00d4ff;">
+							"La IA es básicamente una máquina de intentar resolver la flecha roja de abajo <br> sin tener ni idea de qué significa la de arriba."
+						</p>
+					</div>
+				
+					<aside class="notes">
+						Aquí te pones serio por un momento. Explicas que la deducción es elegante y segura: si todos los cuervos son negros y tengo un cuervo, es negro. Fin. 
+						Pero la inducción (lo que hace la IA) es el conjunto de abajo: veo un caso, veo otro, veo 'n' casos... y de repente, ¡zas!, me invento que para todo x, la propiedad se cumple. 
+						Es un salto de fe estadístico que a veces sale bien y otras... bueno, "Strawberry".
+					</aside>
+				</section>
+
+				<section data-background-color="#0f172a">
+					<h3 style="color: #cbd5e1; margin-bottom: 10px;">El Triángulo de Aristóteles</h3>
+					<p style="font-size: 0.6em; color: #94a3b8; margin-bottom: 40px;">Tres formas de intentar no parecer idiotas (con distinto éxito)</p>
+				
+					<div style="display: flex; gap: 15px; justify-content: center; align-items: stretch;">
+						
+						<div class="fragment" data-fragment-index="1" style="flex: 1; background: rgba(34, 197, 94, 0.1); border: 1px solid #22c55e; border-radius: 15px; padding: 20px;">
+							<h4 style="color: #22c55e; font-size: 0.8em;">Deductivo</h4>
+							<p style="font-size: 0.4em; color: #86efac; text-transform: uppercase;">La Apuesta Segura</p>
+							<hr style="border-color: #22c55e; opacity: 0.3;">
+							<ul style="font-size: 0.55em; list-style: none; padding: 0; line-height: 1.6;">
+								<li>📖 <strong>Regla:</strong> Todos los cuervos son negros.</li>
+								<li>🐦 <strong>Caso:</strong> Estos pájaros son cuervos.</li>
+								<li style="margin-top: 10px; color: #22c55e;">✨ <strong>Resultado:</strong> Son negros. <br><small>(Lógicamente infalible)</small></li>
+							</ul>
+						</div>
+				
+						<div class="fragment" data-fragment-index="2" style="flex: 1; background: rgba(234, 179, 8, 0.1); border: 1px solid #eab308; border-radius: 15px; padding: 20px;">
+							<h4 style="color: #eab308; font-size: 0.8em;">Abductivo</h4>
+							<p style="font-size: 0.4em; color: #fde047; text-transform: uppercase;">El Detective</p>
+							<hr style="border-color: #eab308; opacity: 0.3;">
+							<ul style="font-size: 0.55em; list-style: none; padding: 0; line-height: 1.6;">
+								<li>📖 <strong>Regla:</strong> Todos los cuervos son negros.</li>
+								<li>✨ <strong>Resultado:</strong> Estos pájaros son negros.</li>
+								<li style="margin-top: 10px; color: #eab308;">🕵️ <strong>Caso:</strong> Por lo tanto... son cuervos. <br><small>(Probable, pero igual es un mirlo)</small></li>
+							</ul>
+						</div>
+				
+						<div class="fragment" data-fragment-index="3" style="flex: 1; background: rgba(249, 115, 22, 0.1); border: 2px solid #f97316; border-radius: 15px; padding: 20px; box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);">
+							<h4 style="color: #f97316; font-size: 0.8em;">Inductivo</h4>
+							<p style="font-size: 0.4em; color: #fdba3d; text-transform: uppercase;">El Generador de Reglas</p>
+							<hr style="border-color: #f97316; opacity: 0.3;">
+							<ul style="font-size: 0.55em; list-style: none; padding: 0; line-height: 1.6;">
+								<li>🐦 <strong>Caso:</strong> Estos pájaros son cuervos.</li>
+								<li>✨ <strong>Resultado:</strong> Estos pájaros son negros.</li>
+								<li style="margin-top: 10px; color: #f97316;">🚀 <strong>Regla:</strong> <span style="text-decoration: underline;">Todos los pájaros negros son cuervos.</span><br><small>(¡El origen del conocimiento... y de los prejuicios!)</small></li>
+							</ul>
+						</div>
+				
+					</div>
+				
+					<aside class="notes">
+						Aquí explicas que Aristóteles sentó las bases:
+						1. Deducción: Si la regla es cierta, el resultado es 100% seguro. Es aburrida, no crea conocimiento nuevo.
+						2. Abducción: Es el diagnóstico médico. Miro el síntoma y supongo la causa. Útil, pero falible.
+						3. Inducción: Es la joya de la corona. Miro casos y CREO una regla general. Es como aprenden los niños... y como la IA intenta imitarnos. 
+						Pero fíjate en la barbaridad: "Todos los pájaros negros son cuervos". Acabamos de borrar a los mirlos del mapa.
+					</aside>
+				</section>
 
 				<section>
 					<h2>What is this Talk About?</h2>
