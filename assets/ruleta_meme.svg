@@ -77,11 +77,7 @@
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:2.42946px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.182209"
          x="116.03771"
          y="176.19301"
-         id="tspan2">CRÍTICA EN EL TRABAJO</tspan></text></g><g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="solucion"
-     style="display:inline"><image
+         id="tspan2">CRÍTICA EN EL TRABAJO</tspan></text><image
        width="4.6153841"
        height="6.7452621"
        preserveAspectRatio="none"
@@ -89,7 +85,8 @@
        id="image1-0-2"
        x="59.332958"
        y="22.356424"
-       style="display:inline" /><image
+       style="display:inline"
+       transform="translate(54.239586,119.85625)" /><image
        width="4.6153841"
        height="6.7452621"
        preserveAspectRatio="none"
@@ -97,7 +94,12 @@
        id="image1-0-2-2"
        x="49.971657"
        y="15.650709"
-       style="display:inline" /><image
+       style="display:inline"
+       transform="translate(54.239586,119.85625)" /></g><g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="solucion"
+     style="display:inline"><image
        width="4.7749276"
        height="6.421454"
        preserveAspectRatio="none"
