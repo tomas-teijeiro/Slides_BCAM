@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>AI: The Mathematics of Self-Deception</title>
+		<title>An optimistic view of the awful world of research</title>
 		<meta name="author" content="T. Teijeiro">
 
 		<!-- For having access to Google fonts-->
@@ -20,6 +20,115 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+
+		<style>
+			/* =============================================
+			   TITLE SLIDE — "Optimistic" word decoration
+			   ============================================= */
+
+			.word-optimistic-wrap {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.word-optimistic {
+				position: relative;
+				z-index: 1;
+				display: inline-block;
+				color: #e6a800;
+				font-weight: 800;
+				font-style: italic;
+				text-shadow:
+					0 0  8px #fff7b0,
+					0 0 18px #ffe033,
+					0 0 35px #ffd000,
+					0 0 55px rgba(255,200,0,0.45);
+				animation: optimistic-glow 2.8s ease-in-out infinite alternate;
+			}
+
+			/* Floating sparkles row above the word */
+			.sparkles-top {
+				display: block;
+				position: absolute;
+				top: -22px;
+				left: 50%;
+				transform: translateX(-50%);
+				font-size: 0.40em;
+				letter-spacing: 10px;
+				color: #ffe033;
+				white-space: nowrap;
+				animation: sparkle-float 3.4s ease-in-out infinite;
+				text-shadow: 0 0 6px #fff, 0 0 14px #ffd000;
+				z-index: 2;
+			}
+
+			@keyframes optimistic-glow {
+				from { text-shadow: 0 0  6px #fff7b0, 0 0 14px #ffe033, 0 0 28px #ffd000; }
+				to   { text-shadow: 0 0 10px #fff7b0, 0 0 22px #ffe033, 0 0 46px #ffd000, 0 0 70px rgba(255,200,0,0.35); }
+			}
+			@keyframes sparkle-float {
+				0%,100% { transform: translateX(-50%) translateY(0px);   opacity: 1; }
+				50%     { transform: translateX(-50%) translateY(-5px);  opacity: 0.65; }
+			}
+
+			/* =============================================
+			   TITLE SLIDE — "Awful" word decoration
+			   ============================================= */
+
+			.word-awful-wrap {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			/* Dark dripping shadow cloud behind the word */
+			.word-awful-wrap::before {
+				content: '';
+				position: absolute;
+				inset: -14px -20px;
+				background: radial-gradient(ellipse, #0d0d0d 0%, #1a0a0a 55%, transparent 80%);
+				border-radius: 8px;
+				box-shadow:
+					0 6px 18px rgba(0,0,0,0.9),
+					0 0 0 2px #3d0000;
+				z-index: 0;
+				animation: awful-shadow-pulse 5s ease-in-out infinite alternate;
+			}
+
+			.word-awful {
+				position: relative;
+				z-index: 1;
+				display: inline-block;
+				color: #cc2200;
+				font-family: 'Courier New', Courier, monospace;
+				font-weight: 700;
+				letter-spacing: 3px;
+				padding: 3px 10px;
+				border: 2px solid #5c1010;
+				border-top-color: #881a1a;
+				background: linear-gradient(135deg, #0d0000 0%, #1a0505 100%);
+				box-shadow: 4px 4px 0px #000, -1px -1px 0px #2a0000, inset 0 1px 0 rgba(255,80,80,0.08);
+				text-decoration: line-through;
+				text-decoration-color: rgba(200, 30, 30, 0.75);
+				text-decoration-thickness: 2px;
+				animation: awful-flicker 7s step-end infinite;
+				/* Slight downward tilt — feels unstable */
+				transform: rotate(0.6deg);
+			}
+
+			@keyframes awful-flicker {
+				0%,88%,92%,100% { opacity: 1;   filter: brightness(1); }
+				89%             { opacity: 0.55; filter: brightness(0.7); }
+				90%             { opacity: 1;   filter: brightness(1.15); }
+				91%             { opacity: 0.75; filter: brightness(0.85); }
+			}
+			@keyframes awful-shadow-pulse {
+				from { box-shadow: 0 4px 14px rgba(0,0,0,0.85), 0 0 0 2px #3d0000; }
+				to   { box-shadow: 0 8px 28px rgba(0,0,0,0.95), 0 0 0 2px #600000; }
+			}
+		</style>
+
 	</head>
 	<body>
 		<div class="reveal">
@@ -34,6 +143,106 @@
                     <img class="plain" style="position:fixed;left:0;bottom:5%;height:8%" src="assets/institutional_logos.png"/>
                     <img class="plain" style="position:fixed;right:0;bottom:5%;height:8%" src="assets/bottom_right_titlepage.png"/>
                 </section>
+
+				<section style="height:100%" data-transition="none" data-background-image="assets/background_titlepage.svg">
+
+					<h2 style="margin-top:7%; margin-bottom:2%; font-size:2.1em; line-height:1.7; font-weight:700;">
+
+						An&nbsp;
+						<!-- ✦ OPTIMISTIC ✦ — sunshine, sparkles, warmth -->
+						<span class="word-optimistic-wrap">
+							<span class="sparkles-top">✦ ✧ ✦ ✧ ✦</span>							
+							<span class="word-optimistic">Optimistic</span>
+						</span>
+						&nbsp;View of the<br/>
+
+						<!-- ⛓ AWFUL ⛓ — darkness, bureaucracy, chains -->
+						<span class="word-awful">Awful</span>
+						&nbsp;World of Research
+
+					</h2>
+
+					<h4 style="color:#333; font-size:1.2em;">Tomas Teijeiro</h4>
+					<h5 style="color:#444; margin-bottom:7%; font-size:0.75em;"><em>BCAM – Basque Center for Applied Mathematics</em></h5>
+
+					<h4 style="text-align:left; color:#333; font-size:0.9em; margin-bottom:0.4%;">I Xornada CAMELIA</h4>
+					<h5 style="text-align:left; color:#444; font-size:0.75em;">April 14, 2026</h5>
+
+					<img class="plain" style="position:fixed;left:0;bottom:5%;height:8%" src="assets/institutional_logos.png"/>
+					<img class="plain" style="position:fixed;right:0;bottom:5%;height:8%" src="assets/bottom_right_titlepage.png"/>
+				</section>
+
+				<section data-background-color="#e8f5e9" data-transition="slide">
+					<h2 style="color: #2e7d32;">1. The PhD</h2>
+					<h3 style="color: #4caf50;">The Age of Innocence</h3>
+					
+					<div style="text-align: left; font-size: 0.8em; margin-top: 1em;">
+						<ul>
+							<li class="fragment" style="margin-bottom: 0.5em;">
+								<b>The Objective:</b> Learn the state-of-the-art, publish your first paper, and graduate without losing your sanity.
+							</li>
+							<li class="fragment" style="margin-bottom: 0.5em;">
+								<b>The AI/Medicine Reality:</b> Realizing that real hospital data is 90% missing values, 10% noise, and nothing like the clean datasets on Kaggle.
+							</li>
+							<li class="fragment">
+								<b>The Problems:</b>
+								<ul>
+									<li>Severe Imposter Syndrome.</li>
+									<li><em>"It works on my machine!"</em></li>
+									<li>Spending 6 months training a massive Deep Learning model when a standard Logistic Regression would have worked perfectly.</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section data-background-color="#fff3e0" data-transition="slide">
+					<h2 style="color: #ef6c00;">2. The Postdoc</h2>
+					<h3 style="color: #ff9800;">The Infinite Sprint</h3>
+					
+					<div style="text-align: left; font-size: 0.8em; margin-top: 1em;">
+						<ul>
+							<li class="fragment" style="margin-bottom: 0.5em;">
+								<b>The Objective:</b> Publish high-impact papers, secure external funding, and prove you can be an independent researcher.
+							</li>
+							<li class="fragment" style="margin-bottom: 0.5em;">
+								<b>The AI/Medicine Reality:</b> Moving from "building algorithms" to the nightmare of Ethics Committees, IRB approvals, and trying to deploy models in actual clinical trials.
+							</li>
+							<li class="fragment">
+								<b>The Problems:</b>
+								<ul>
+									<li>The ticking clock of 1-to-2 year short-term contracts.</li>
+									<li>Writing grants becomes your new full-time job.</li>
+									<li>Realizing that the PyTorch/TensorFlow framework you mastered during your PhD is now considered "legacy code".</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<section data-background-color="#fbe9e7" data-transition="slide">
+					<h2 style="color: #c62828;">3. The Tenure Track</h2>
+					<h3 style="color: #e53935;">The Crucible</h3>
+					
+					<div style="text-align: left; font-size: 0.8em; margin-top: 1em;">
+						<ul>
+							<li class="fragment" style="margin-bottom: 0.5em;">
+								<b>The Objective:</b> Achieve tenure, sustain a lab, manage a team, and establish a lasting legacy in precision medicine.
+							</li>
+							<li class="fragment" style="margin-bottom: 0.5em;">
+								<b>The AI/Medicine Reality:</b> You no longer write code. You draw architecture boxes on whiteboards and hope your students actually know how to program them.
+							</li>
+							<li class="fragment">
+								<b>The Problems:</b>
+								<ul>
+									<li>Academic politics and endless departmental administration.</li>
+									<li>Balancing teaching load with securing million-dollar grants to keep your lab alive.</li>
+									<li>Reviewer 2 is no longer just rejecting your paper; they are now on your tenure evaluation committee.</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
 
 				<section>
 					<h2>What is this Talk About?</h2>
