@@ -23,8 +23,9 @@
 
 		<style>
 			/* =============================================
-			   TITLE SLIDE — "Optimistic" word decoration
-			   ============================================= */
+			TITLE SLIDE — "Optimistic" word decoration
+			(Unchanged - Sunshine, Brightness)
+			============================================= */
 
 			.word-optimistic-wrap {
 				position: relative;
@@ -47,7 +48,6 @@
 				animation: optimistic-glow 2.8s ease-in-out infinite alternate;
 			}
 
-			/* Floating sparkles row above the word */
 			.sparkles-top {
 				display: block;
 				position: absolute;
@@ -73,59 +73,69 @@
 			}
 
 			/* =============================================
-			   TITLE SLIDE — "Awful" word decoration
-			   ============================================= */
+			TITLE SLIDE — "Awful" word decoration
+			(Redesigned - Darkness, Sadness, Bureaucracy)
+			============================================= */
 
 			.word-awful-wrap {
 				position: relative;
 				display: inline-block;
 				vertical-align: middle;
+				margin: 0 8px; /* Give space for the gloomy shadow */
+				animation: awful-sag 4s ease-in-out infinite alternate;
 			}
 
-			/* Dark dripping shadow cloud behind the word */
+			/* Gloomy, dark fog/shadow behind the word */
 			.word-awful-wrap::before {
 				content: '';
 				position: absolute;
-				inset: -14px -20px;
-				background: radial-gradient(ellipse, #0d0d0d 0%, #1a0a0a 55%, transparent 80%);
-				border-radius: 8px;
-				box-shadow:
-					0 6px 18px rgba(0,0,0,0.9),
-					0 0 0 2px #3d0000;
+				inset: -15px -25px;
+				background: radial-gradient(ellipse, rgba(15,20,25,0.95) 10%, rgba(10,12,15,0.6) 60%, transparent 80%);
+				border-radius: 50%;
+				filter: blur(8px);
 				z-index: 0;
-				animation: awful-shadow-pulse 5s ease-in-out infinite alternate;
+				animation: fog-pulse 5s ease-in-out infinite alternate;
 			}
 
+			/* The actual word: cold, lifeless, bureaucratic */
 			.word-awful {
 				position: relative;
 				z-index: 1;
-				display: inline-block;
-				color: #cc2200;
-				font-family: 'Courier New', Courier, monospace;
+				
+				color: #8c979d; /* Cold, lifeless slate grey */
+				font-family: 'Courier New', Courier, monospace; /* Bureaucratic typewriter */
 				font-weight: 700;
-				letter-spacing: 3px;
-				padding: 3px 10px;
-				border: 2px solid #5c1010;
-				border-top-color: #881a1a;
-				background: linear-gradient(135deg, #0d0000 0%, #1a0505 100%);
-				box-shadow: 4px 4px 0px #000, -1px -1px 0px #2a0000, inset 0 1px 0 rgba(255,80,80,0.08);
-				text-decoration: line-through;
-				text-decoration-color: rgba(200, 30, 30, 0.75);
-				text-decoration-thickness: 2px;
-				animation: awful-flicker 7s step-end infinite;
-				/* Slight downward tilt — feels unstable */
-				transform: rotate(0.6deg);
+				letter-spacing: 2px;
+				padding: 4px 14px;
+				background: linear-gradient(180deg, #222 0%, #0d0d0d 100%);
+				border: 2px solid #333; /* Dull border */
+				box-shadow: 
+					inset 0 0 10px rgba(0,0,0,0.9), /* Internal darkness */
+					3px 5px 0px rgba(0,0,0,0.9);   /* Heavy shadow block */
+				text-shadow: 1px 2px 3px rgba(0,0,0,1);				
 			}
 
-			@keyframes awful-flicker {
-				0%,88%,92%,100% { opacity: 1;   filter: brightness(1); }
-				89%             { opacity: 0.55; filter: brightness(0.7); }
-				90%             { opacity: 1;   filter: brightness(1.15); }
-				91%             { opacity: 0.75; filter: brightness(0.85); }
+			/* Literal chains holding the box down */
+			.chain {
+				position: absolute;
+				top: -16px;
+				font-size: 0.6em;
+				color: #444;
+				text-shadow: 1px 1px 0px #000;
+				z-index: 2;
 			}
-			@keyframes awful-shadow-pulse {
-				from { box-shadow: 0 4px 14px rgba(0,0,0,0.85), 0 0 0 2px #3d0000; }
-				to   { box-shadow: 0 8px 28px rgba(0,0,0,0.95), 0 0 0 2px #600000; }
+			.chain.left { left: 8px; }
+			.chain.right { right: 8px; }
+
+			/* Animations */
+			@keyframes awful-sag {
+				0%   { transform: translateY(0px) rotate(0deg); }
+				100% { transform: translateY(5px) rotate(2deg); } /* Slowly sinking and tilting slightly */
+			}
+
+			@keyframes fog-pulse {
+				0%   { opacity: 0.7; transform: scale(0.95); }
+				100% { opacity: 1; transform: scale(1.05); }
 			}
 		</style>
 
@@ -134,16 +144,6 @@
 		<div class="reveal">
 			<div class="slides">
 				<!--Title-->
-                <section style="height:100%" data-transition="none" data-background-image="assets/background_titlepage.svg">
-                    <h2 style="margin-top:5%;margin-bottom:6%;font-size:2.4em">AI: The Mathematics of Self-Deception</h2>
-                    <h4 style="color:#222;font-size:1.7em">Tomas Teijeiro</h4>
-					<h5 style="color:#222;margin-bottom:7%;font-size:0.8em"><em>BCAM - Basque Center for Applied Mathematics</em></h5>
-                    <h4 style="text-align:left;color:#222;font-size:1em;margin-bottom:1%">UAM Math Department Colloquium</h4>
-                    <h5 style="text-align:left;color:#222;font-size:0.8em">25/04/2025, Madrid</h5>
-                    <img class="plain" style="position:fixed;left:0;bottom:5%;height:8%" src="assets/institutional_logos.png"/>
-                    <img class="plain" style="position:fixed;right:0;bottom:5%;height:8%" src="assets/bottom_right_titlepage.png"/>
-                </section>
-
 				<section style="height:100%" data-transition="none" data-background-image="assets/background_titlepage.svg">
 
 					<h2 style="margin-top:7%; margin-bottom:3%; font-size:2.1em; line-height:1.7; font-weight:700;">
@@ -157,7 +157,11 @@
 						&nbsp;View of the<br/>
 
 						<!-- ⛓ AWFUL ⛓ — darkness, bureaucracy, chains -->
-						<span class="word-awful">Awful</span>
+						<span class="word-awful-wrap">
+							<span class="chain left">⛓</span>
+							<span class="chain right">⛓</span>
+							<span class="word-awful">Awful</span>
+						</span>
 						&nbsp;World of Research <span style="font-size:50%;">(in AI)</span>
 
 					</h2>
@@ -166,59 +170,40 @@
 					<h5 style="color:#444; margin-bottom:7%; font-size:0.75em;"><em>BCAM - Basque Center for Applied Mathematics</em></h5>
 
 					<h4 style="text-align:left; color:#333; font-size:0.9em; margin-bottom:0.4%;">I Xornada CAMELIA</h4>
-					<h5 style="text-align:left; color:#444; font-size:0.75em;">April 14, 2026</h5>
+					<h5 style="text-align:left; color:#444; font-size:0.75em;">CiTIUS - April 14, 2026</h5>
 
 					<img class="plain" style="position:fixed;left:0;bottom:5%;height:8%" src="assets/institutional_logos.png"/>
 					<img class="plain" style="position:fixed;right:0;bottom:5%;height:8%" src="assets/bottom_right_titlepage.png"/>
 				</section>
 
-				<section data-background-color="#e8f5e9" data-transition="slide">
-					<h2 style="color: #2e7d32;">1. The PhD</h2>
-					<h3 style="color: #4caf50;">The Age of Innocence</h3>
+				<section data-background-color="#e8f5e9">
+					<section>
+						<h2 style="color: #2e7d32;">The PhD</h2>
+						<h3 style="color: #4caf50;"><em>Learning to read and write</em></h3>
+					</section>
+
 					
-					<div style="text-align: left; font-size: 0.8em; margin-top: 1em;">
-						<ul>
-							<li class="fragment" style="margin-bottom: 0.5em;">
-								<b>The Objective:</b> Learn the state-of-the-art, publish your first paper, and graduate without losing your sanity.
-							</li>
-							<li class="fragment" style="margin-bottom: 0.5em;">
-								<b>The AI/Medicine Reality:</b> Realizing that real hospital data is 90% missing values, 10% noise, and nothing like the clean datasets on Kaggle.
-							</li>
-							<li class="fragment">
-								<b>The Problems:</b>
-								<ul>
-									<li>Severe Imposter Syndrome.</li>
-									<li><em>"It works on my machine!"</em></li>
-									<li>Spending 6 months training a massive Deep Learning model when a standard Logistic Regression would have worked perfectly.</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
 				</section>
 
-				<section data-background-color="#fff3e0" data-transition="slide">
-					<h2 style="color: #ef6c00;">2. The Postdoc</h2>
-					<h3 style="color: #ff9800;">The Infinite Sprint</h3>
+				<section data-background-color="#fff3e0">
+					<section>
+						<h2 style="color: #ef6c00;">The Postdoc</h2>
+						<h3 style="color: #ff9800;"><em>Facing the contradictions</em></h3>
+					</section>
+
 					
-					<div style="text-align: left; font-size: 0.8em; margin-top: 1em;">
-						<ul>
-							<li class="fragment" style="margin-bottom: 0.5em;">
-								<b>The Objective:</b> Publish high-impact papers, secure external funding, and prove you can be an independent researcher.
-							</li>
-							<li class="fragment" style="margin-bottom: 0.5em;">
-								<b>The AI/Medicine Reality:</b> Moving from "building algorithms" to the nightmare of Ethics Committees, IRB approvals, and trying to deploy models in actual clinical trials.
-							</li>
-							<li class="fragment">
-								<b>The Problems:</b>
-								<ul>
-									<li>The ticking clock of 1-to-2 year short-term contracts.</li>
-									<li>Writing grants becomes your new full-time job.</li>
-									<li>Realizing that the PyTorch/TensorFlow framework you mastered during your PhD is now considered "legacy code".</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
 				</section>
+
+				<section data-background-color="#fbe9e7">
+					<section>
+						<h2 style="color: #c62828;">The Tenure Track</h2>
+						<h3 style="color: #e53935;"><em>Fitting into the system</em></h3>
+					</section>
+
+					
+				</section>
+
+				<!-- Old content, reuse as much as possible-->
 
 				<section data-background-color="#fbe9e7" data-transition="slide">
 					<h2 style="color: #c62828;">3. The Tenure Track</h2>
