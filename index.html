@@ -215,10 +215,10 @@
 					</section>
 
 					<section>
-						<h2 style="color: #2e7d32;">PhD Singularities</h2>		
+						<h3 style="color: #2e7d32;">PhD Singularities</h3>		
 						
 						<div class="fragment">
-							<h3 style="color: #4caf50; text-align: left;"><em>Non-linear return on effort</em></h3>
+							<h4 style="color: #4caf50; text-align: left;"><em>Non-linear return on effort</em></h4>
 
 							<ul>
 								<li>You spend <b>months</b> working on ideas that <b>fail miserably</b>...</li>
@@ -227,7 +227,7 @@
 						</div>
 
 						<div class="fragment" style="margin-top: 20px;">
-							<h3 style="color: #4caf50; text-align: left;"><em>Time relativity</em></h3>
+							<h4 style="color: #4caf50; text-align: left;"><em>Time relativity</em></h4>
 							
 							<div style="display: flex; flex-direction: column; gap: 40px; justify-content: center; margin-top: 40px; width: 90%; margin-left: auto; margin-right: auto;">
 								
@@ -287,7 +287,177 @@
 							</div>
 						</div>
 					</section>
-					
+
+					<section>
+						<h3 style="color: #2e7d32; margin-bottom: 40px;">Distressing Panic in AI Research</h3>
+
+						<div style="display: flex; flex-direction: column; gap: 25px; width: 85%; margin: 0 auto; text-align: left;">
+
+							<div class="fragment" style="background: rgba(140, 151, 157, 0.1); border-left: 6px solid #8c979d; padding: 20px 25px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+								<h4 style="margin: 0 0 10px 0; color: #333; display: flex; align-items: center; gap: 10px;">
+									<span>📚</span> The "already solved" illusion
+								</h4>
+								<p style="margin: 0; font-size: 0.8em; line-height: 1.4; color: #444;">
+									A quick literature review makes it feel like <b>every conceivable problem</b> has already been <b>successfully addressed</b> using AI.
+								</p>
+							</div>
+
+							<div class="fragment" style="background: rgba(140, 151, 157, 0.1); border-left: 6px solid #8c979d; padding: 20px 25px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+								<h4 style="margin: 0 0 10px 0; color: #333; display: flex; align-items: center; gap: 10px;">
+									<span>⏱️</span> The arXiv paranoia
+								</h4>
+								<p style="margin: 0; font-size: 0.8em; line-height: 1.4; color: #444;">
+									Constant background <b>anxiety</b> that another research group is <b>stepping on your toes</b> and will publish your exact idea tomorrow.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h3 style="color: #2e7d32; margin-bottom: 20px;">Back in 2017...</h3>
+						I was finishing my PhD thesis on ECG signal interpretation, when...
+						<img class="fragment fade-up" width="80%" src="assets/2017_arxiv_paper.png" />
+					</section>					
+
+					<section>
+						<h3 style="color: #2e7d32;">Physionet/CinC Challenge 2017</h3>
+						<div class="column-container">
+							<ul style="width: 105%;font-size: 1em;">
+								<li class="fragment" data-fragment-index="1">Short, single-lead ECG segments, classified as a whole.</li>
+								<li class="fragment" data-fragment-index="1">8528 records for training, 3658 for testing.</li>
+								<li class="fragment" data-fragment-index="2" style="margin-top:0.7em">4 target classes:
+									<ol style="font-size: 0.8em;">
+										<li>Normal Sinus Rhythm.</li>
+										<li>Atrial Fibrillation.</li>
+										<li>Other Rhythm.</li>
+										<li>Noise.</li>
+									</ol>
+								</li>
+								<li class="fragment" data-fragment-index="3" style="margin-top:0.7em">More than 75 participant teams.</li>
+								<li class="fragment" data-fragment-index="3">Algorithms were independently evaluated.</li>
+							</ul>
+							<div style="width:85%;margin-left: auto;">
+								<img class="fragment" data-fragment-index="1" width="70%" src="assets/kardia.png" />
+								<img class="fragment" data-fragment-index="2" src="assets/classes.svg" />
+							</div>
+						</div>
+					</section>					
+
+					<section>
+						<h3 style="color: #2e7d32;">Scores of the Top-25 Approaches</h3>
+						<div class="r-stack">
+							<img src="assets/challenge_results.svg" />
+							<img class="fragment" src="assets/challenge_results_highlight.svg" />
+						</div>
+					</section>
+
+					<section>
+						<h3 style="color: #2e7d32;">Crash course on ECG interpretation</h3>
+						<div class="column-container">
+							<div style="display:grid;grid-auto-flow: row;">
+								<video width="240pt" autoplay="true" loop="true" muted="true"> <source src="assets/sr_anim.mp4"/></video>
+								<video width="240pt" autoplay="true" loop="true" muted="true"> <source src="assets/afib_anim.mp4"/></video>
+							</div>
+							<div style="display:grid;grid-auto-flow:row;width:120%;">
+								Normal Sinus Rhythm
+								<div class="r-stack">
+									<img src="assets/A00848.svg" />
+									<img class="fragment" data-fragment-index="2" src="assets/A00848_rhythm.svg" />
+									<img class="fragment" data-fragment-index="3" src="assets/A00848_waves.svg" />
+								</div>
+								<span style="margin-top:0.5em">Atrial Fibrillation</span>
+								<div class="r-stack">
+									<img src="assets/A00326.svg" />
+									<img class="fragment" data-fragment-index="2" src="assets/A00326_rhythm.svg" />
+									<img class="fragment" data-fragment-index="4" src="assets/A00326_waves.svg" />
+								</div>
+							</div>
+							<div style="width:80%;margin-left: auto;">
+								<span class="fragment" data-fragment-index="1">Diagnostic Criteria:</span>
+								<ul style="font-size: 0.7em;margin-left:2em;">								
+									<li class="fragment" data-fragment-index="2">Irregularly irregular heart rhythm.</li>
+									<li class="fragment" data-fragment-index="3">Absence of P waves.</li>
+									<li class="fragment" data-fragment-index="4">Presence of f waves.</li>
+								</ul>
+							</div>
+						</div>						
+					</section>
+
+					<section style="text-align: left;">
+						<h3 style="color: #2e7d32;">How Well does DL Reproduce Expert Knowledge?</h3>
+						<div class="column-container">
+							<div style="width: 105%;">
+								<div class="fragment" data-fragment-index="1">
+									Experiment:<br/>
+									<span style="font-size: 0.7em;">Given a sequence of RR intervals $[RR_1, \ldots, $$_n]$ in a 30-second window, check if:</span>
+									<div style="font-size: 0.5em;">
+									$$
+									\exists i \in \{1, \ldots, n-2\} ~|~ min(RR_i, RR_{i+1}, RR_{i+2}) &gt; 1000ms ~\text{OR}~\\ \hspace{6.5em} max(RR_i, RR_{i+1}, RR_{i+2}) &lt; 500ms
+									$$
+									</div>
+									<ul style="font-size: 0.7em;">
+										<li>Dataset: Public MIT-BIH Arrhythmia Database, MLII Lead
+											<ul style="font-size: 0.625em;">
+												<li>37 records for training, 9 for testing.</li>
+												<li>Segments of 30 seconds duration, with different overlapping for assessing the relevance of the dataset size.</li>
+												<li>Not so imbalanced dataset: 75% negatives, 25% positives.</li>
+											</ul>
+										</li>
+										<li>Model: State-of-the-art network achieving good performance in the Physionet Challenge.</li>
+									</ul>
+								</div>
+								<div class="fragment" data-fragment-index="3">
+									Perfect class separability (easy problem)! But...
+									<ul style="font-size: 0.7em;margin-top:0.3em">
+										<li>Requires signal abstraction (Heart beat detection)</li>
+										<li>Requires distance calculations (RRs)</li>
+										<li>Requires counting up to 3.</li>
+										<li>Requires a logical "OR" operation.</li>
+									</ul>
+								</div>
+							</div>	
+								<img class="fragment" data-fragment-index="2" width="180pt" style="margin-top:2.1em" src="assets/warrick.svg" />
+								
+						</div>
+						<div class="fragment" style="background-color: #c62828; position:absolute; right: 18%; bottom:0%; padding: 10px; border-radius: 8px; color: white; font-size: 0.7em; font-weight: bold;">
+									DL Performance: $F_1$ score = 0.808<br/> (65712 training samples)
+						</div>
+					</section>
+
+					<section>
+						<h3 style="color: #2e7d32;">What are the Learning Difficulties?</h3>
+						<div class="column-container fragment" data-fragment-index="1" style="align-items:center;">
+							<span style="margin-right: 0.18em;">FP</span>
+							<div class="r-stack">
+								<img src="assets/fp_01.svg" />
+								<img class="fragment" data-fragment-index="2" src="assets/fp_01_overlay.svg" />
+							</div>
+						</div>
+						<div class="column-container fragment" data-fragment-index="1" style="align-items:center;margin-top:0.5em">
+							<span style="margin-right: 0.18em;">FP</span>
+							<div class="r-stack">
+								<img src="assets/fp_02.svg" />
+								<img class="fragment" data-fragment-index="3" src="assets/fp_02_overlay.svg" />
+							</div>
+						</div>
+						<div class="column-container fragment" data-fragment-index="4" style="align-items:center;margin-top:0.5em">
+							<span>FN</span>
+							<div class="r-stack">
+								<img src="assets/fn_01.svg" />
+								<img class="fragment" data-fragment-index="5" src="assets/fn_01_overlay.svg" />
+							</div>
+						</div>
+						<div class="column-container fragment" data-fragment-index="4" style="align-items:center;margin-top:0.5em">
+							<span>FN</span>
+							<div class="r-stack">
+								<img src="assets/fn_02.svg" />
+								<img class="fragment" data-fragment-index="6" src="assets/fn_02_overlay.svg" />
+							</div>
+						</div>
+						<div class="fragment" data-fragment-index="7" style="width:60%;margin-top:0.5em;display:inline-block">
+							Interestingly, it seems that the main difficulty is counting up to 3! 🤪
+						</div>
+					</section>
 				</section>
 
 				<section data-background-color="#fff3e0">
@@ -321,6 +491,7 @@
 								<ul style="font-size: 70%;list-style-type: '✓ ';">
 									<li>Number of Q1 papers.</li>
 									<li>Number of supervised Master/PhD students.</li>
+									<li>Institution ranking</li>
 									<li>Invited keynotes.</li>
 									<li>Superlinear <em>h</em>-index evolution.</li>
 								</ul>
@@ -858,176 +1029,6 @@
 							</td></tr></tbody></table>
 					</section>
 
-				</section>
-
-				<section>
-					<section><h2>The Deception of Models</h2></section>
-
-					<section>
-						<h3>Case Study: Arrhythmia Diagnosis from ECG Signals</h3>
-						<div class="column-container">
-							<div style="display:grid;grid-auto-flow: row;">
-								<video width="240pt" autoplay="true" loop="true" muted="true"> <source src="assets/sr_anim.mp4"/></video>
-								<video width="240pt" autoplay="true" loop="true" muted="true"> <source src="assets/afib_anim.mp4"/></video>
-							</div>
-							<div style="display:grid;grid-auto-flow:row;width:120%;">
-								Normal Sinus Rhythm
-								<div class="r-stack">
-									<img src="assets/A00848.svg" />
-									<img class="fragment" data-fragment-index="2" src="assets/A00848_rhythm.svg" />
-									<img class="fragment" data-fragment-index="3" src="assets/A00848_waves.svg" />
-								</div>
-								<span style="margin-top:0.5em">Atrial Fibrillation</span>
-								<div class="r-stack">
-									<img src="assets/A00326.svg" />
-									<img class="fragment" data-fragment-index="2" src="assets/A00326_rhythm.svg" />
-									<img class="fragment" data-fragment-index="4" src="assets/A00326_waves.svg" />
-								</div>
-							</div>
-							<div style="width:80%;margin-left: auto;">
-								<span class="fragment" data-fragment-index="1">Diagnostic Criteria:</span>
-								<ul style="font-size: 0.7em;margin-left:2em;">								
-									<li class="fragment" data-fragment-index="2">Irregularly irregular heart rhythm.</li>
-									<li class="fragment" data-fragment-index="3">Absence of P waves.</li>
-									<li class="fragment" data-fragment-index="4">Presence of f waves.</li>
-								</ul>
-							</div>
-						</div>						
-					</section>
-
-					<section>
-						<h3>A Bit of History...</h3>
-						&bull; 2017, I was finishing my PhD thesis on ECG interpretation, when...
-						<img class="fragment fade-up" width="80%" src="assets/2017_arxiv_paper.png" />
-					</section>
-
-					<section>
-						<h3>Physionet/CinC Challenge 2017</h3>
-						<div class="column-container">
-							<ul style="width: 105%;font-size: 1em;">
-								<li class="fragment" data-fragment-index="1">Short, single-lead ECG segments, classified as a whole.</li>
-								<li class="fragment" data-fragment-index="1">8528 records for training, 3658 for testing.</li>
-								<li class="fragment" data-fragment-index="2" style="margin-top:0.7em">4 target classes:
-									<ol style="font-size: 0.8em;">
-										<li>Normal Sinus Rhythm.</li>
-										<li>Atrial Fibrillation.</li>
-										<li>Other Rhythm.</li>
-										<li>Noise.</li>
-									</ol>
-								</li>
-								<li class="fragment" data-fragment-index="3" style="margin-top:0.7em">More than 75 participant teams.</li>
-								<li class="fragment" data-fragment-index="3">Algorithms were independently evaluated.</li>
-							</ul>
-							<div style="width:85%;margin-left: auto;">
-								<img class="fragment" data-fragment-index="1" width="70%" src="assets/kardia.png" />
-								<img class="fragment" data-fragment-index="2" src="assets/classes.svg" />
-							</div>
-						</div>
-					</section>
-
-					<section>
-						<h3>Scores of the Top-25 Approaches</h3>
-						<div class="r-stack">
-							<img src="assets/challenge_results.svg" />
-							<img class="fragment" src="assets/challenge_results_highlight.svg" />
-						</div>
-					</section>
-
-					<section style="text-align: left;">
-						<h3>How Well does DL Reproduce Expert Knowledge?</h3>
-						<div class="column-container">
-							<div style="width: 105%;">
-								<div class="fragment" data-fragment-index="1">
-									Experiment:<br/>
-									<span style="font-size: 0.7em;">Given a sequence of RR intervals $[RR_1, \ldots, $$_n]$ in a 30-second window, check if:</span>
-									<div style="font-size: 0.5em;">
-									$$
-									\exists i \in \{1, \ldots, n-2\} ~|~ min(RR_i, RR_{i+1}, RR_{i+2}) &gt; 1000ms ~\text{OR}~\\ \hspace{6.5em} max(RR_i, RR_{i+1}, RR_{i+2}) &lt; 500ms
-									$$
-									</div>
-									<ul style="font-size: 0.7em;">
-										<li>Dataset: Public MIT-BIH Arrhythmia Database, MLII Lead
-											<ul style="font-size: 0.625em;">
-												<li>37 records for training, 9 for testing.</li>
-												<li>Segments of 30 seconds duration, with different overlapping for assessing the relevance of the dataset size.</li>
-												<li>Not so imbalanced dataset: 75% negatives, 25% positives.</li>
-											</ul>
-										</li>
-										<li>Model: State-of-the-art network achieving good performance in the Physionet Challenge.</li>
-									</ul>
-								</div>
-								<div class="fragment" data-fragment-index="3">
-									Perfect class separability (easy problem)! But...
-									<ul style="font-size: 0.7em;margin-top:0.3em">
-										<li>Requires signal abstraction (Heart beat detection)</li>
-										<li>Requires distance calculations (RRs)</li>
-										<li>Requires counting up to 3.</li>
-										<li>Requires a logical "OR" operation.</li>
-									</ul>
-								</div>
-							</div>	
-							<img class="fragment" data-fragment-index="2" width="180pt" style="margin-top:2.1em" src="assets/warrick.svg" />
-						</div>
-					</section>
-
-					<section>
-						<h3>Learning Performance with Different Dataset Sizes</h3>
-						<div class="column-container">
-							<div>
-								Overlap = 20s<br/>
-								<span style="font-size:0.8em">Training size: 6571</span>
-								<img src="assets/learning_curves_20s.png" />
-								$F_1$ score = 0.397
-							</div>
-							<div class="fragment">
-								Overlap = 25s<br/>
-								<span style="font-size:0.8em">Training size: 13142</span>
-								<img src="assets/learning_curves_25s.png" />
-								$F_1$ score = 0.709
-							</div>
-							<div class="fragment">
-								Overlap = 29s<br/>
-								<span style="font-size:0.8em">Training size: 65712</span>
-								<img src="assets/learning_curves_29s.png" />
-								$F_1$ score = 0.808
-							</div>
-						</div>
-					</section>
-
-					<section>
-						<h3>What are the Learning Difficulties?</h3>
-						<div class="column-container fragment" data-fragment-index="1" style="align-items:center;">
-							<span style="margin-right: 0.18em;">FP</span>
-							<div class="r-stack">
-								<img src="assets/fp_01.svg" />
-								<img class="fragment" data-fragment-index="2" src="assets/fp_01_overlay.svg" />
-							</div>
-						</div>
-						<div class="column-container fragment" data-fragment-index="1" style="align-items:center;margin-top:0.5em">
-							<span style="margin-right: 0.18em;">FP</span>
-							<div class="r-stack">
-								<img src="assets/fp_02.svg" />
-								<img class="fragment" data-fragment-index="3" src="assets/fp_02_overlay.svg" />
-							</div>
-						</div>
-						<div class="column-container fragment" data-fragment-index="4" style="align-items:center;margin-top:0.5em">
-							<span>FN</span>
-							<div class="r-stack">
-								<img src="assets/fn_01.svg" />
-								<img class="fragment" data-fragment-index="5" src="assets/fn_01_overlay.svg" />
-							</div>
-						</div>
-						<div class="column-container fragment" data-fragment-index="4" style="align-items:center;margin-top:0.5em">
-							<span>FN</span>
-							<div class="r-stack">
-								<img src="assets/fn_02.svg" />
-								<img class="fragment" data-fragment-index="6" src="assets/fn_02_overlay.svg" />
-							</div>
-						</div>
-						<div class="fragment" data-fragment-index="7" style="width:60%;margin-top:0.5em;display:inline-block">
-							Interestingly, it seems that the main difficulty is counting up to 3! 🤪
-						</div>
-					</section>
 				</section>
 
 				<section>
