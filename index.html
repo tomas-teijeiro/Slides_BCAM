@@ -137,6 +137,49 @@
 				0%   { opacity: 0.7; transform: scale(0.95); }
 				100% { opacity: 1; transform: scale(1.05); }
 			}
+
+			/*Styles for press coverage slide*/
+			.continents {
+			display: flex;
+			align-items: flex-start;
+			width: 100%;
+			}
+
+			.continent {
+			flex: 1;
+			background: var(--col-bg);
+			border: 1px solid rgba(255,255,255,0.07);
+			border-radius: 6px;
+			padding: 0.6em 0.7em;
+			}
+
+			.continent h3 {			
+			font-size: 0.8em;
+			font-weight: 600;
+			text-transform: uppercase;
+			color: var(--accent);
+			margin: 0 0 0.5em 0;
+			padding-bottom: 0.35em;
+			border-bottom: 1px solid rgba(239,108,0,0.15);
+			}
+
+			.continent ul{
+				list-style: none;
+			margin: 0;
+			padding: 0;
+			}
+
+			.continent ul li {
+			display: flex;
+			align-items: center;
+			gap: 0.4em;
+			font-size: 0.32em;
+			line-height: 1.5;
+			}
+
+			.continent ul li a:hover { color: var(--accent); }
+
+			.flag { font-size: 1.1em; flex-shrink: 0; }
 		</style>
 
 	</head>
@@ -493,9 +536,158 @@
 									<li>Number of supervised Master/PhD students.</li>
 									<li>Institution ranking</li>
 									<li>Invited keynotes.</li>
+									<li>Patents.</li>
 									<li>Superlinear <em>h</em>-index evolution.</li>
 								</ul>
 							</div>      
+						</div>
+					</section>
+
+					<section>
+						<h3 style="color: #ef6c00; margin-bottom: 40px;">Postdoc Pitfalls</h3>
+
+						<div style="display: flex; flex-direction: column; gap: 25px; width: 85%; margin: 0 auto; text-align: left;">
+
+							<div class="fragment" style="background: rgba(140, 151, 157, 0.1); border-left: 6px solid #8c979d; padding: 20px 25px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+								<h4 style="margin: 0 0 10px 0; color: #333; display: flex; align-items: center; gap: 10px;">
+									<span>🎭</span> The identity crisis
+								</h4>
+								<p style="margin: 0; font-size: 0.8em; line-height: 1.4; color: #444;">
+									This is the <b>most heterogeneous stage</b> of the academic career. Depending on the lab and the funding, you may have different profiles (or multiple of them!):
+									<ul style="font-size: 0.8em; line-height: 1.4; color: #444; margin-left: 2em;">
+										<li>Glorified PhD student.</li>
+										<li>Highly-skilled technician.</li>
+										<li>Underpaid "mini-PI".</li>
+									</ul>
+								</p>
+							</div>
+
+							<div class="fragment" style="background: rgba(140, 151, 157, 0.1); border-left: 6px solid #8c979d; padding: 20px 25px; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+								<h4 style="margin: 0 0 10px 0; color: #333; display: flex; align-items: center; gap: 10px;">
+									<span>🪤</span> Productivity trap
+								</h4>
+								<p style="margin: 0; font-size: 0.8em; line-height: 1.4; color: #444;">
+									You are at the <b>peak of your technical capabilities</b>. Yet, to progress in your career, you must <b>gradually abandon the exciting work</b> to take on bureaucratic and managerial tasks that feel like a complete waste of time and talent.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h3 style="color: #ef6c00">🎲 The critical role of luck</h3>
+						<img src="assets/EPFL_Landscape.jpg" width="80%"/>
+					</section>
+
+					<!-- TODO put a slide with all "top level" projects I participated at EPFL, and then cross them as basically useless, to then focus on CoughVid-->
+
+					<section>
+						<h3 style="color: #ef6c00">🎲 The magic of bottom-up research</h3>						
+						<div class="continents">
+
+							<!-- AFRICA -->
+							<div class="continent">
+							<h3>Africa</h3>
+							<ul class="news-list">
+								<li><a href="https://www.agenceecofin.com/coronavirus/1004-75607-live-coronavirus-du-10/04/2020">Agence Ecofin</a><span class="flag">🇨🇲</span></li>
+								<li><a href="https://www.barlamane.com/fr/suisse-des-chercheurs-de-lecole-polytechnique-federale-de-lausanne-creent-lapplication-coughvid-qui-detecte-a-la-toux-le-coronavirus/">Barlamane</a><span class="flag">🇲🇦</span></li>
+								<li><a href="https://www.pulselive.co.ke/bi/tech/this-covid-19-app-would-listen-to-your-cough-and-use-ai-to-predict-whether-you-have/q3wts16">Pulse Live</a><span class="flag">🇰🇪</span></li>
+							</ul>
+							</div>
+
+							<!-- ASIA -->
+							<div class="continent">
+							<h3>Asia</h3>
+							<ul class="news-list">
+								<li><a href="https://www.miragenews.com/a-new-app-can-help-detect-coronavirus/">Mirage News</a><span class="flag">🇦🇺</span></li>
+								<li><a href="https://www.m3india.in/contents/clinical_news/136447/a-new-app-can-help-detect-the">M3 India</a><span class="flag">🇮🇳</span></li>
+								<li><a href="https://astronite.in/an-ai-based-application-can-help-detect-the-covid-19/">Astronite</a><span class="flag">🇮🇳</span></li>
+								<li><a href="https://sciencemediacentremalaysia.com/research/2020/04/research-new-app-detect-covid-19-based-on-your-cough/">Science Media Malaysia</a><span class="flag">🇲🇾</span></li>
+								<li><a href="http://xahoithongtin.vnmedia.vn/tin-moi/202004/khong-the-tin-nhung-coughvid-su-dung-ai-de-phat-hien-covid-19-chi-qua-am-thanh-ho-6e27a0c/">VN Media</a><span class="flag">🇻🇳</span></li>
+								<li><a href="https://prabidhi.info/en/coughvid-ai-app-detect-coronavirus-covid-19-coughing-sounds/">Prabidhi Info</a><span class="flag">🇳🇵</span></li>
+								<li><a href="https://www.cnbcindonesia.com/tech/20200422122624-37-153621/wah-aplikasi-ini-bisa-deteksi-corona-dari-suara-batuk">CNBC Indonesia</a><span class="flag">🇮🇩</span></li>
+								<li><a href="https://inet.detik.com/science/d-4985406/coughvid-teliti-suara-batuk-untuk-pantau-covid-19">Detik</a><span class="flag">🇮🇩</span></li>
+							</ul>
+							</div>
+
+							<!-- EUROPE -->
+							<div class="continent" style="flex:2">
+							<h3>Europe</h3>
+							<ul class="news-list" style="columns: 2; column-gap: 1em;">
+								<li><a href="https://www.rts.ch/info/economie/11767047-toussez-sur-votre-smartphone-il-vous-dira-presque-si-vous-etes-positif-au-covid19.html">RTS</a><span class="flag">🇨🇭</span></li>
+								<li><a href="https://www.swissinfo.ch/fre/epfl--une-application-qui-d%C3%A9tecte-le-coronavirus-gr%C3%A2ce-%C3%A0-la-toux/45681160">Swiss Info</a><span class="flag">🇨🇭</span></li>
+								<li><a href="https://www.laliberte.ch/news-agence/detail/epfl-une-application-qui-detecte-le-coronavirus-grace-a-la-toux/560091">La Liberté</a><span class="flag">🇨🇭</span></li>
+								<li><a href="https://www.lfm.ch/actualite/vaud/une-app-pour-detecter-le-coronavirus/">LFM</a><span class="flag">🇨🇭</span></li>
+								<li><a href="https://www.myscience.org/news/2020/a_new_app_can_help_detect_the_coronavirus-2020-epfl">My Science</a><span class="flag">🇨🇭</span></li>
+								<li><a href="https://www.rsi.ch/news/svizzera/Test-e-tecnologia-per-il-virus-12939599.html">Radiotelevisione Svizzera</a><span class="flag">🇨🇭</span></li>
+								<li><a href="https://bioalps.org/covid-19-testimonial-series-coughvid/">BioAlps</a><span class="flag">🇨🇭</span></li>
+								<li><a href="https://www.letemps.ch/sciences/applis-mobiles-depister-covid-toux">Le Temps</a><span class="flag">🇨🇭</span></li>
+								<li><a href="https://www.ictjournal.ch/articles/2020-11-06/course-entre-chercheurs-pour-diagnostiquer-covid-19-dans-le-son-de-la-toux">ICTjournal</a><span class="flag">🇨🇭</span></li>
+								<li><a href="https://sciencebusiness.net/network-updates/epfl-develops-app-can-help-detect-coronavirus">Science Business</a><span class="flag">🇬🇧</span></li>
+								<li><a href="https://gadgetspot.co.uk/a-smartphone-app-detects-the-covid-19-with-your-cough/">Gadget Spot</a><span class="flag">🇬🇧</span></li>
+								<li><a href="https://www.onenewspage.co.uk/">One News Page</a><span class="flag">🇬🇧</span></li>
+								<li><a href="https://world-news-monitor.de/technologie/2020/04/20/schweiz-wissenschaftler-entwickeln-app-die-covid-19-am-geraeusch-des-hustens-erkennen-soll/">World Business Monitor</a><span class="flag">🇦🇹</span></li>
+								<li><a href="https://www.moustique.be/27556/une-appli-pour-detecter-le-covid-19-grace-la-toux">Moustique</a><span class="flag">🇧🇪</span></li>
+								<li><a href="https://www.clubic.com/coronavirus/actualite-892008-application-suisse-etudie-toux-depistage-coronavirus.html">Clubic</a><span class="flag">🇫🇷</span></li>
+								<li><a href="https://www.phonandroid.com/coronavirus-coughvid-lapplication-qui-detecte-le-covid-19-avec-votre-toux.html">Phonandroid</a><span class="flag">🇫🇷</span></li>
+								<li><a href="https://www.sciencesetavenir.fr/decouvrir/covid-19-les-sciences-participatives-pour-epauler-les-structures-officielles_143398">Sciences et Avenir</a><span class="flag">🇫🇷</span></li>
+								<li><a href="https://www.rtflash.fr/application-d-ia-qui-detecte-coronavirus/article">RTFlash</a><span class="flag">🇫🇷</span></li>
+								<li><a href="https://www.ilfattoquotidiano.it/2020/04/14/coronavirus-il-politecnico-di-losanna-lavora-a-unapp-in-grado-di-diagnosticare-il-contagio-da-covid-19-dal-suono-della-tosse/5770047/">Il Fatto Quotidiano</a><span class="flag">🇮🇹</span></li>
+								<li><a href="https://www.notizieora.it/come-riconoscere-i-sintomi-del-covid-19-con-coughvid/">Notizie Ora</a><span class="flag">🇮🇹</span></li>
+								<li><a href="https://www.webnews.it/2020/04/10/coughvid-riconoscere-il-covid-19-dal-suono-della-tosse/">Webnews Italia</a><span class="flag">🇮🇹</span></li>
+								<li><a href="https://world-news-monitor.de/technologie/2020/04/20/schweiz-wissenschaftler-entwickeln-app-die-covid-19-am-geraeusch-des-hustens-erkennen-soll/">World News Monitor</a><span class="flag">🇩🇪</span></li>
+								<li><a href="http://gernews24h.com/smartphone-app-erkennt-covid-19-mit-ihrem-husten/">Gernews 24</a><span class="flag">🇩🇪</span></li>
+								<li><a href="https://www.vozpopuli.com/altavoz/next/Graba-tos-caracterizar-sintomas-Covid-19_0_1342067217.html">Voz Popúli</a><span class="flag">🇪🇸</span></li>
+								<li><a href="https://www.20minutos.es/noticia/4222599/0/una-nueva-app-detecta-si-tienes-coronavirus-por-el-sonido-de-tu-tos/">20 Minutos</a><span class="flag">🇪🇸</span></li>
+								<li><a href="https://cincodias.elpais.com/cincodias/2020/04/16/lifestyle/1587021642_252583.html">El País</a><span class="flag">🇪🇸</span></li>
+								<li><a href="https://applicantes.com/coughvid-app-coronavirus-sonido-tos/">Applicantes</a><span class="flag">🇪🇸</span></li>
+								<li><a href="https://as.com/diarioas/2020/04/13/actualidad/1586809586_439330.html">Diario AS</a><span class="flag">🇪🇸</span></li>
+								<li><a href="https://www.msn.com/es-es/salud/vida-saludable/coughvid-la-app-que-diagnostica-el-coronavirus-con-el-sonido-de-la-tos/ar-BB12zOdS">MSN News</a><span class="flag">🇪🇸</span></li>
+								<li><a href="https://emergencyservices.ie/coughvid-app-will-tell-if-you-have-covid-19/">Emergency Services</a><span class="flag">🇮🇪</span></li>
+								<li><a href="https://www.ferra.ru/news/apps/sozdano-prilozhenie-dlya-opredeleniya-koronavirusa-po-kashlyu-11-04-2020.htm">Ferra.ru</a><span class="flag">🇷🇺</span></li>
+								<li><a href="https://incrussia.ru/news/coughvid/">Incrussia</a><span class="flag">🇷🇺</span></li>
+								<li><a href="https://www.kaldata.com/%d1%82%d0%b5%d0%bb%d0%b5%d1%84%d0%be%d0%bd%d0%b8/%d1%81%d0%bc%d0%b0%d1%80%d1%82%d1%84%d0%be%d0%bd%d0%b8%d1%82%d0%b5-%d1%89%d0%b5-%d0%bc%d0%be%d0%b3%d0%b0%d1%82-%d0%b4%d0%b0-%d0%b8%d0%b4%d0%b5%d0%bd%d1%82%d0%b8%d1%84%d0%b8%d1%86%d0%b8%d1%80%d0%b0-334484.html">Kaldata</a><span class="flag">🇷🇺</span></li>
+								<li><a href="https://drive-journal.ru/prilozhenie-coughvid-opredelyaet-koronavirus-po-kashlyu/">Drive Journal</a><span class="flag">🇷🇺</span></li>
+								<li><a href="https://news.yandex.uz/news/story/Uchenye_razrabatyvayut_prilozhenie_dlya_obnaruzheniya_koronavirusa_po_kashlyu--dff801935cb69b940585c1cceaf70c21">Yandex</a><span class="flag">🇷🇺</span></li>
+								<li><a href="https://playboyrussia.com/news/uchenye-rabotayut-nad-prilozheniem-kotoroe-pozvolit-vyyavlyat-koronavirus-po-kashlyu-128931/">Playboy Russia</a><span class="flag">🇷🇺</span></li>
+								<li><a href="https://www.rtflash.fr/application-d-ia-qui-detecte-coronavirus/article">Leak</a><span class="flag">🇵🇹</span></li>
+								<li><a href="https://www.svethardware.cz/aplikace-coughvid-chce-diagnostikovat-covid-19-zakaslanim/51796">Svet Hardware</a><span class="flag">🇨🇿</span></li>
+								<li><a href="https://pestihirlap.hu/2020/04/12/uj-teszt-keszul-amely-a-kohoges-hangjabol-allapitja-meg-a-koronavirust/">Pesti Hírlap</a><span class="flag">🇭🇺</span></li>
+							</ul>
+							</div>
+
+							<!-- NORTH AMERICA -->
+							<div class="continent">
+							<h3 style="white-space: nowrap;">N. America</h3>
+							<ul class="news-list">
+								<li><a href="https://www.businessinsider.com/app-would-listen-cough-predict-coronavirus-2020-4">Business Insider</a><span class="flag">🇺🇸</span></li>
+								<li><a href="https://www.wsj.com/articles/smartphone-coronavirus-test-apps-would-listen-to-your-cough-11587055803">Wall Street Journal</a><span class="flag">🇺🇸</span></li>
+								<li><a href="https://www.youtube.com/watch?v=SawtEd1IbyY">NPR Radio</a><span class="flag">🇺🇸</span></li>
+								<li><a href="https://www.fox2detroit.com/news/researchers-developing-app-that-can-detect-covid-19-based-off-the-sound-of-your-cough">Fox News</a><span class="flag">🇺🇸</span></li>
+								<li><a href="https://parentology.com/coughvid-app-could-tell-if-you-have-covid-19/">Parentology</a><span class="flag">🇺🇸</span></li>
+								<li><a href="https://usa-today-news.com/news/this-covid-19-app-would-listen-to-your-cough-and-use-ai-to-predict-whether-you-have-coronavirus/">USA Today</a><span class="flag">🇺🇸</span></li>
+								<li><a href="https://www.wbur.org/hereandnow/2020/04/15/covid-19-cough-sound-app">WBUR</a><span class="flag">🇺🇸</span></li>
+								<li><a href="https://neurosciencenews.com/ai-cough-coronavirus-16145">Neuroscience News</a><span class="flag">🇺🇸</span></li>
+								<li><a href="https://lacalletv.com/tecnologia/esta-app-escuchara-su-tos-y-usara-inteligencia-artificial/">La Calle TV</a><span class="flag">🇺🇸</span></li>
+								<li><a href="https://www.slashgear.com/coughvid-app-uses-ai-to-detect-covid-19-from-coughing-sounds-10616214/">SlashGear</a><span class="flag">🇺🇸</span></li>
+								<li><a href="https://www.tribuna.com.mx/cienciaytecnologia/2020/4/10/desarrollan-aplicacion-para-detectar-covid-19-por-medio-del-sonido-de-la-tos-164727.html">Tribuna</a><span class="flag">🇲🇽</span></li>
+								<li><a href="https://www.diariopresente.mx/tags/coughvid-45015/">Diario Presente</a><span class="flag">🇲🇽</span></li>
+								<li><a href="https://screenrant.com/coronavirus-cough-screening-research/amp/">Screen Rant</a><span class="flag">🇨🇦</span></li>
+							</ul>
+							</div>
+
+							<!-- SOUTH AMERICA -->
+							<div class="continent">
+							<h3 style="white-space: nowrap;">S. America</h3>
+							<ul class="news-list">
+								<li><a href="https://www.epochtimes.com.br/aplicativo-movel-e-projetado-para-detectar-covid-19-pelo-som-da-tosse/">Echo Times</a><span class="flag">🇧🇷</span></li>
+								<li><a href="https://casavogue.globo.com/Design/Tecnologia/noticia/2020/04/pesquisadores-suicos-estao-criando-app-que-identifica-pacientes-com-covid-19-pelo-som-da-tosse.html">Casa Vogue</a><span class="flag">🇧🇷</span></li>
+								<li><a href="https://larepublica.pe/tecnologia/2020/04/12/whatsapp-como-colocar-divertidos-stickers-en-tus-actualizaciones-de-estado-fotos-videos-tutorial-trucos-android-ios-iphone/">La República</a><span class="flag">🇵🇪</span></li>
+								<li><a href="https://gestion.pe/tecnologia/coronavirus-coughvid-disenan-aplicacion-para-detectar-el-covid-19-por-el-sonido-de-la-tos-pandemia-nndc-noticia/">Gestión</a><span class="flag">🇵🇪</span></li>
+								<li><a href="https://www.entornointeligente.com/coughvid-la-app-que-afirma-detectar-el-covid-19-escuchando-cmo-es-tu-tos/">Entorno Inteligente</a><span class="flag">🇻🇪</span></li>
+								<li><a href="https://catamarcaprovincia.com.ar/">Catamarca Provincia</a><span class="flag">🇦🇷</span></li>
+							</ul>
+							</div>
+
 						</div>
 					</section>
 					
