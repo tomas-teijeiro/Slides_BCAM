@@ -9,7 +9,7 @@ Slides are created with [Reveal.js](https://revealjs.com/), and deployed using G
 For a proper export to `pdf`, run the following command (adjusting the `--max-slides` flag accordingly):
 
 ```bash
-$ docker run --rm -t --net=host -v `pwd`:/slides -v "/usr/share/fonts:/home/node/.local/share/fonts" astefanutti/decktape generic --key=" " --max-slides=50 index.html slides.pdf
+$ docker run --rm -t --net=host -v `pwd`:/slides -v "/usr/share/fonts:/home/node/.local/share/fonts" ghcr.io/astefanutti/decktape generic --key=" " --max-slides=50 index.html slides.pdf
 ```
 
 ### Tuning the CSS Theme:
